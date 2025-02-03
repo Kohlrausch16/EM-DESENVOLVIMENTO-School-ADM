@@ -1,12 +1,22 @@
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
 
-  return (
+const NotFound = () => {
+  return(
     <>
-     
-     <h1> Hallo Welt!</h1>
-     
-    </>
-  )
+      <h1> Not found </h1>
+    </>);
 }
 
-export default App
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
