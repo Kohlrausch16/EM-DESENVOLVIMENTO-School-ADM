@@ -1,11 +1,14 @@
 import LoginCard from '../layouts/LoginCard';
-import { BackGroundImage } from '../components/BackGroundImage';
+//import { BackGroundImage } from '../components/BackGroundImage';
+import { FlexContainer } from './LoginFlexController';
 
 const Login = () =>{
     return(
       <>
-        <BackGroundImage />
-        <LoginCard />
+    
+        <FlexContainer>
+            <LoginCard />
+        </FlexContainer>
       </>);
   }
 
