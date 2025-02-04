@@ -1,4 +1,4 @@
 export const login = {
-    email: "teste@gmailcom",
+    email: "teste@gmail.com",
     password: "password"
 }
