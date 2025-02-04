@@ -1,4 +1,9 @@
-import style from 'styled-components'
+import style  from 'styled-components'
+
+/* const entry = keyframes`
+    0%{margin-top: 10%;}
+    100%{margin-top: 0%;}
+`;*/
 
 
 export const Card = style.div`
@@ -11,19 +16,18 @@ export const Card = style.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5% 0%;
+    padding: 8% 0%;
 `;
 
 export const Logo = style.img`
     width: 25%;
     height: 25%
-
 `;
 
 export const CardText = style.div`
     font-family: Inria-Sans;
     font-size: 35px;
-    padding: 4%;
+    padding: 8%;
 
 `;
 
@@ -39,6 +43,10 @@ export const TextArea = style.div`
     border: solid #DEDEDE 1px; 
     border-radius: 50px;
 
+    &:hover {
+        background-color: #FAF5F5;
+    }
+
 `;
 
 export const Input = style.input`
@@ -46,9 +54,24 @@ export const Input = style.input`
     flex: 1;
     width: 95%;
     font-size: 15px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background: none
 `;
 
 export const ActionButton = style.button`
+    flex: 1;
+    width: 35%;
+    padding: 15px;
+    color: #ffffff;
+    border-radius: 50px;
+    border: none;
+    background-color: #8DBDF4;
+    font-size: 164x;
+    margin: 2% 0% 0% 0%; 
 
-    margin: 2% 0% 0% 0%;
+    &:hover {
+        background-color: #4A90E2;
+    }
 `;
