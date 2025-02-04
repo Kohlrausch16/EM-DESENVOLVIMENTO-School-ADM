@@ -1,11 +1,11 @@
 import style from "styled-components";
+import image from "../assets/images/4A90E2.png";
 
 export const ContentArea = style.div`
     display: flex;
     width: 100%;
-    height: 100%;
-    background-color: black;
-    overflow: clip;
+    background-image: url(${image});
+    overflow: hidden;
 `;
 
 export const FlexContainer = style.div`

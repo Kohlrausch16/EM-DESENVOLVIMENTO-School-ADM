@@ -1,11 +1,5 @@
 import style  from 'styled-components'
 
-/* const entry = keyframes`
-    0%{margin-top: 10%;}
-    100%{margin-top: 0%;}
-`;*/
-
-
 export const Card = style.div`
     background-color: #FFFFFF;
     opacity: 0.75;
@@ -25,7 +19,7 @@ export const Logo = style.img`
 `;
 
 export const CardText = style.div`
-    font-family: Inria-Sans;
+    font-family: Verdana;
     font-size: 35px;
     padding: 8%;
 
