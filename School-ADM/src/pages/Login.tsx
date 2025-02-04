@@ -7,8 +7,8 @@ const Login = () =>{
         <ContentArea>
           <FlexContainer>
               <LoginCard />
-          </FlexContainer>
-        </ContentArea>
+            </FlexContainer>
+          </ContentArea>
       </>);
   }
 
