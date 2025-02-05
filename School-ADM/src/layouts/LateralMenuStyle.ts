@@ -15,6 +15,7 @@ export const LogoContainer = style.div`
     width: 40%;
     padding: 10% 30%;
     justify-content: center;
+    border-bottom: solid 1px #FFFEFE;
 `;
 
 export const MenuLogo = style.img`
@@ -38,7 +39,6 @@ export const MenuIcon = style.img`
     display: flex;
     width: 7%;
     padding: 1% 2% 1% 18%;
-    border-top: solid 1px #FFFEFE;
     text-align: end;
 `;
 
@@ -50,5 +50,4 @@ export const MenuField = style.div`
     align-items: center;
     font-weight: bold;
     color: #FFFEFE;
-    border-top: solid 1px #FFFEFE;
 `;
