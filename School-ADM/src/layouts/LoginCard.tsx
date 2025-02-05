@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';  // useNavigate é o hook para navegação programática
+import { useNavigate } from 'react-router-dom';
 import img from '../assets/images/logo.png';
 import { Card, Logo, CardText, TextArea, Input, ActionButton } from './LoginCardStyle';
 import { login } from '../axios';
@@ -8,13 +8,12 @@ const LoginCard = () => {
 
   const emailContent = useRef<HTMLInputElement | null>(null);
   const passwordContent = useRef<HTMLInputElement | null>(null);
-  const navigate = useNavigate();  // Hook para navegação programática
+  const navigate = useNavigate(); 
 
-  // Adicionando o listener de evento 'keydown'
   document.addEventListener('keydown', (evento) => {
     if (evento.key === 'Enter') {
       console.log('passou aqui!');
-      submit('/home');  // Chama a função submit com o link '/home'
+      submit('/home'); 
     }
   });
 
@@ -27,7 +26,6 @@ const LoginCard = () => {
     } else {
       let loginAccepted = false;
 
-      // Verificação de login
       for (let i = 0; i <= login.length - 1; i++) {
         if (emailValue === login[i].email && passwordValue === login[i].password) {
           loginAccepted = true;
@@ -36,7 +34,7 @@ const LoginCard = () => {
       }
 
       if (loginAccepted === true) {
-        navigate(link);  // Usando 'navigate' para redirecionar
+        navigate(link);
       } else {
         alert('Acesso negado!');
       }
@@ -53,7 +51,7 @@ const LoginCard = () => {
       <TextArea>
         <Input id="passwordInput" ref={passwordContent} type="password" placeholder="Informe sua senha" />
       </TextArea>
-      <ActionButton id="button" onClick={() => submit('/home')}>Entrar</ActionButton>  {/* Passa o link para a função */}
+      <ActionButton id="button" onClick={() => submit('/home')}>Entrar</ActionButton>
     </Card>
   );
 };

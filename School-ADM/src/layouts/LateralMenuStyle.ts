@@ -17,21 +17,38 @@ export const LogoContainer = style.div`
     justify-content: center;
 `;
 
-
 export const MenuLogo = style.img`
-    width: 80%;
+    width: 75%;
     height: 90%;
-
 `;
 
 export const ItemBar = style.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 6%;
+    border-bottom: solid 1px #FFFEFE;
 
+    &:hover{
+        background-color: #958D8D;
+    }
 `;
 
 export const MenuIcon = style.img`
-
+    display: flex;
+    width: 7%;
+    padding: 1% 2% 1% 18%;
+    border-top: solid 1px #FFFEFE;
+    text-align: end;
 `;
 
 export const MenuField = style.div`
-
+    width: 73%;
+    display: flex;
+    font-family: Verdana;
+    justify-content: left;
+    align-items: center;
+    font-weight: bold;
+    color: #FFFEFE;
+    border-top: solid 1px #FFFEFE;
 `;

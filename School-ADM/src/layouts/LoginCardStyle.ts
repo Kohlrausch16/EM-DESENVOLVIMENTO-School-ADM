@@ -24,7 +24,7 @@ export const CardText = style.div`
     padding: 8%;
 
 `;
-
+    
 /* top | right | bottom | left */
 
 export const TextArea = style.div`
