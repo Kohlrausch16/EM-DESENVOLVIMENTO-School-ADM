@@ -1,5 +1,5 @@
 import LoginCard from '../layouts/LoginCard';
-import { ContentArea, FlexContainer } from './LoginFlexController';
+import { ContentArea, FlexContainer } from './FlexController';
 
 const Login = () =>{
     return(
