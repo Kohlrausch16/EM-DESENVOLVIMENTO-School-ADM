@@ -4,7 +4,7 @@ export const MenuBody = style.div`
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 100vh;
+    height: 100%;
     background-color: #333333;
     align-items: center;
 `;
