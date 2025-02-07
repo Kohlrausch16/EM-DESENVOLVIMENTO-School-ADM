@@ -1,6 +1,7 @@
+import HomeClassCard from "../layouts/HomeClassCard";
 import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
-import { ContentContainer, IconBar, Icon, ClassCardArea } from "./HomeStyle";
+import { ContentContainer, IconBar, HomeTitle, Icon, ClassCardArea } from "./HomeStyle";
 //import student from '../assets/images/students.png';
 
 function Home(){
@@ -21,7 +22,11 @@ function Home(){
                 )}
                     
                 </IconBar>
+
+                <HomeTitle> Aulas do dia </HomeTitle>
                 <ClassCardArea >
+
+                    <HomeClassCard />
 
                 </ClassCardArea>
 

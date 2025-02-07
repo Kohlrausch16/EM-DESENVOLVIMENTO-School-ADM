@@ -5,7 +5,7 @@ export const ContentArea = style.div`
     display: flex;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;'
+    overflow: hidden;
 `;
 
 export const BackgroundImage = style.div`

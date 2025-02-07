@@ -1,25 +1,20 @@
-import style, { keyframes } from "styled-components";
-
-/*const goUpAnimation = keyframes`
-    0%{margin-top: 0%;}
-    100%{margin-top: -2%;}
-`;*/
-
+import style from "styled-components";
 
 export const ContentContainer = style.div`
     flex: 1;
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: #FFFEFE;
-    padding: 7% 5%;
+    padding: 3% 1%;
     justify-content: center;
-    aliing-items: center;
+    align-items: center;
 `;
 
 export const IconBar = style.div`
     display: flex;
-    width: 70%;
+    width: 55%;
     height: 5%;
     padding: 2%;
     background-color: none;
@@ -40,7 +35,18 @@ export const Icon = style.i`
     }
 `;
 
+export const HomeTitle = style.div`
+    
+`;
+
+
 export const ClassCardArea = style.div`
-
-
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 100%;
+    padding: 2%;
+    background-color: red;
+    justify-content: space-between;
+    overflow: scroll;
 `;
