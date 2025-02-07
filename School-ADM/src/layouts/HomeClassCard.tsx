@@ -1,4 +1,4 @@
-import { ClassCard, LenguageFlag, ClassName, CourseLevel } from "./HomeClassCardStyle";
+import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardInfo, Information, ItemIcon, ItemDescription } from "./HomeClassCardStyle";
 import flag from '../assets/images/deutschland_flagge.png';
 
 
@@ -11,6 +11,28 @@ function HomeClassCard(){
                 <LenguageFlag src={flag} />
                 <ClassName> Alemão - B1.2</ClassName>
                 <CourseLevel> B1.2 </CourseLevel>
+                <CardInfo>
+                    <Information>
+                        <ItemIcon> efvefv</ItemIcon>
+                        <ItemDescription> vfvwvwf</ItemDescription>
+                    </Information>
+
+                    <Information>
+                        <ItemIcon> efvefv</ItemIcon>
+                        <ItemDescription> vfvwvwf</ItemDescription>
+                    </Information>
+
+                    <Information>
+                        <ItemIcon> efvefv</ItemIcon>
+                        <ItemDescription> vfvwvwf</ItemDescription>
+                    </Information>
+
+                    <Information>
+                        <ItemIcon> efvefv</ItemIcon>
+                        <ItemDescription> vfvwvwf</ItemDescription>
+                    </Information>
+                </CardInfo>
+
             </ClassCard>
 
             <ClassCard>

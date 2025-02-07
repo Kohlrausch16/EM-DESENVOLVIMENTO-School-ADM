@@ -17,8 +17,11 @@ export const LenguageFlag = style.img`
 `;
 
 export const ClassName = style.div`
+    display: flex;
+    flex-warp: warp;
     font-family: verdana;
-    font-size: 150%;
+
+    font-size: 140%;
     padding: 3%;
     color: #333333;
 
@@ -26,11 +29,27 @@ export const ClassName = style.div`
 
 export const CourseLevel = style.div`
     font-family: verdana;
-    align-self: right;
-    height: 20%;
+    margin-left: auto;
+    height: 16%;
     border-bottom-left-radius: 15px;
     font-size: 120%;
     padding: 3%;
     color: #333333;
     background-color: #DEDEDE;
+`;
+
+export const CardInfo = style.div`
+
+`;
+
+export const Information = style.div`
+
+`;
+
+export const ItemIcon = style.div`
+
+`;
+
+export const ItemDescription = style.div`
+
 `;
