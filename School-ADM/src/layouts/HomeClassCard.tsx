@@ -1,5 +1,9 @@
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardInfo, Information, ItemIcon, ItemDescription } from "./HomeClassCardStyle";
-import flag from '../assets/images/deutschland_flagge.png';
+import deutschland from '../assets/images/deutschland_flagge.png';
+import frankreich from '../assets/images/frankreich_flagge.png';
+import usa from '../assets/images/usa_flagge.png';
+import spanien from '../assets/images/spanien_flagge.png';
+import italien from '../assets/images/italien_flagge.png';
 
 
 function HomeClassCard(){
@@ -8,7 +12,7 @@ function HomeClassCard(){
         <>
 
             <ClassCard>
-                <LenguageFlag src={flag} />
+                <LenguageFlag src={deutschland} />
                 <ClassName> Alemão - B1.2</ClassName>
                 <CourseLevel> B1.2 </CourseLevel>
                 <CardInfo>
@@ -35,22 +39,37 @@ function HomeClassCard(){
 
             </ClassCard>
 
+
+
+
+
+
+
+
+
             <ClassCard>
-                <LenguageFlag src={flag} />
+                <LenguageFlag src={frankreich} />
                 <ClassName> Alemão - B1.2</ClassName>
                 <CourseLevel> B1.2 </CourseLevel>
             </ClassCard>
 
             <ClassCard>
-                <LenguageFlag src={flag} />
+                <LenguageFlag src={usa} />
                 <ClassName> Alemão - B1.2</ClassName>
                 <CourseLevel> B1.2 </CourseLevel>
             </ClassCard>
 
-            <ClassCard/>
+            <ClassCard>
+                <LenguageFlag src={spanien} />
+                <ClassName> Alemão - B1.2</ClassName>
+                <CourseLevel> B1.2 </CourseLevel>
+            </ClassCard>
 
-            <ClassCard/>
-
+            <ClassCard>
+                <LenguageFlag src={italien} />
+                <ClassName> Alemão - B1.2</ClassName>
+                <CourseLevel> B1.2 </CourseLevel>
+            </ClassCard>
         </>
 
     );
