@@ -27,6 +27,7 @@ export const Icon = style.i`
     color: #333333;
     font-size: 35px;
     transition: transform 0.2s;
+    cursor: pointer;
 
     &:hover{
         color: #958D8D;
@@ -36,6 +37,11 @@ export const Icon = style.i`
 `;
 
 export const HomeTitle = style.div`
+    width: 85%;
+    margin: 3%;
+    color: #333333;
+    font-family: verdana;
+    font-size: 160%;
     
 `;
 
@@ -46,7 +52,6 @@ export const ClassCardArea = style.div`
     width: 80%;
     height: 100%;
     padding: 2%;
-    background-color: red;
     justify-content: space-between;
     overflow: scroll;
 `;

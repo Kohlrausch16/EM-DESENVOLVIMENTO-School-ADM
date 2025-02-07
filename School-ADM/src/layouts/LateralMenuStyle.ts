@@ -21,6 +21,7 @@ export const LogoContainer = style.div`
 export const MenuLogo = style.img`
     width: 75%;
     height: 90%;
+    cursor: pointer;
 `;
 
 export const ItemBar = style.div`
@@ -40,6 +41,7 @@ export const MenuIcon = style.img`
     width: 7%;
     padding: 1% 2% 1% 18%;
     text-align: end;
+    cursor: pointer;
 `;
 
 export const MenuField = style.div`
@@ -50,4 +52,5 @@ export const MenuField = style.div`
     align-items: center;
     font-weight: bold;
     color: #FFFEFE;
+    cursor: pointer;
 `;

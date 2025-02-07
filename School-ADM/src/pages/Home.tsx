@@ -1,13 +1,11 @@
-import HomeClassCard from "../layouts/HomeClassCard";
 import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer, IconBar, HomeTitle, Icon, ClassCardArea } from "./HomeStyle";
-//import student from '../assets/images/students.png';
+import HomeClassCard from "../layouts/HomeClassCard";
 
 function Home(){
 
     const headIcons = ["fab fa-instagram", "fab fa-facebook", "fab fa-whatsapp", "fab fa-envelope", "fab fa-globe", "fab fa-user"]
-
 
 
     return(
