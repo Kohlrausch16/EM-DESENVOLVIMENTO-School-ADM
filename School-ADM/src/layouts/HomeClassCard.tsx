@@ -1,4 +1,4 @@
-import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardInfo, Information, ItemIcon, ItemDescription } from "./HomeClassCardStyle";
+import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardRow, Information, TextContent, ItemIcon, ItemDescription, CardInfo } from "./HomeClassCardStyle";
 import deutschland from '../assets/images/deutschland_flagge.png';
 import frankreich from '../assets/images/frankreich_flagge.png';
 import usa from '../assets/images/usa_flagge.png';
@@ -8,34 +8,35 @@ import italien from '../assets/images/italien_flagge.png';
 
 function HomeClassCard(){
 
+    const cardIcons = ["fab fa-instagram", "fab fa-facebook", "fab fa-whatsapp", "fab fa-envelope"];
+
     return(
         <>
 
             <ClassCard>
+
                 <LenguageFlag src={deutschland} />
-                <ClassName> Alemão - B1.2</ClassName>
-                <CourseLevel> B1.2 </CourseLevel>
+
+                <CardRow>
+
                 <CardInfo>
-                    <Information>
-                        <ItemIcon> efvefv</ItemIcon>
-                        <ItemDescription> vfvwvwf</ItemDescription>
-                    </Information>
-
-                    <Information>
-                        <ItemIcon> efvefv</ItemIcon>
-                        <ItemDescription> vfvwvwf</ItemDescription>
-                    </Information>
-
-                    <Information>
-                        <ItemIcon> efvefv</ItemIcon>
-                        <ItemDescription> vfvwvwf</ItemDescription>
-                    </Information>
-
-                    <Information>
-                        <ItemIcon> efvefv</ItemIcon>
-                        <ItemDescription> vfvwvwf</ItemDescription>
-                    </Information>
+                    <ClassName> Alemão - B1.2</ClassName>
+                    <CourseLevel> B1.2 </CourseLevel>
                 </CardInfo>
+
+                <TextContent>
+
+                    {cardIcons.map((item) => 
+                        <Information>
+                            <ItemIcon className={item} />
+                            <ItemDescription> vfvwvwf</ItemDescription>
+                        </Information>
+                    )}
+
+                </TextContent>
+
+
+                </CardRow>
 
             </ClassCard>
 
@@ -76,4 +77,13 @@ function HomeClassCard(){
 }
 
 export default HomeClassCard;
+
+/*
+
+                
+                
+                
+
+
+*/
 
