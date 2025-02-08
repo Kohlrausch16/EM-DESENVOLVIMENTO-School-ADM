@@ -12,7 +12,6 @@ const LoginCard = () => {
 
   document.addEventListener('keydown', (evento) => {
     if (evento.key === 'Enter') {
-      console.log('passou aqui!');
       submit('/home'); 
     }
   });

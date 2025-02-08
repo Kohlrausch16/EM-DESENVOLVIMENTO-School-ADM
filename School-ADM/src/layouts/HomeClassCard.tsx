@@ -5,71 +5,47 @@ import usa from '../assets/images/usa_flagge.png';
 import spanien from '../assets/images/spanien_flagge.png';
 import italien from '../assets/images/italien_flagge.png';
 
+type homeCardContent = {
+        lenguageFlag: integer;
+        className: string;
+        level: string;
+        classInfo: [
+            {
+                icon: string,
+                content: string;
+            }
+        ];
+        active: true;
+}
 
-function HomeClassCard(){
+type HomeCardContentProps = {
+    content: homeCardContent;
+}
 
-    const cardIcons = ["fab fa-instagram", "fab fa-facebook", "fab fa-whatsapp", "fab fa-envelope"];
+function HomeClassCard({content}: HomeCardContentProps){
+
+    const flags = [deutschland, frankreich, usa, spanien, italien];
 
     return(
         <>
-
             <ClassCard>
-
-                <LenguageFlag src={deutschland} />
-
+                <LenguageFlag src={flags[content.lenguageFlag]} />
                 <CardRow>
+                    <CardInfo>
+                        <ClassName> {content.className}</ClassName>
+                        <CourseLevel> {content.level} </CourseLevel>
+                    </CardInfo>
 
-                <CardInfo>
-                    <ClassName> Alemão - B1.2</ClassName>
-                    <CourseLevel> B1.2 </CourseLevel>
-                </CardInfo>
-
-                <TextContent>
-
-                    {cardIcons.map((item) => 
-                        <Information>
-                            <ItemIcon className={item} />
-                            <ItemDescription> vfvwvwf</ItemDescription>
-                        </Information>
-                    )}
-
-                </TextContent>
-
-
+                    <TextContent>
+                        {content.classInfo.map((item) => 
+                            <Information>
+                                <ItemIcon className={item.icon} />
+                                
+                                <ItemDescription> {item.content}</ItemDescription>
+                            </Information>
+                        )}
+                    </TextContent>
                 </CardRow>
-
-            </ClassCard>
-
-
-
-
-
-
-
-
-
-            <ClassCard>
-                <LenguageFlag src={frankreich} />
-                <ClassName> Alemão - B1.2</ClassName>
-                <CourseLevel> B1.2 </CourseLevel>
-            </ClassCard>
-
-            <ClassCard>
-                <LenguageFlag src={usa} />
-                <ClassName> Alemão - B1.2</ClassName>
-                <CourseLevel> B1.2 </CourseLevel>
-            </ClassCard>
-
-            <ClassCard>
-                <LenguageFlag src={spanien} />
-                <ClassName> Alemão - B1.2</ClassName>
-                <CourseLevel> B1.2 </CourseLevel>
-            </ClassCard>
-
-            <ClassCard>
-                <LenguageFlag src={italien} />
-                <ClassName> Alemão - B1.2</ClassName>
-                <CourseLevel> B1.2 </CourseLevel>
             </ClassCard>
         </>
 
