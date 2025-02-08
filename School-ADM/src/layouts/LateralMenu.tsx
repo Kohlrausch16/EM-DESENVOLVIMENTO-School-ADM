@@ -12,23 +12,28 @@ function LateralMenu(){
     const items = [
         {
             fieldName: 'HOME',
-            icon: home
+            icon: home,
+            link: '/home'
         }, 
         {
             fieldName: 'ALUNOS',
-            icon: student
+            icon: student,
+            link: '/student'
         }, 
         {
             fieldName: 'TURMAS',
-            icon: classes
+            icon: classes,
+            link: '/class'
         }, 
         {
             fieldName: 'PROFESSORES',
-            icon: teacher
+            icon: teacher,
+            link: '/teacher'
         }, 
         {
             fieldName: 'CURSOS',
-            icon: course
+            icon: course,
+            link: '/course'
         }, 
     ];
 
@@ -41,7 +46,7 @@ function LateralMenu(){
 
                 {items.map((item) => 
 
-                <ItemBar>
+                <ItemBar href={item.link}>  
                     <MenuIcon src={item.icon} />
                     <MenuField> {item.fieldName}</MenuField>
                 </ItemBar>

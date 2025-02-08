@@ -3,9 +3,8 @@ import style from 'styled-components';
 
 export const ClassCard = style.div`
     display: flex;
-    width: 48%;
-    height: 40%;
-    margin-bottom: 5%;
+    width: 100%;
+    height: 100%;
     border: solid 2px #DEDEDE;
     border-radius: 15px;
     overflow: hidden;
@@ -79,4 +78,12 @@ export const CardRow = style.div`
     flex-direction: column;
     width: 85%;
     height: 100%;
+`;
+
+export const Link = style.a`
+    text-decoration: none;
+    color: #333333;
+    width: 48%;
+    height: 40%;
+    margin-bottom: 5%;
 `;

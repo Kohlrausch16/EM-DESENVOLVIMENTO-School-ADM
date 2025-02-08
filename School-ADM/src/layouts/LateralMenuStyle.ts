@@ -24,12 +24,13 @@ export const MenuLogo = style.img`
     cursor: pointer;
 `;
 
-export const ItemBar = style.div`
+export const ItemBar = style.a`
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 6%;
     border-bottom: solid 1px #FFFEFE;
+    text-decoration: none;
 
     &:hover{
         background-color: #958D8D;

@@ -15,6 +15,7 @@ export const login = [
 
 export const homeCardContent = [
         {
+            id: '8230d29d-1eed-4294-93e6-0939a61156ea',
             lenguageFlag: 0, // Alemão
             className: "Alemão B1.1",
             level: "B1.1",
@@ -39,6 +40,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '9c10c584-9d04-43c0-83e9-71be600462b6',
             lenguageFlag: 0, // Alemão
             className: "Alemão B2.3",
             level: "B2.3",
@@ -63,6 +65,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '9c10c584-9d04-43c0-83e9-71be600462b6',
             lenguageFlag: 1, // Francês
             className: "Francês B1.1",
             level: "B1.1",
@@ -87,6 +90,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '7a54d357-7298-47a7-a4ee-cad48bbd0627',
             lenguageFlag: 1, // Francês
             className: "Francês C1.1",
             level: "C1.1",
@@ -111,6 +115,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
             lenguageFlag: 0, // Alemão
             className: "Alemão C1.2",
             level: "C1.2",
@@ -135,6 +140,7 @@ export const homeCardContent = [
             active: false,
         },
         {
+            id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
             lenguageFlag: 2, // Inglês
             className: "Inglês B1.1",
             level: "B1.1",
@@ -159,6 +165,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
             lenguageFlag: 3, // Espanhol
             className: "Espanhol A1.1",
             level: "A1.1",
@@ -183,6 +190,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
             lenguageFlag: 4, // Italiano
             className: "Italiano A2.2",
             level: "A2.2",
@@ -207,6 +215,7 @@ export const homeCardContent = [
             active: true,
         },
         {
+            id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
             lenguageFlag: 2, // Inglês
             className: "Inglês B2.1",
             level: "B2.1",
