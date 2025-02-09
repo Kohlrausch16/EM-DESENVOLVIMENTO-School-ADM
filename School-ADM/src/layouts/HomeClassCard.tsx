@@ -29,7 +29,7 @@ function HomeClassCard({content}: HomeCardContentProps){
 
     return(
         <>
-            <Link href={`/login/${content.id}`}>
+            <Link href={`/class/${content.id}`}>
                 <ClassCard>
                     <LenguageFlag src={flags[content.lenguageFlag]} />
                     <CardRow>
