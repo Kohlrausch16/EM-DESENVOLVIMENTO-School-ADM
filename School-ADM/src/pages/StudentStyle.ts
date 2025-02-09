@@ -1,52 +1,67 @@
 import style from 'styled-components';
 
-
-export const SearchBar = style.div`
+export const PageBody = style.div`
     display: flex;
-    width: 45%;
-    height: 6%;
-    border: solid 2px #DEDEDE;
-    border-radius: 50px;
-    overflow: hidden;
-    transition: transform 0.2s;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #FAF5F5;
-    }
-
+    flex-direction: column;
+    width: 85%;
+    height: 85%;
+    margin-top: 4%;
+    padding-top: 1%;
+    overflow: scroll;
 `;
 
-export const SearchField = style.input`
-    border: none;
-    flex: 1;
-    width: 95%;
-    font-size: 15px;
-    margin: 0% 4%;
-    outline: none;
-    border: none;
-    box-shadow: none;
-    background: none
-`;
-
-export const IconContainer = style.div`
+export const StudentCard = style.div`
     display: flex;
-    width: 12%;
-    height: 100%;
-    border-left: solid 2px  #DEDEDE;
-    justify-content: center;
-
-    &:hover {
-        background-color: #b1aeae;
-    }
-
-`;
-
-export const SearchIcon = style.i`
-    display: flex;
-    justify-content: center;
+    width: 89.5%;
+    height: 5%;
+    border: solid 2px  #DEDEDE;
+    border-radius: 15px;
+    padding: 5%;
+    gap: 10px;
     align-items: center;
+    transition: transform 0.2s;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #FAF5F5;
+        transform: translate(0, -5%);
+    }
+`;
+
+export const StudentPic = style.img`
+    height: 200%;
+    border-radius: 50%;
+    border: solid 2px  #DEDEDE;
+`;
+
+
+export const InfoContainer = style.div`
+    display: flex;
+    width: 60%;
+    height: 260%;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+
+export const StudentName = style.div`
+    display: flex;
+    height: 65%;    
+    font-size: 200%;
+    font-family: verdana;
+    color: #333333;
+`;
+
+export const LenguageIconContainer = style.div`
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    height: 40%;
     width: 100%;
-    height: 100%;
-    font-size: 30px;
+    gap: 2%;
+`;
+
+export const CourseIcon = style.img`
+    height: 90%;
+    width:  5.65%;
 `;
