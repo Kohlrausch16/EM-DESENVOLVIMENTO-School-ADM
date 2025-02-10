@@ -15,7 +15,7 @@ export const ContentContainer = style.div`
     }
 
 `;
-
+    
 export const SearchField = style.input`
     border: none;
     flex: 1;
