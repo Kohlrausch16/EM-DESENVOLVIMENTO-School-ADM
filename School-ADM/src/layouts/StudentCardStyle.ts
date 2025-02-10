@@ -11,7 +11,7 @@ export const ContentContainer = style.a`
     align-items: center;
     transition: transform 0.2s;
     text-decoration: none;
-    
+
     &:hover{
         cursor: pointer;
         background-color: #FAF5F5;
@@ -19,13 +19,11 @@ export const ContentContainer = style.a`
     }
 `;
 
-
 export const StudentPic = style.img`
     height: 200%;
     border-radius: 50%;
     border: solid 2px  #DEDEDE;
 `;
-
 
 export const InfoContainer = style.div`
     display: flex;

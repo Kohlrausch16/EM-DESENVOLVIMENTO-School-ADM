@@ -1,5 +1,6 @@
 import { PageBody } from "./StudentStyle";
 import SearchBar from "../components/SearchBar";
+import AddButton from "../components/AddButton";
 import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
@@ -16,6 +17,7 @@ function Students(){
             <LateralMenu />
             <ContentContainer>
                 <SearchBar title={title} />
+                <AddButton />
                 <PageBody>
                     <StudentCard />
                 </PageBody>
