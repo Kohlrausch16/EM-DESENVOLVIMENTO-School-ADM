@@ -70,7 +70,6 @@ export const ItemDescription = style.div`
     flex-direction: column;
     flex: 1;
     align-self: center;
-    font-style: italic;
 `;
 
 export const CardRow = style.div`

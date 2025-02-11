@@ -11,7 +11,7 @@ export const login = [
         email: "user@gmail.com",
         password: "password"
     }
-]
+];
 
 export const homeCardContent = [
         {
