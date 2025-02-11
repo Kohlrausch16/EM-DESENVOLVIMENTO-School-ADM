@@ -34,9 +34,10 @@ function StudentCard({student}: StudentDataProps[]){
 
                     <LenguageIconContainer>
 
-                    {item.lenguages.map((contentIcon) =>    
-                        <CourseIcon src={icons[contentIcon]} />
-                    )} 
+                    {item.lenguages.map((contentIcon) => 
+                        <CourseIcon src={icons[contentIcon.lenguageIcon]} />
+                    )}
+
                     </LenguageIconContainer> 
 
                 </InfoContainer>
@@ -52,7 +53,3 @@ function StudentCard({student}: StudentDataProps[]){
 
 
 export default StudentCard;
-
-/*
-
-${student.id} */
