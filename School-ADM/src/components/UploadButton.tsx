@@ -1,4 +1,4 @@
-import { ButtonContainer, ButtonBody, ButtonIcon } from './UploadButtonStyle';
+import { ButtonBody, ButtonIcon } from './UploadButtonStyle';
 
 function UploadButton(){
 

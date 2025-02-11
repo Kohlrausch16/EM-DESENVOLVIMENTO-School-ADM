@@ -54,3 +54,10 @@ export const CourseIcon = style.img`
     height: 90%;
     width:  5.65%;
 `;
+
+export const ButtonSection = style.div`
+    display: flex;
+    width: 40%;
+    justify-content: end;
+    gap: 6%;    
+`;

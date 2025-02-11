@@ -1,4 +1,7 @@
-import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, StudentName, CourseIcon } from "./StudentCardStyle";
+import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, StudentName, CourseIcon, ButtonSection } from "./StudentCardStyle";
+import DeleteButton from "../components/DeleteButton";
+import EditButton from "../components/EditButton";
+
 import picture from '../assets/images/home.png';
 import dtl from '../assets/images/deutschland_rund.png';
 import frk from '../assets/images/frankreich_rund.png';
@@ -26,7 +29,12 @@ function StudentCard(){
                         <CourseIcon src={icon} />
                     )} 
                     </LenguageIconContainer> 
+
                 </InfoContainer>
+                <ButtonSection>
+                        <EditButton />
+                        <DeleteButton />
+                    </ButtonSection>
             </ContentContainer>
         </>
     );
