@@ -5,6 +5,7 @@ import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
 import StudentCard from "../layouts/StudentCard";
+import { studentsTest } from "../axios";
 
 function Students(){
 
@@ -19,7 +20,7 @@ function Students(){
                     <AddButton />
                 </ButtonContainer>
                 <PageBody>
-                    <StudentCard />
+                    <StudentCard student={studentsTest} />
                 </PageBody>
                 
             </ContentContainer>

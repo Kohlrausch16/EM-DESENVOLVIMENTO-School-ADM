@@ -9,24 +9,33 @@ import usa from '../assets/images/usa_rund.png';
 import spa from '../assets/images/spanien_rund.webp';
 import itl from '../assets/images/italien_rund.webp';
 
+type StudentDataProps = {
+    id: string;
+    first_name: string;
+    last_name: string;
+    lenguages: [
+        lenguageIcon: number,
+    ]
+}
 
-function StudentCard(){
+function StudentCard({student}: StudentDataProps[]){
 
     const icons = [dtl, frk, usa, spa, itl];
 
     return(
         <>
-            <ContentContainer href={`/student`}> 
+            {student.map((item: StudentDataProps) =>
+                <ContentContainer href={`/student/${item.id}`}> 
                 <StudentPic src={picture} />
-                <InfoContainer>
+                    <InfoContainer>
                     <StudentName>
-                        Kohlrausch
+                        {item.first_name}  {item.last_name}
                     </StudentName>
 
                     <LenguageIconContainer>
 
-                    {icons.map((icon) =>    
-                        <CourseIcon src={icon} />
+                    {item.lenguages.map((contentIcon) =>    
+                        <CourseIcon src={icons[contentIcon]} />
                     )} 
                     </LenguageIconContainer> 
 
@@ -36,6 +45,7 @@ function StudentCard(){
                         <DeleteButton />
                     </ButtonSection>
             </ContentContainer>
+            )}       
         </>
     );
 }

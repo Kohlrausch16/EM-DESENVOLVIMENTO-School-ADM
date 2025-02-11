@@ -242,3 +242,31 @@ export const homeCardContent = [
 
 ];
 
+export const studentsTest = [
+    {
+        id: '4fcf8c9a-5714-4208-a6bc-6516474b1doe',
+        first_name: 'João H.',
+        last_name: 'Kohlrausch',
+        lenguages: [
+            {
+                lenguageIcon: 0
+            },
+            {
+                lenguageIcon: 2,
+            }
+        ],
+    },
+    {
+        id: '4fcf8c9a-5714-4208-a6bc-65164749udoe',
+        first_name: 'Test',
+        last_name: 'Test',
+        lenguages: [
+            {
+                lenguageIcon: 1
+            },
+            {
+                lenguageIcon: 4,
+            }
+        ],
+    },
+];

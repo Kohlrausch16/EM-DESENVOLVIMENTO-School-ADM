@@ -28,7 +28,7 @@ export const StudentPic = style.img`
 export const InfoContainer = style.div`
     display: flex;
     width: 60%;
-    height: 260%;
+    height: 220%;
     flex-direction: column;
     justify-content: center;
 `;
@@ -36,7 +36,7 @@ export const InfoContainer = style.div`
 export const StudentName = style.div`
     display: flex;
     height: 65%;    
-    font-size: 200%;
+    font-size: 130%;
     font-family: verdana;
     color: #333333;
 `;
