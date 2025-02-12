@@ -13,7 +13,7 @@ export const login = [
     }
 ];
 
-export const homeCardContent = [
+export const classContent = [
         {
             id: '8230d29d-1eed-4294-93e6-0939a61156ea',
             lenguageFlag: 0, // Alemão

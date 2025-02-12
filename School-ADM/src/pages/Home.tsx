@@ -1,4 +1,4 @@
-import { homeCardContent } from "../axios";
+import { classContent } from "../axios";
 
 import HomeClassCard from "../layouts/HomeClassCard";
 import LateralMenu from "../layouts/LateralMenu";
@@ -25,7 +25,7 @@ function Home(){
                 <HomeTitle> Aulas do dia </HomeTitle>
                 <ClassCardArea >
 
-                    {homeCardContent.map((item) =>
+                    {classContent.map((item) =>
                         <HomeClassCard content={ item } />
                     )}   
                     

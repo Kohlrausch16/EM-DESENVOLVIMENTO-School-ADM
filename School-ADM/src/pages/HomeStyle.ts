@@ -45,7 +45,6 @@ export const HomeTitle = style.div`
     
 `;
 
-
 export const ClassCardArea = style.div`
     display: flex;
     flex-wrap: wrap;
