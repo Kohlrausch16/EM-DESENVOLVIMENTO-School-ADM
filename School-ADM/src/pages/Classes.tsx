@@ -5,7 +5,7 @@ import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
 import ClassCard from "../layouts/ClassCard";
-
+import { classContent } from "../axios";
 
 function Classes(){
 
@@ -20,9 +20,10 @@ function Classes(){
                     <AddButton />
                 </ButtonContainer>
                 <PageBody> 
-                    <ClassCard />
-                    <ClassCard />
-                    <ClassCard />
+                    {classContent.map((item) => 
+                        <ClassCard content={item} />
+                    )}
+                    
                 </PageBody>
       
             </ContentContainer>
