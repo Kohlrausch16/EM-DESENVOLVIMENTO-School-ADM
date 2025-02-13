@@ -8,7 +8,6 @@ export const CardContainer = style.div`
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.2s;
-    cursor: pointer;
 
     &:hover{
         cursor: pointer;
@@ -17,7 +16,6 @@ export const CardContainer = style.div`
     }
 `;
 
-
 export const LenguageFlag = style.img`
     width: 7%;
     border-right: solid 2px #DEDEDE;
@@ -25,62 +23,68 @@ export const LenguageFlag = style.img`
 
 export const ClassName = style.div`
     display: flex;
+    width: 100%;
     height: 40%;
+    padding: 0% 3%;
+    font-size: 140%;
     font-family: verdana;
-    font-size: 120%;
-    padding: 1% 3%;
     color: #333333;
-    background-color: blue;
-`;
-
-export const CourseLevel = style.div`
-    font-family: verdana;
-    margin-left: auto;
-    height: 5%;
-    border-bottom-left-radius: 15px;
-    font-size: 120%;
-    padding: 3%;
-    color: #333333;
-    background-color: #DEDEDE;
-`;
-
-export const CardInfo = style.div`
-    display: flex;
-`;
-
-export const Information = style.div`
-    display: flex;
-    width: 50%;    
-    gap: 5%;
-    background-color: yellow;
-`;
-
-export const ItemIcon = style.i`
-    display: flex;
-    align-self: center;
+    align-items: center;
 `;
 
 export const TextContent = style.div`
     display: flex;
+    flex-direction: row;
     width: 100%;
     height: 60%;
-    padding: 2%;
-    background-color: red;
+    gap: 2%;
+    padding: 0% 3%;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const CourseLevel = style.div`
+    display: flex;
+    width: 9%;
+    height: 45%;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    font-size: 100%;
+    border-bottom-left-radius: 10px;
+    font-family: verdana;
+    color: #333333;
+    background-color: #DEDEDE;
+`;
+
+export const ButtonContainer = style.div`
+    display: flex;
+    width: 15%;
+    height: 100%;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ItemIcon = style.i`
+    color: #333333;
 `;
 
 export const ItemDescription = style.div`
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-self: center;
-    background-color: green;
+    color: #333333; 
 `;
 
 export const CardRow = style.div`
     display: flex;
     flex-direction: column;
-    width: 85%;
     height: 100%;
+    width: 70%;
+`;
+
+export const ItemContainer = style.div`
+    display: flex;
+    flex: 1;
+    gap: 2%;
 `;
 
 export const Link = style.a`
