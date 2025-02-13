@@ -91,6 +91,6 @@ export const Link = style.a`
     text-decoration: none;
     color: #333333;
     width: 99%;
-    height: 17%;
-    margin-bottom: 0.7%;
+    height: 20%;
+    margin-bottom: 0.5%;
 `;

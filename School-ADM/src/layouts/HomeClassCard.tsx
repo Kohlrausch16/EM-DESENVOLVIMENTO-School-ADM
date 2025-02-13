@@ -1,7 +1,7 @@
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardRow, Information, TextContent, ItemIcon, Link, ItemDescription, CardInfo } from "./HomeClassCardStyle";
 import deutschland from '../assets/images/deutschland_flagge.png';
 import frankreich from '../assets/images/frankreich_flagge.png';
-import usa from '../assets/images/usa_flagge.png';
+import usa from '../assets/images/usa_flagge_2.png';
 import spanien from '../assets/images/spanien_flagge.png';
 import italien from '../assets/images/italien_flagge.png';
 
