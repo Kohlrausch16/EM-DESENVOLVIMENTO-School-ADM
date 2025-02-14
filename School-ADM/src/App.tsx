@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Students from './pages/Students';
 import Classes from './pages/Classes';
 import Teachers from './pages/Teachers';
+import StudentInfo from './pages/StudentInfo';
 
 const NotFound = () => {
   return(
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/student" element={<Students />} />
+        <Route path="/student/:id" element={<StudentInfo />} />
         <Route path="/class" element={<Classes />} />
         <Route path="/teacher" element={<Teachers />} />
         <Route path="*" element={<NotFound />} />

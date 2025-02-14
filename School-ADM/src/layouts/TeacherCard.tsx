@@ -25,7 +25,7 @@ function TeacherCard({teacher}: TeachertDataProps[]){
     return(
         <>
             {teacher.map((item: TeacherDataProps) =>
-                <ContentContainer href={`/student/${item.id}`}> 
+                <ContentContainer href={`/teacher/${item.id}`}> 
                 <StudentPic src={picture} />
                     <InfoContainer>
                     <StudentName>
