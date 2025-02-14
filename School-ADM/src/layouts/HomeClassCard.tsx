@@ -1,13 +1,8 @@
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardRow, Information, TextContent, ItemIcon, Link, ItemDescription, CardInfo } from "./HomeClassCardStyle";
-import deutschland from '../assets/images/deutschland_flagge.png';
-import frankreich from '../assets/images/frankreich_flagge.png';
-import usa from '../assets/images/usa_flagge_2.png';
-import spanien from '../assets/images/spanien_flagge.png';
-import italien from '../assets/images/italien_flagge.png';
 
 type homeCardContent = {
         id: string;
-        lenguageFlag: number;
+        lenguageFlag: string;
         className: string;
         level: string;
         classInfo: [
@@ -25,13 +20,11 @@ type HomeCardContentProps = {
 
 function HomeClassCard({content}: HomeCardContentProps){
 
-    const flags = [deutschland, frankreich, usa, spanien, italien];
-
     return(
         <>
             <Link href={`/class/${content.id}`}>
                 <ClassCard>
-                    <LenguageFlag src={flags[content.lenguageFlag]} />
+                    <LenguageFlag src={content.lenguageFlag} />
                     <CardRow>
                         <CardInfo>
                             <ClassName> {content.className}</ClassName>

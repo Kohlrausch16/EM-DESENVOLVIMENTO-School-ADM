@@ -16,7 +16,7 @@ export const login = [
 export const classContent = [
         {
             id: '8230d29d-1eed-4294-93e6-0939a61156ea',
-            lenguageFlag: 0, // Alemão
+            lenguageFlag: './src/assets/images/deutschland_flagge.png', // Alemão
             className: "Alemão B1.1",
             level: "B1.1",
             classInfo: [
@@ -41,7 +41,7 @@ export const classContent = [
         },
         {
             id: '9c10c584-9d04-43c0-83e9-71be600462b6',
-            lenguageFlag: 0, // Alemão
+            lenguageFlag: './src/assets/images/deutschland_flagge.png', // Alemão
             className: "Alemão B2.3",
             level: "B2.3",
             classInfo: [
@@ -66,7 +66,7 @@ export const classContent = [
         },
         {
             id: '9c10c584-9d04-43c0-83e9-71be600462b6',
-            lenguageFlag: 1, // Francês
+            lenguageFlag: './src/assets/images/frankreich_flagge.png', // Francês
             className: "Francês B1.1",
             level: "B1.1",
             classInfo: [
@@ -91,7 +91,7 @@ export const classContent = [
         },
         {
             id: '7a54d357-7298-47a7-a4ee-cad48bbd0627',
-            lenguageFlag: 1, // Francês
+            lenguageFlag: './src/assets/images/frankreich_flagge.png', // Francês
             className: "Francês C1.1",
             level: "C1.1",
             classInfo: [
@@ -116,7 +116,7 @@ export const classContent = [
         },
         {
             id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
-            lenguageFlag: 0, // Alemão
+            lenguageFlag: './src/assets/images/deutschland_flagge.png', // Alemão
             className: "Alemão C1.2",
             level: "C1.2",
             classInfo: [
@@ -141,7 +141,7 @@ export const classContent = [
         },
         {
             id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
-            lenguageFlag: 2, // Inglês
+            lenguageFlag: './src/assets/images/usa_flagge_2.png', // Inglês
             className: "Inglês B1.1",
             level: "B1.1",
             classInfo: [
@@ -166,7 +166,7 @@ export const classContent = [
         },
         {
             id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
-            lenguageFlag: 3, // Espanhol
+            lenguageFlag: './src/assets/images/spanien_flagge.png', // Espanhol
             className: "Espanhol A1.1",
             level: "A1.1",
             classInfo: [
@@ -191,7 +191,7 @@ export const classContent = [
         },
         {
             id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
-            lenguageFlag: 4, // Italiano
+            lenguageFlag: './src/assets/images/italien_flagge.png', // Italiano
             className: "Italiano A2.2",
             level: "A2.2",
             classInfo: [
@@ -216,7 +216,7 @@ export const classContent = [
         },
         {
             id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
-            lenguageFlag: 2, // Inglês
+            lenguageFlag: './src/assets/images/usa_flagge_2.png', // Inglês
             className: "Inglês B2.1",
             level: "B2.1",
             classInfo: [
@@ -245,27 +245,29 @@ export const classContent = [
 export const studentsTest = [
     {
         id: '4fcf8c9a-5714-4208-a6bc-6516474b1doe',
+        picture: './src/assets/images/deutschland_rund.png',
         first_name: 'João H.',
         last_name: 'Kohlrausch',
         lenguages: [
             {
-                lenguageIcon: 0
+                lenguageIcon: './src/assets/images/deutschland_rund.png'
             },
             {
-                lenguageIcon: 2,
+                lenguageIcon: './src/assets/images/usa_rund.png',
             }
         ],
     },
     {
         id: '4fcf8c9a-5714-4208-a6bc-65164749udoe',
+        picture: './src/assets/images/spanien_rund.webp',
         first_name: 'Test',
         last_name: 'Test',
         lenguages: [
             {
-                lenguageIcon: 1
+                lenguageIcon: './src/assets/images/italien_rund.webp'
             },
             {
-                lenguageIcon: 4,
+                lenguageIcon: './src/assets/images/frankreich_rund.png',
             }
         ],
     },
@@ -274,27 +276,29 @@ export const studentsTest = [
 export const teacherTest = [
     {
         id: '4fcf8c9a-5714-4208-a6bc-6516474b1doe',
+        picture: './src/assets/images/deutschland_rund.png',
         first_name: 'Teacher',
         last_name: '1',
         lenguages: [
             {
-                lenguageIcon: 0
+                lenguageIcon: './src/assets/images/deutschland_rund.png'
             },
             {
-                lenguageIcon: 2,
+                lenguageIcon: './src/assets/images/usa_rund.png',
             }
         ],
     },
     {
         id: '4fcf8c9a-5714-4208-a6bc-65164749udoe',
+        picture: './src/assets/images/deutschland_rund.png',
         first_name: 'Test',
         last_name: 'Test',
         lenguages: [
             {
-                lenguageIcon: 1
+                lenguageIcon: './src/assets/images/deutschland_rund.png'
             },
             {
-                lenguageIcon: 4,
+                lenguageIcon: './src/assets/images/usa_rund.png',
             }
         ],
     },
