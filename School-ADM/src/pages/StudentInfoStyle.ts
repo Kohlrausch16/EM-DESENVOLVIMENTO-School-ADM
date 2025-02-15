@@ -47,7 +47,7 @@ export const Line = style.hr`
 export const Header = style.div`
     display: flex;
     width: 98%;
-    height: 30%;
+    height: 35%;
     padding: 2% 0% 0% 2%;
 `;
 
@@ -124,12 +124,46 @@ export const StudentInformation = style.input`
 export const TextBody = style.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 70%;
+    width: 96%;
+    height: 61%;
+    padding: 1% 2%;
     background-color: blue;
+`;
 
+export const TextTitle = style.h1`
+    font: verdana;
+    color: #333333;
+    font-size: 150%;
+`;
 
+export const IconContainer = style.div`
+    display: flex;
+    width: 95%;
+    height: 12%;
+    margin-top: -2%;
+    padding: 1% 2%;
+    gap: 1%;
+    background-color: yellow;
+`;
 
+export const LenguageIcons = style.img`
+    width: 5%;
+    height: 90%;
+    border-radius: 50%;
+    border: solid 2px  #DEDEDE;
+
+    &:hover{
+        cursor: pointer;
+    }
+`;
+
+export const AddIcon = style.i`
+    font-size: 240%;
+
+    &:hover{
+        cursor: pointer;
+        color: #333333;
+    }
 `;
 
 
@@ -143,11 +177,18 @@ export const TextBody = style.div`
 
 
 
-export const TextTitle = style.h1``;
 
-export const IconContainer = style.div``;
 
-export const LenguageIcons = style.img``;
+
+
+
+
+
+
+
+
+
+
 
 export const CourseFeeContainer = style.div``;
 

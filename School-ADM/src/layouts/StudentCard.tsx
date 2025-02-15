@@ -33,7 +33,6 @@ function StudentCard({student}: StudentDataProps[]){
 
                 </InfoContainer>
                 <ButtonSection>
-                        <EditButton />
                         <DeleteButton />
                     </ButtonSection>
             </ContentContainer>
