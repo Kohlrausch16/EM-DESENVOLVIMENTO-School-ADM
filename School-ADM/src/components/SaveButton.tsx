@@ -1,14 +1,12 @@
-import { ButtonContainer, ButtonBody, ButtonIcon } from './SaveButtonStyle';
+import { ButtonBody, ButtonIcon } from './SaveButtonStyle';
 
 function AddButton(){
 
     return(
         <>
-            <ButtonContainer>
-                <ButtonBody>
-                    <ButtonIcon className="fa-solid fa-floppy-disk" />
-                </ButtonBody>
-            </ButtonContainer>
+            <ButtonBody>
+                <ButtonIcon className="fa-solid fa-floppy-disk" />
+            </ButtonBody>
         </>
     );
 }

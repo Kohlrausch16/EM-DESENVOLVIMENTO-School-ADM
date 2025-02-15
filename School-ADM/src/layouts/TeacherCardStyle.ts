@@ -51,7 +51,7 @@ export const LenguageIconContainer = style.div`
 `;
 
 export const CourseIcon = style.img`
-    height: 90%;
+    height: 100%;
     width:  5.65%;
 `;
 

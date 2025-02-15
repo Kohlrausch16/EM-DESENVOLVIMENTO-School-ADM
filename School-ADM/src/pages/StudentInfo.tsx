@@ -1,40 +1,67 @@
-import { ContentArea, ContentContainer, StudentPicture, StudentInfoDescription, Line } from "./StudentInfoStyle";
+import { IconContainer, TextTitle, LenguageIcons, DescriptionTitle, StudentInfoContainer, CourseFeeContainer, CourseFee, CourseTotalFee, LineBottom, TextBody, InfoSection, Header, ButtonContainer, ContentArea, ContentContainer, StudentPicture, StudentInfoDescription, Line, StudentName, StudentInformation } from "./StudentInfoStyle";
 import { useParams } from "react-router-dom";
 import { studentsTest } from "../axios"; 
 import LateralMenu from "../layouts/LateralMenu";
+import img from '../assets/images/deutschland_flagge.png';
+import DeleteButton from "../components/DeleteButton";
+import SaveButton from "../components/SaveButton";
 
 function StudentInfo(){
 
+    type lenguageIcon = string;
+
+    type StudentDataProps = {
+        id: string;
+        picture: string;
+        name: string;
+        age: string;
+        phone: string;
+        lenguages: lenguageIcon[];
+    }
+
     const {id} = useParams();
 
-    const student = studentsTest.find((item) => {
+    const student: StudentDataProps = studentsTest.find((item) => {
         return item.id == id;
     });
 
+    console.log(student);
+
     return(
-    <>
+    <>        
         <ContentArea>
             <LateralMenu />
             <ContentContainer>
                 <StudentInfoDescription>
-                    <StudentPicture />
+                    <StudentPicture src={img} />
                     <Line />
+                        <Header>
+                            <StudentInfoContainer>
+                                <StudentName type='text' defaultValue={student.name} />
+                                <InfoSection>
+                                    <DescriptionTitle> Idade </DescriptionTitle>
+                                    <StudentInformation type='text' defaultValue={student.age} />
+                                </InfoSection>
+                                <InfoSection>
+                                    <DescriptionTitle> Número </DescriptionTitle>
+                                    <StudentInformation type='text' defaultValue={student.phone} />
+                                </InfoSection>
+                            </StudentInfoContainer>
+                            
+                            <ButtonContainer>
+                                <SaveButton />
+                                <DeleteButton />
+                            </ButtonContainer>
+                        </Header>
 
-                    <h1> {student?.first_name} {student?.first_name}</h1>
+                        <TextBody>
+
+
+                        </TextBody>
 
                 </StudentInfoDescription>
-
-
             </ContentContainer>
-
-
-
-
         </ContentArea>
-
-
-        
-    
     </>
 
     );

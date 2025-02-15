@@ -51,7 +51,7 @@ export const Input = style.input`
     outline: none;
     border: none;
     box-shadow: none;
-    background: none
+    background: none;
 `;
 
 export const ActionButton = style.button`

@@ -246,8 +246,9 @@ export const studentsTest = [
     {
         id: '4fcf8c9a-5714-4208-a6bc-6516474b1doe',
         picture: './src/assets/images/deutschland_rund.png',
-        first_name: 'João H.',
-        last_name: 'Kohlrausch',
+        name: 'João H.',
+        age: '21',
+        phone: '51 99999-9999',
         lenguages: [
             {
                 lenguageIcon: './src/assets/images/deutschland_rund.png'
@@ -260,8 +261,9 @@ export const studentsTest = [
     {
         id: '4fcf8c9a-5714-4208-a6bc-65164749udoe',
         picture: './src/assets/images/spanien_rund.webp',
-        first_name: 'Test',
-        last_name: 'Test',
+        name: 'Test',
+        age: '41',
+        phone: '51 99999-9999',
         lenguages: [
             {
                 lenguageIcon: './src/assets/images/italien_rund.webp'

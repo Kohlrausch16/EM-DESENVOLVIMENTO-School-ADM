@@ -7,8 +7,7 @@ type lenguageIcon = string;
 type StudentDataProps = {
     id: string;
     picture: string;
-    first_name: string;
-    last_name: string;
+    name: string;
     lenguages: lenguageIcon[];
 }
 
@@ -21,7 +20,7 @@ function StudentCard({student}: StudentDataProps[]){
                 <StudentPic src={item.picture} />
                     <InfoContainer>
                     <StudentName>
-                        {item.first_name}  {item.last_name}
+                        {item.name}
                     </StudentName>
 
                     <LenguageIconContainer>
