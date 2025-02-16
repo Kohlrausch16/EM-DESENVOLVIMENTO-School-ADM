@@ -268,19 +268,19 @@ export const studentsTest = [
     phone: "51 99999-9999",
     courses: [
       {
-        id: "7a54d357-7298-47a7-a4ee-cad48bbd0628",
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4g", // Aula de Alemão C1.2
+        lenguageFlag: "/assets/images/deutschland_rund.png", // Alemão
+        className: "Alemão C1.2",
+        level: "C1.2",
+      },
+      {
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4k", // Aula de Inglês B2.1
         lenguageFlag: "/assets/images/usa_rund.png", // Inglês
         className: "Inglês B2.1",
         level: "B2.1",
       },
       {
-        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4j",
-        lenguageFlag: "/assets/images/italien_rund.webp", // Italiano
-        className: "Italiano A2.2",
-        level: "A2.2",
-      },
-      {
-        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4g",
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4g", // Aula de Alemão C1.2
         lenguageFlag: "/assets/images/deutschland_rund.png", // Alemão
         className: "Alemão C1.2",
         level: "C1.2",
@@ -295,16 +295,16 @@ export const studentsTest = [
     phone: "51 99999-9999",
     courses: [
       {
-        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4k",
-        lenguageFlag: "/assets/images/spanien_rund.png", // Inglês
-        className: "Inglês B2.1",
-        level: "B2.1",
+        id: "7a54d357-7298-47a7-a4ee-cad48bbd0628", // Aula de Francês C1.1
+        lenguageFlag: "/assets/images/frankreich_rund.png", // Francês
+        className: "Francês C1.1",
+        level: "C1.1",
       },
       {
-        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4g",
-        lenguageFlag: "/assets/images/frankreich_rund.png", // Alemão
-        className: "Alemão C1.2",
-        level: "C1.2",
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4j", // Aula de Italiano A2.2
+        lenguageFlag: "/assets/images/italien_rund.webp", // Italiano
+        className: "Italiano A2.2",
+        level: "A2.2",
       },
     ],
   },

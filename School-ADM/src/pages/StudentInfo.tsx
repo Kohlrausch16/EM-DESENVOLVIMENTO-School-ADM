@@ -1,4 +1,4 @@
-import { IconContainer, TextTitle, LenguageIcons, StudentInfoContainer, CourseFeeContainer, AddIcon, TextBody, Header, ContentArea, ContentContainer, StudentInfoDescription } from "./StudentInfoStyle";
+import { IconContainer, TextTitle, LenguageIcons, StudentInfoContainer, CourseFeeContainer, AddIcon, TextBody, Link, Header, ContentArea, ContentContainer, StudentInfoDescription } from "./StudentInfoStyle";
 import { useParams } from "react-router-dom";
 import LateralMenu from "../layouts/LateralMenu";
 
@@ -52,7 +52,7 @@ function StudentInfo(){
                     <TextBody>
                         <TextTitle> TURMAS </TextTitle>
                         <IconContainer>
-                            {student?.courses.map((item) => <LenguageIcons href={item.id} src={item.lenguageFlag} />)}
+                            {student?.courses.map((item) => <Link href={`/class/${item.id}`}> <LenguageIcons src={item.lenguageFlag} /> </Link>)}
                             <AddIcon className={"fa-solid fa-circle-plus"} />
                         </IconContainer>
 

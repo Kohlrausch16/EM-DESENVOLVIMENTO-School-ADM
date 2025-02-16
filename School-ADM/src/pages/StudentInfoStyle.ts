@@ -73,24 +73,34 @@ export const IconContainer = style.div`
     gap: 1%;
 `;
 
-export const LenguageIcons = style.a`
+export const LenguageIcons = style.img`
+    width: 100%;
+    height: 100%;
+`;
+
+export const Link = style.a`
     width: 5.6%;
     height: 100%;
     border-radius: 50%;
     border: solid 1px  #DEDEDE;
 
+    transition: transform 0.2s;
+
     &:hover{
-        cursor: pointer;
+        cursor pointer;
+        transform: translate(0, -5%);
     }
 `;
 
 export const AddIcon = style.i`
     font-size: 240%;
     color: #333333;
+    transition: transform 0.2s;
 
     &:hover{
         color: #958D8D;
-        cursor: pointer;
+        cursor pointer;
+        transform: translate(0, -5%);
     }
 `;
 

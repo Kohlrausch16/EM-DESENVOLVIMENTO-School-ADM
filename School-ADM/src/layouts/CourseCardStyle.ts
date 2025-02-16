@@ -9,7 +9,6 @@ export const ClassCard = style.div`
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.2s;
-    cursor: pointer;
 
     &:hover{
         cursor pointer;
