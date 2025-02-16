@@ -47,29 +47,12 @@ export const StudentInfoContainer = style.div`
     gap: 1%;
 `;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const TextBody = style.div`
     display: flex;
     flex-direction: column;
     width: 96%;
-    height: 45%;
+    height: 50%;
+    margin-bottom: 2%;
     justify-content: start;
     padding: 0% 2%;
 `;
@@ -90,11 +73,11 @@ export const IconContainer = style.div`
     gap: 1%;
 `;
 
-export const LenguageIcons = style.img`
-    width: 5%;
+export const LenguageIcons = style.a`
+    width: 5.6%;
     height: 100%;
     border-radius: 50%;
-    border: solid 2px  #DEDEDE;
+    border: solid 1px  #DEDEDE;
 
     &:hover{
         cursor: pointer;
@@ -110,19 +93,6 @@ export const AddIcon = style.i`
         cursor: pointer;
     }
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const CourseFeeContainer = style.div`
     display: flex;
