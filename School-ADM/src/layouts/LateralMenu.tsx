@@ -1,10 +1,10 @@
 import { MenuBody, LogoContainer, MenuLogo, ItemBar, MenuIcon, MenuField } from "./LateralMenuStyle";
-import logo from '../assets/images/logo.png';
-import home from '../assets/images/home.png';
-import student from '../assets/images/students.png';
-import classes from '../assets/images/classes.png';
-import teacher from '../assets/images/teachers.png';
-import course from '../assets/images/courses.png';
+import logo from '/assets/images/logo.png';
+import home from '/assets/images/home.png';
+import student from '/assets/images/students.png';
+import classes from '/assets/images/classes.png';
+import teacher from '/assets/images/teachers.png';
+import course from '/assets/images/courses.png';
 
 
 function LateralMenu(){

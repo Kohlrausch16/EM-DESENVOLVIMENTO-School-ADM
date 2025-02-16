@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import img from '../assets/images/logo.png';
+import img from '/assets/images/logo.png';
 import { Card, Logo, CardText, TextArea, Input, ActionButton } from './LoginCardStyle';
 import { login } from '../axios';
 

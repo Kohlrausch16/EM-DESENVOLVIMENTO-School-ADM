@@ -1,5 +1,5 @@
 import style from "styled-components";
-import image from "../assets/images/background.png";
+import image from "/assets/images/background.png";
 
 export const ContentArea = style.div`
     display: flex;

@@ -131,36 +131,9 @@ export const CourseFeeContainer = style.div`
     height: 20%;
     margin-bottom: 5%;
     padding: 2% 0%;
-    gap: 2%;
-    font-size: 90%;
+    color: #333333;
+    font-size: 100%;
     font-weight: light;
     font-family: verdana;
     border-top: solid 1px  #DEDEDE;
-`;
-
-
-export const CourseFee = style.div`
-    display: flex;
-    width: 90%;
-    height: 80%;
-    padding: 0% 5%;
-    align-items: center;
-    justify-content: space-between;
-`;
-
-export const CourseTotalFee = style.div`
-    display: flex;
-    width: 90%;
-    height: 100%;
-    padding: 0% 5%;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
-`;
-
-export const FeeDescription = style.div`
-`;
-
-export const FeeValue = style.div`
-    font-style: italic;
 `;

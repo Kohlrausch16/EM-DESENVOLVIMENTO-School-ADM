@@ -1,4 +1,4 @@
-import { IconContainer, TextTitle, LenguageIcons, FeeValue, FeeDescription, StudentInfoContainer, CourseFeeContainer, CourseFee, CourseTotalFee, AddIcon, TextBody, InfoSection, Header, ContentArea, ContentContainer, StudentInfoDescription, StudentName, StudentInformation } from "./StudentInfoStyle";
+import { IconContainer, TextTitle, LenguageIcons, StudentInfoContainer, CourseFeeContainer, AddIcon, TextBody, Header, ContentArea, ContentContainer, StudentInfoDescription } from "./StudentInfoStyle";
 import { useParams } from "react-router-dom";
 import { studentsTest } from "../axios"; 
 import LateralMenu from "../layouts/LateralMenu";
@@ -7,10 +7,10 @@ import HomeClassCard from "../layouts/HomeClassCard";
 
 import { classContent } from "../axios";
 
-
-import PictureSection from "../components/PhotoSection";
+import PictureSection from "../components/PictureSection";
 import StudentInfoSection from "../components/StudentInfoSection";
 import ButtonContainer from "../components/ButtonContainer";
+import PaymentFeeSection from "../components/PaymentFeeSection";
 
 type StudentDataProps = {
     id: string;
@@ -52,35 +52,20 @@ function StudentInfo(){
 
                     <TextBody>
 
-                    <TextTitle> TURMAS </TextTitle>
+                        <TextTitle> TURMAS </TextTitle>
 
-                    <IconContainer>
-                        {student.courses.map((item) => <LenguageIcons src={item.lenguageFlag} />)}
-                        <AddIcon className={"fa-solid fa-circle-plus"} />
-                    </IconContainer>
+                        <IconContainer>
+                            {student.courses.map((item) => <LenguageIcons src={item.lenguageFlag} />)}
+                            <AddIcon className={"fa-solid fa-circle-plus"} />
+                        </IconContainer>
 
-                    <HomeClassCard content={classContent[0]}/>
-                </TextBody>
+                        <HomeClassCard content={classContent[0]}/>
+                    </TextBody>
 
 
                 <CourseFeeContainer>
-                    <CourseFee>
-                        <FeeDescription> Total Mensalidades: </FeeDescription>
-                        <FeeValue> R$55555 </FeeValue>
-                    </CourseFee>
-                
-                    <CourseFee>
-                        <FeeDescription> Total Mensalidades: </FeeDescription>
-                        <FeeValue> R$55555 </FeeValue>
-                    </CourseFee>
-                    
-                    <CourseTotalFee>
-                        <FeeDescription> Total Mensalidades: </FeeDescription>
-                        <FeeValue> R$55555 </FeeValue>
-                    </CourseTotalFee>
-                    
+                    <PaymentFeeSection />
                 </CourseFeeContainer>
-
 
                 </StudentInfoDescription>
             </ContentContainer>
@@ -91,25 +76,3 @@ function StudentInfo(){
 }
 
 export default StudentInfo;
-
-/*
-
-<CourseFeeContainer>
-                    <CourseFee>
-                        <FeeDescription> Total Mensalidades: </FeeDescription>
-                        <FeeValue> R$55555 </FeeValue>
-                    </CourseFee>
-                
-                    <CourseFee>
-                        <FeeDescription> Total Mensalidades: </FeeDescription>
-                        <FeeValue> R$55555 </FeeValue>
-                    </CourseFee>
-                    
-                    <CourseTotalFee>
-                        <FeeDescription> Total Mensalidades: </FeeDescription>
-                        <FeeValue> R$55555 </FeeValue>
-                    </CourseTotalFee>
-                    
-                </CourseFeeContainer>
-
-*/
