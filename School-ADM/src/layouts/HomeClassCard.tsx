@@ -1,17 +1,17 @@
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardRow, Information, TextContent, ItemIcon, Link, ItemDescription, CardInfo } from "./HomeClassCardStyle";
 
 type homeCardContent = {
-        id: string;
-        lenguageFlag: string;
-        className: string;
-        level: string;
-        classInfo: [
-            {
-                icon: string,
-                content: string;
-            }
-        ];
-        active: true;
+    id: string;
+    lenguageFlag: string;
+    className: string;
+    level: string;
+    classInfo: [
+        {
+            icon: string,
+            content: string;
+        }
+    ];
+    active: true;
 }
 
 type HomeCardContentProps = {

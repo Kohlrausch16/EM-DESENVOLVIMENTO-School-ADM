@@ -37,7 +37,7 @@ export const classContent = [
                     content: "2"
                 },
             ],
-            active: true,
+            active: true
         },
         {
             id: '9c10c584-9d04-43c0-83e9-71be600462b6',
@@ -249,12 +249,25 @@ export const studentsTest = [
         name: 'João H.',
         age: '21',
         phone: '51 99999-9999',
-        lenguages: [
+        courses: [
             {
-                lenguageIcon: './src/assets/images/deutschland_rund.png'
+                id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
+                lenguageFlag: './src/assets/images/usa_rund.png', // Inglês
+                className: "Inglês B2.1",
+                level: "B2.1",
+
             },
             {
-                lenguageIcon: './src/assets/images/usa_rund.png',
+                id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
+                lenguageFlag: './src/assets/images/italien_rund.webp', // Italiano
+                className: "Italiano A2.2",
+                level: "A2.2",
+            },
+            {
+                id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
+                lenguageFlag: './src/assets/images/deutschland_rund.png', // Alemão
+                className: "Alemão C1.2",
+                level: "C1.2",
             }
         ],
     },
@@ -264,12 +277,19 @@ export const studentsTest = [
         name: 'Test',
         age: '41',
         phone: '51 99999-9999',
-        lenguages: [
+        courses: [
             {
-                lenguageIcon: './src/assets/images/italien_rund.webp'
+                id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
+                lenguageFlag: './src/assets/images/spanien_rund.webp', // Inglês
+                className: "Inglês B2.1",
+                level: "B2.1",
+
             },
             {
-                lenguageIcon: './src/assets/images/frankreich_rund.png',
+                id: '4fcf8c9a-5714-4208-a6bc-6516474b1d4f',
+                lenguageFlag: './src/assets/images/frankreich_rund.png', // Alemão
+                className: "Alemão C1.2",
+                level: "C1.2",
             }
         ],
     },

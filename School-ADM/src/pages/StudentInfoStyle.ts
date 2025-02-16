@@ -11,9 +11,8 @@ export const ContentContainer = style.div`
     display: flex;
     flex-direction: column;
     width: 56%;
-    height: 95%;
+    height: 100%;
     padding: 5% 7%;
-
     justify-content: center;
     background-color: #FFFEFE;
 `;
@@ -23,6 +22,7 @@ export const StudentInfoDescription = style.div`
     flex-direction: column; 
     width: 100%;
     height: 100%;
+    background-color: red;
     overflow: scroll;
 `;
 
@@ -31,6 +31,10 @@ export const StudentPicture = style.img`
     height: 20%;
     border-radius: 50%;
     border: solid 2px  #DEDEDE;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 export const Line = style.hr`
@@ -125,7 +129,7 @@ export const TextBody = style.div`
     display: flex;
     flex-direction: column;
     width: 96%;
-    height: 61%;
+    height: 40%;
     padding: 1% 2%;
     background-color: blue;
 `;
@@ -141,6 +145,7 @@ export const IconContainer = style.div`
     width: 95%;
     height: 12%;
     margin-top: -2%;
+    margin-bottom: 5%;
     padding: 1% 2%;
     gap: 1%;
     background-color: yellow;
@@ -159,41 +164,34 @@ export const LenguageIcons = style.img`
 
 export const AddIcon = style.i`
     font-size: 240%;
+    color: #333333;
 
     &:hover{
+        color: #958D8D;
         cursor: pointer;
-        color: #333333;
     }
 `;
 
+export const CourseFeeContainer = style.div`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: green;
+    gap: 5%;
+    border-top: solid 1px  #DEDEDE;
+`;
 
 
+export const CourseFee = style.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const CourseFeeContainer = style.div``;
-
-export const CourseFee = style.div``;
-
-export const CourseTotalFee = style.div``;
-
-export const LineBottom = style.hr``;
+export const CourseTotalFee = style.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+`;

@@ -1,18 +1,25 @@
 import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, StudentName, CourseIcon, ButtonSection } from "./StudentCardStyle";
 import DeleteButton from "../components/DeleteButton";
-import EditButton from "../components/EditButton";
 
-type lenguageIcon = string;
+type courseContent = {
+    id: string;
+    lenguageFlag: string;
+    className: string;
+    level: string;
+}
 
 type StudentDataProps = {
     id: string;
     picture: string;
     name: string;
-    lenguages: lenguageIcon[];
+    age: string;
+    phone: string;
+    courses: courseContent[];
 }
 
 function StudentCard({student}: StudentDataProps[]){
-    
+
+
     return(
         <>
             {student.map((item: StudentDataProps) =>
@@ -25,16 +32,18 @@ function StudentCard({student}: StudentDataProps[]){
 
                     <LenguageIconContainer>
 
-                    {item.lenguages.map((contentIcon) => 
-                        <CourseIcon src={contentIcon.lenguageIcon} />
+                    {item.courses.map((contentIcon: courseContent) => 
+                        <CourseIcon src={contentIcon.lenguageFlag} />
                     )}
 
                     </LenguageIconContainer> 
 
                 </InfoContainer>
+
                 <ButtonSection>
                         <DeleteButton />
-                    </ButtonSection>
+                </ButtonSection>
+
             </ContentContainer>
             )}       
         </>
@@ -43,3 +52,10 @@ function StudentCard({student}: StudentDataProps[]){
 
 
 export default StudentCard;
+
+
+/*
+
+
+
+                    */

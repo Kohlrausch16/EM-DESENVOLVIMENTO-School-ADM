@@ -1,14 +1,14 @@
-import { IconContainer, TextTitle, LenguageIcons, DescriptionTitle, StudentInfoContainer, CourseFeeContainer, CourseFee, CourseTotalFee, LineBottom, AddIcon, TextBody, InfoSection, Header, ButtonContainer, ContentArea, ContentContainer, StudentPicture, StudentInfoDescription, Line, StudentName, StudentInformation } from "./StudentInfoStyle";
+import { IconContainer, TextTitle, LenguageIcons, DescriptionTitle, StudentInfoContainer, CourseFeeContainer, CourseFee, CourseTotalFee, AddIcon, TextBody, InfoSection, Header, ButtonContainer, ContentArea, ContentContainer, StudentPicture, StudentInfoDescription, Line, StudentName, StudentInformation } from "./StudentInfoStyle";
 import { useParams } from "react-router-dom";
 import { studentsTest } from "../axios"; 
 import LateralMenu from "../layouts/LateralMenu";
-import img from '../assets/images/deutschland_flagge.png';
 import DeleteButton from "../components/DeleteButton";
 import SaveButton from "../components/SaveButton";
+import HomeClassCard from "../layouts/HomeClassCard";
+
+import { classContent } from "../axios";
 
 function StudentInfo(){
-
-    type lenguageIcon = string;
 
     type StudentDataProps = {
         id: string;
@@ -16,16 +16,21 @@ function StudentInfo(){
         name: string;
         age: string;
         phone: string;
-        lenguages: lenguageIcon[];
+        courses: [
+            {
+                id: string;
+                lenguageFlag: string;
+                className: string;
+                level: string;
+            }
+        ];
     }
 
     const {id} = useParams();
 
     const student: StudentDataProps = studentsTest.find((item) => {
-        return item.id == id;
+        return item.id === id;
     });
-
-    console.log(student);
 
     return(
     <>        
@@ -33,7 +38,7 @@ function StudentInfo(){
             <LateralMenu />
             <ContentContainer>
                 <StudentInfoDescription>
-                    <StudentPicture src={img} />
+                    <StudentPicture src={student.picture} />
                     <Line />
                         <Header>
                             <StudentInfoContainer>
@@ -59,12 +64,27 @@ function StudentInfo(){
                             <TextTitle> TURMAS </TextTitle>
 
                             <IconContainer>
-                                <LenguageIcons src={img} />
-                                <LenguageIcons src={img} />
+                                {student.courses.map((item) => <LenguageIcons src={item.lenguageFlag} />)}
                                 <AddIcon className={"fa-solid fa-circle-plus"} />
                             </IconContainer>
 
+                            <HomeClassCard content={classContent[0]}/>
                         </TextBody>
+
+                        <CourseFeeContainer>
+                            <CourseFee>
+                            teste 1515
+                            </CourseFee>
+                        
+                            <CourseFee>
+                                teste 1515
+                            </CourseFee>
+                            
+                            <CourseTotalFee>
+                            teste 1515   
+                            </CourseTotalFee>
+                            
+                        </CourseFeeContainer>
 
                 </StudentInfoDescription>
             </ContentContainer>
