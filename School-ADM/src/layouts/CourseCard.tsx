@@ -22,7 +22,6 @@ type Classes = {
 }
 
 function CourseCard({content}: Classes){
-    console.log(content);
 
     const foundClass = classContent.find((item) => item.id === content);
 

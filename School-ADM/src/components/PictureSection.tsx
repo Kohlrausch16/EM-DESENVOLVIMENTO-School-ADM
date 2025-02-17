@@ -5,8 +5,6 @@ type PictureProps = {
 }
 
 function PictureSection({picture}: PictureProps){
-
-    console.log(picture);
     
     return(
         <>

@@ -53,10 +53,11 @@ export const CardRow = style.div`
 
 export const PriceContainer = style.div`
     display: flex;
+    font-family: verdana;
     flex-direction: column;
     width: 31%;
     height: 100%;
-    gap: 5%;
+    gap: 10%;
     justify-content: center;
     align-items: center;
     padding: 0% 1%;

@@ -31,12 +31,9 @@ function StudentInfo(){
 
     const {id} = useParams();
 
-    
-
     const student: StudentDataProps | undefined = studentsTest.find((item) => {
         return item.id === id;
     });
-
 
     const [index, changeCard] = useState('4fcf8c9a-5714-4208-a6bc-6516474b1d4g');
 
@@ -66,7 +63,7 @@ function StudentInfo(){
                     </TextBody>
 
                 <CourseFeeContainer>
-                    <PaymentFeeSection />
+                    <PaymentFeeSection fees={student?.courses} />
                 </CourseFeeContainer>
 
                 </StudentInfoDescription>
