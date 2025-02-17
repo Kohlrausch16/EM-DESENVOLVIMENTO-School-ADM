@@ -24,7 +24,7 @@ type Classes = {
 function CourseCard({content}: Classes){
     console.log(content);
 
-    const foundClass = classContent.find((item) => item.id === content)
+    const foundClass = classContent.find((item) => item.id === content);
 
 
     return(
@@ -49,19 +49,20 @@ function CourseCard({content}: Classes){
                         </TextContent>
                     </CardRow>
                     <PriceContainer>
+
                         <FeeSection>
-                            <div> cwcwcwc</div>
-                            <div> cwcwdc </div>
+                            <div> Mensalidade</div>
+                            <div> {foundClass?.monthlyFee} </div>
                         </FeeSection>
 
                         <FeeSection>
-                            <div> cwcwcwc</div>
-                            <div> cwcwdc </div>
+                            <div> Materiais </div>
+                            <div> {foundClass?.materialFee}  </div>
                         </FeeSection>
 
                         <FeeSection>
-                            <div> cwcwcwc</div>
-                            <div> cwcwdc </div>
+                            <div> Total </div>
+                            <div> {foundClass?.monthlyFee + foundClass?.materialFee}  </div>
                         </FeeSection>
 
                     </PriceContainer>

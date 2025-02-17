@@ -259,6 +259,12 @@ export const classContent = [
   },
 ];
 
+
+
+
+
+
+
 export const studentsTest = [
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1doe",
@@ -268,10 +274,10 @@ export const studentsTest = [
     phone: "51 99999-9999",
     courses: [
       {
-        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4g", // Aula de Alemão C1.2
-        lenguageFlag: "/assets/images/deutschland_rund.png", // Alemão
-        className: "Alemão C1.2",
-        level: "C1.2",
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4i",
+        lenguageFlag: "/assets/images/spanien_flagge.png", // Espanhol
+        className: "Espanhol A1.1",
+        level: "A1.1",
       },
       {
         id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4k", // Aula de Inglês B2.1
@@ -309,6 +315,16 @@ export const studentsTest = [
     ],
   },
 ];
+
+
+
+
+
+
+
+
+
+
 
 export const teacherTest = [
   {

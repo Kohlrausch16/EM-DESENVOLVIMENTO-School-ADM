@@ -59,14 +59,13 @@ export const PriceContainer = style.div`
     gap: 5%;
     justify-content: center;
     align-items: center;
-    background-color: green;
+    padding: 0% 1%;
 `;
 
 export const FeeSection = style.div`
     display: flex;
     justify-content: space-between;
     width: 96%;
-    background-color: yellow;
 `;
 
 

@@ -74,12 +74,7 @@ export const IconContainer = style.div`
 `;
 
 export const LenguageIcons = style.img`
-    width: 100%;
-    height: 100%;
-`;
-
-export const Link = style.a`
-    width: 5.6%;
+   width: 5.6%;
     height: 100%;
     border-radius: 50%;
     border: solid 1px  #DEDEDE;
@@ -87,7 +82,7 @@ export const Link = style.a`
     transition: transform 0.2s;
 
     &:hover{
-        cursor pointer;
+        cursor: pointer;
         transform: translate(0, -5%);
     }
 `;

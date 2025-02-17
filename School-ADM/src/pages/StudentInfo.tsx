@@ -1,4 +1,5 @@
-import { IconContainer, TextTitle, LenguageIcons, StudentInfoContainer, CourseFeeContainer, AddIcon, TextBody, Link, Header, ContentArea, ContentContainer, StudentInfoDescription } from "./StudentInfoStyle";
+import { useState } from "react";
+import { IconContainer, TextTitle, LenguageIcons, StudentInfoContainer, CourseFeeContainer, AddIcon, TextBody, Header, ContentArea, ContentContainer, StudentInfoDescription } from "./StudentInfoStyle";
 import { useParams } from "react-router-dom";
 import LateralMenu from "../layouts/LateralMenu";
 
@@ -30,10 +31,14 @@ function StudentInfo(){
 
     const {id} = useParams();
 
+    
+
     const student: StudentDataProps | undefined = studentsTest.find((item) => {
         return item.id === id;
     });
 
+
+    const [index, changeCard] = useState('4fcf8c9a-5714-4208-a6bc-6516474b1d4g');
 
     return(
     <>     
@@ -52,11 +57,11 @@ function StudentInfo(){
                     <TextBody>
                         <TextTitle> TURMAS </TextTitle>
                         <IconContainer>
-                            {student?.courses.map((item) => <Link href={`/class/${item.id}`}> <LenguageIcons src={item.lenguageFlag} /> </Link>)}
+                            {student?.courses.map((item) => <LenguageIcons src={item.lenguageFlag} onClick={() => changeCard(item.id)}/>)}
                             <AddIcon className={"fa-solid fa-circle-plus"} />
                         </IconContainer>
 
-                        {student?.courses.map((item) => <CourseCard content={item.id} />)}
+                        <CourseCard content={index} />
                         
                     </TextBody>
 
