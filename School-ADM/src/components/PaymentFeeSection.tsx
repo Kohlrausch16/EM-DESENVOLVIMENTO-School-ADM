@@ -4,43 +4,48 @@ import { classContent } from "../axios";
 
 function PaymentFeeSection({fees}: string[]){
 
-    let monthlyFees: number[] = [];
-    let materialFees: number[] = [];
+    const classes = [];
 
-    for(let i = 0; i < fees.lenght; i++){
-        let foundClass = classContent.find((item) => {
-            return item.id === fees[i].id
+    for(let i = 0; i < fees.length; i++){
+        const foundClass = classContent.find((item) => {
+            return item.id === fees[i].id;
         });
-
-        if(foundClass){
-            monthlyFees.push(foundClass?.monthlyFee);
-            materialFees.push(foundClass?.materialFee);
-        }
-    
+        classes.push(foundClass);
     }
 
-    console.log(monthlyFees, materialFees);
+    const totalMonthlyFee = classes.reduce((sum, item) => sum + (item?.monthlyFee || 0), 0);
+    const totalMaterialFee = classes.reduce((sum, item) => sum + (item?.materialFee || 0), 0);
+    const totalFee = parseFloat(totalMonthlyFee) + parseFloat(totalMaterialFee);
 
-    const totalMonthlyFee = monthlyFees.reduce((sum, item) => {
-        sum = sum + item;
-    }, 0);
-
-
+    
     return(
     <>
         <CourseFee>
             <div> Total mensalidades: </div>
-            <FeeValue> {totalMonthlyFee} </FeeValue>
+            <FeeValue> 
+                {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',}).format(totalMonthlyFee)} 
+            </FeeValue>
         </CourseFee>
     
         <CourseFee>
             <div> Total materiais: </div>
-            <FeeValue> R$55555 </FeeValue>
+            <FeeValue> 
+                {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',}).format(totalMaterialFee)} 
+            
+            </FeeValue>
         </CourseFee>
         
         <CourseTotalFee>
             <div> Total: </div>
-            <FeeValue> {totalMonthlyFee} </FeeValue>
+            <FeeValue>   
+                {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',}).format(totalFee)}  
+            </FeeValue>
         </CourseTotalFee>
     </>
     );

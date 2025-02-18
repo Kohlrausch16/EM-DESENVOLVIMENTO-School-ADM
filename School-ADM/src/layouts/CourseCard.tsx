@@ -51,17 +51,29 @@ function CourseCard({content}: Classes){
 
                         <FeeSection>
                             <div> Mensalidade</div>
-                            <div> {foundClass?.monthlyFee} </div>
+                            <div> 
+                                {new Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL',}).format(foundClass?.monthlyFee)} 
+                            </div>
                         </FeeSection>
 
                         <FeeSection>
                             <div> Materiais </div>
-                            <div> {foundClass?.materialFee}  </div>
+                            <div>   
+                                {new Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL',}).format(foundClass?.materialFee)} 
+                            </div>
                         </FeeSection>
 
                         <FeeSection>
                             <div> Total </div>
-                            <div> {foundClass?.monthlyFee + foundClass?.materialFee}  </div>
+                            <div> 
+                                {new Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL',}).format((parseFloat(foundClass?.monthlyFee)) + (parseFloat(foundClass?.materialFee)))}             
+                                </div>
                         </FeeSection>
 
                     </PriceContainer>

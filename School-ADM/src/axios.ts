@@ -275,7 +275,7 @@ export const studentsTest = [
     courses: [
       {
         id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4i",
-        lenguageFlag: "/assets/images/spanien_flagge.png", // Espanhol
+        lenguageFlag: "/assets/images/spanien_rund.png", // Espanhol
         className: "Espanhol A1.1",
         level: "A1.1",
       },

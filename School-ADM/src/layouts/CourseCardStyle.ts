@@ -67,6 +67,7 @@ export const FeeSection = style.div`
     display: flex;
     justify-content: space-between;
     width: 96%;
+    font-size: 80%;
 `;
 
 
