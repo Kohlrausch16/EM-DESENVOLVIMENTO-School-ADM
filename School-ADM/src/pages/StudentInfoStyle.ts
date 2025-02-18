@@ -112,3 +112,16 @@ export const CourseFeeContainer = style.div`
     font-family: verdana;
     border-top: solid 1px  #DEDEDE;
 `;
+
+export const EmptyDiv = style.div`
+    display: flex;
+    font-family: verdana;
+    color:rgba(51, 51, 51, 0.62);
+    width: 90%;
+    height: 50%;
+    font-size: 120%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 5%;
+`;
