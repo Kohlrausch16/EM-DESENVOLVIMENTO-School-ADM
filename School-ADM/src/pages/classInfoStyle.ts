@@ -25,6 +25,7 @@ export const PageBody = style.div`
     height: 85%;
     overflow-y: scroll;
     border-top: solid 1px #DEDEDE;
+    background-color: yellow;
 `;
 
 export const HeaderContainer = style.div`
@@ -32,7 +33,6 @@ export const HeaderContainer = style.div`
     flex-direction: column;
     width: 92%;
     height: 73%;
-    background-color: yellow;
 `;
 
 export const IconContainer = style.div`
@@ -51,13 +51,12 @@ export const NameContainer = style.div`
     width: 96%;
     height: 15%;
     padding: 0% 2%;
-    background-color: red;
 `;
 
 
 export const ClassName = style.input`
     display: inline-block;
-    width: 25%;
+    width: 30%;
     padding: 2%;
     height: 15%;
     font-size: 160%;
@@ -85,7 +84,6 @@ export const ClassContainer = style.div`
     height: 25%;
     justify-content: space-between;
     align-items: center;
-    background-color: blue;
 `;
 
 export const ClassContainerSection = style.div`
@@ -96,7 +94,6 @@ export const ClassContainerSection = style.div`
     align-items: center;
     height: 100%;
     width: 47%;
-    background-color: green;
 `;
 
 export const ClassContainerSectionTitle = style.div`
@@ -121,5 +118,21 @@ export const ClassFlag = style.img`
 `;
 
 export const ClassLevelSection = style.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13.5%;
+    height: 44%;
+    border-radius: 50%;
+    font-family: verdana;
+    color: #333333;
+    background-color: #DEDEDE;
+    font-size: 100%;
+    transition: transform 0.2s;
 
+    &:hover{
+        cursor: pointer;
+        background-color: #BEBEBE;
+        transform: translate(0, -5%);
+    }
 `;

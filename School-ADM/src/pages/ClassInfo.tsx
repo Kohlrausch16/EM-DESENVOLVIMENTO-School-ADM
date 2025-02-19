@@ -36,7 +36,7 @@ function ClassInfo(){
 
                             <ClassContainerSection>
                                 <ClassContainerSectionTitle> Nível </ClassContainerSectionTitle>
-                                        <ClassLevelSection> {foundClass?.level} </ClassLevelSection>
+                                <ClassLevelSection> {foundClass?.level} </ClassLevelSection>
                             </ClassContainerSection>
                         </ClassContainer>
 
