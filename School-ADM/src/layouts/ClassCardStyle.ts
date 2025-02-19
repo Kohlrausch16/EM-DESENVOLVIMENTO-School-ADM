@@ -17,7 +17,7 @@ export const CardContainer = style.div`
 `;
 
 export const LenguageFlag = style.img`
-    width: 7%;
+    width: 5%;
     border-right: solid 2px #DEDEDE;
 `;
 

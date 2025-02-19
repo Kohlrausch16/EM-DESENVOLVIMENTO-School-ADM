@@ -19,6 +19,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/deutschland_flagge.png", // Alemão
     className: "Alemão B1.1",
     level: "B1.1",
+    roundFlag: "/assets/images/deutschland_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -46,6 +47,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/deutschland_flagge.png", // Alemão
     className: "Alemão B2.3",
     level: "B2.3",
+    roundFlag: "/assets/images/deutschland_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -73,6 +75,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/frankreich_flagge.png", // Francês
     className: "Francês B1.1",
     level: "B1.1",
+    roundFlag: "/assets/images/frankreich_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -100,6 +103,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/frankreich_flagge.png", // Francês
     className: "Francês C1.1",
     level: "C1.1",
+    roundFlag: "/assets/images/frankreich_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -127,6 +131,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/deutschland_flagge.png", // Alemão
     className: "Alemão C1.2",
     level: "C1.2",
+    roundFlag: "/assets/images/deutschland_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -154,6 +159,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/usa_flagge_2.png", // Inglês
     className: "Inglês B1.1",
     level: "B1.1",
+    roundFlag: "/assets/images/usa_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -181,6 +187,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/spanien_flagge.png", // Espanhol
     className: "Espanhol A1.1",
     level: "A1.1",
+    roundFlag: "/assets/images/spanien_rund.png",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -208,6 +215,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/italien_flagge.png", // Italiano
     className: "Italiano A2.2",
     level: "A2.2",
+    roundFlag: "/assets/images/italien_rund.webp",
     classInfo: [
       {
         icon: "fas fa-calendar-alt",
@@ -235,6 +243,7 @@ export const classContent = [
     lenguageFlag: "/assets/images/usa_flagge_2.png", // Inglês
     className: "Inglês B2.1",
     level: "B2.1",
+    roundFlag: "/assets/images/usa_rund.png",
     monthlyFee: 599,
     materialFee: 149.99,
     classInfo: [
@@ -258,11 +267,6 @@ export const classContent = [
     active: true,
   },
 ];
-
-
-
-
-
 
 
 export const studentsTest = [

@@ -19,4 +19,4 @@ export const ButtonBody = style.button`
 export const ButtonIcon = style.i`
     color: white;
     font-size: 200%;
-`;
+`;  
