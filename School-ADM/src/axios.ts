@@ -318,6 +318,105 @@ export const studentsTest = [
       },
     ],
   },
+  {
+    id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4l",
+    picture: "/assets/images/deutschland_rund.png",
+    name: "Maria L.",
+    age: "32",
+    phone: "51 98888-8888",
+    courses: [
+      {
+        id: "8230d29d-1eed-4294-93e6-0939a61156ea", // Aula de Alemão B1.1
+        lenguageFlag: "/assets/images/deutschland_rund.png", // Alemão
+        className: "Alemão B1.1",
+        level: "B1.1",
+      },
+      {
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4k", // Aula de Inglês B2.1
+        lenguageFlag: "/assets/images/usa_rund.png", // Inglês
+        className: "Inglês B2.1",
+        level: "B2.1",
+      },
+      {
+        id: "9c10c584-9d04-43c0-83e9-71be600462b8", // Aula de Francês B1.1
+        lenguageFlag: "/assets/images/frankreich_rund.png", // Francês
+        className: "Francês B1.1",
+        level: "B1.1",
+      },
+    ],
+  },
+  {
+    id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4m",
+    picture: "/assets/images/frankreich_rund.png",
+    name: "Carlos M.",
+    age: "28",
+    phone: "51 97777-7777",
+    courses: [
+      {
+        id: "9c10c584-9d04-43c0-83e9-71be600462b7", // Aula de Alemão B2.3
+        lenguageFlag: "/assets/images/deutschland_rund.png", // Alemão
+        className: "Alemão B2.3",
+        level: "B2.3",
+      },
+    ],
+  },
+  {
+    id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4n",
+    picture: "/assets/images/usa_rund.png",
+    name: "Ricardo P.",
+    age: "24",
+    phone: "51 96666-6666",
+    courses: [
+      {
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4h", // Aula de Inglês B1.1
+        lenguageFlag: "/assets/images/usa_rund.png", // Inglês
+        className: "Inglês B1.1",
+        level: "B1.1",
+      },
+      {
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4i", // Aula de Espanhol A1.1
+        lenguageFlag: "/assets/images/spanien_rund.png", // Espanhol
+        className: "Espanhol A1.1",
+        level: "A1.1",
+      },
+    ],
+  },
+  {
+    id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4o",
+    picture: "/assets/images/italien_rund.webp",
+    name: "Luisa T.",
+    age: "30",
+    phone: "51 95555-5555",
+    courses: [
+      {
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4j", // Aula de Italiano A2.2
+        lenguageFlag: "/assets/images/italien_rund.webp", // Italiano
+        className: "Italiano A2.2",
+        level: "A2.2",
+      },
+      {
+        id: "7a54d357-7298-47a7-a4ee-cad48bbd0628", // Aula de Francês C1.1
+        lenguageFlag: "/assets/images/frankreich_rund.png", // Francês
+        className: "Francês C1.1",
+        level: "C1.1",
+      },
+    ],
+  },
+  {
+    id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4p",
+    picture: "/assets/images/deutschland_rund.png",
+    name: "Pedro R.",
+    age: "35",
+    phone: "51 94444-4444",
+    courses: [
+      {
+        id: "9c10c584-9d04-43c0-83e9-71be600462b8", // Aula de Francês B1.1
+        lenguageFlag: "/assets/images/frankreich_rund.png", // Francês
+        className: "Francês B1.1",
+        level: "B1.1",
+      },
+    ],
+  }
 ];
 
 
