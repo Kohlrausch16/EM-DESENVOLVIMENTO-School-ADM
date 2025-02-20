@@ -83,7 +83,6 @@ export const ClassContainer = style.div`
     height: 25%;
     justify-content: space-between;
     align-items: center;
-    background-color: purple;
 `;
 
 export const ClassContainerSection = style.div`
@@ -105,7 +104,7 @@ export const ClassContainerSectionTitle = style.div`
 
 export const ClassFlag = style.img`
     width: 13%;
-    height: 43%;
+    height: 44%;
     border-radius: 50%;
     border: solid 1px  #DEDEDE;
 
@@ -122,7 +121,7 @@ export const ClassLevelSection = style.div`
     justify-content: center;
     align-items: center;
     width: 13.5%;
-    height: 44%;
+    height: 44.5%;
     border-radius: 50%;
     font-family: verdana;
     color: #333333;
@@ -141,23 +140,89 @@ export const ClassInfoContainer = style.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 30%;
-    background-color: yellow;
+    align-self: center;
+    width: 95%;
+    height: 20%;
+    gap: 2%;
+`;
+
+export const ClassInfoInnerContainer = style.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    gap: 5%;
 `;
 
 export const ClassInfoSelection = style.select`
+    width: 70%;
+    height: 40%;
+    outline: none;
+    text-align: center;
+    border: none;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
+    font-family: verdana;
+    color: #333333;
+    font-size: 100%;
+    font-style: italic;
 
+    &:hover{
+        background-color: #FAF5F5;
+    }
 `;
 
 export const ClassInfoSelectionOption = style.option`
+    width: 70%;
+    height: 40%;
+    outline: none;
+    border: none;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
+    font-family: verdana;
+    color: #333333;
+    font-size: 100%;
+    font-style: italic;
 
+    &:hover{
+        background-color: #FAF5F5;
+    }
 `;
 
 export const ClassInfoTime = style.input`
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    outline: none;
+    border: none;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
+    font-family: verdana;
+    color: #333333;
+    font-size: 100%;
+    font-style: italic;
 
+    &:hover{
+        background-color: #FAF5F5;
+    }
 `;
 
 export const ClassInfoNumber = style.input`
+    width: 20%;
+    height: 40%;
+    outline: none;
+    border: none;
+    text-align: center;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
+    font-family: verdana;
+    color: #333333;
+    font-size: 100%;
+    font-style: italic;
 
+
+    &:hover{
+        background-color: #FAF5F5;
+    }
 `;

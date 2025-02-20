@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { classContent } from "../axios";
 import LateralMenu from "../layouts/LateralMenu";
-import { ClassContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
+import { ClassContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassInfoInnerContainer, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
 import UploadButton from "../components/UploadButton";
 import FolderButton from "../components/FolderButton";
 import SaveButton from "../components/SaveButton";
@@ -44,23 +44,28 @@ function ClassInfo(){
 
 
                         <ClassInfoContainer>
-                            <ClassContainerSectionTitle> Dia </ClassContainerSectionTitle>
 
-                            <ClassInfoSelection required>
+                            <ClassInfoInnerContainer>
+                                <ClassContainerSectionTitle> Dia </ClassContainerSectionTitle>
+                                    <ClassInfoSelection required>
+                                    {weekDays.map((item) => item === foundClass?.classInfo[0].content ? (<ClassInfoSelectionOption selected>
+                                        {foundClass?.classInfo[0].content}
+                                    </ClassInfoSelectionOption>) : (<ClassInfoSelectionOption>
+                                        {item}
+                                    </ClassInfoSelectionOption>))}
+                                </ClassInfoSelection>
+                            </ClassInfoInnerContainer>
 
-                                {weekDays.map((item) => item === foundClass?.classInfo[0].content ? (<ClassInfoSelectionOption selected>
-                                    {foundClass?.classInfo[0].content}
-                                </ClassInfoSelectionOption>) : (<ClassInfoSelectionOption>
-                                    {item}
-                                </ClassInfoSelectionOption>))}
+                            <ClassInfoInnerContainer>
+                                <ClassContainerSectionTitle> Horário </ClassContainerSectionTitle>
+                                <ClassInfoTime type="time" value={`${foundClass?.classInfo[1].content}`}/>
+                            </ClassInfoInnerContainer>
 
-                            </ClassInfoSelection>
+                            <ClassInfoInnerContainer>    
+                                <ClassContainerSectionTitle> Sala </ClassContainerSectionTitle>
+                                <ClassInfoNumber type="number" value={`${foundClass?.classInfo[3].content}`}/>
+                            </ClassInfoInnerContainer>
 
-                            <ClassContainerSectionTitle> Horário </ClassContainerSectionTitle>
-                            <ClassInfoTime type="time"/>
-
-                            <ClassContainerSectionTitle> Sala </ClassContainerSectionTitle>
-                            <ClassInfoNumber type="number" />
                         </ClassInfoContainer>
 
                     </HeaderContainer>
