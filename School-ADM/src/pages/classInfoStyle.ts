@@ -25,7 +25,6 @@ export const PageBody = style.div`
     height: 85%;
     overflow-y: scroll;
     border-top: solid 1px #DEDEDE;
-    background-color: yellow;
 `;
 
 export const HeaderContainer = style.div`
@@ -84,6 +83,7 @@ export const ClassContainer = style.div`
     height: 25%;
     justify-content: space-between;
     align-items: center;
+    background-color: purple;
 `;
 
 export const ClassContainerSection = style.div`
@@ -135,4 +135,29 @@ export const ClassLevelSection = style.div`
         background-color: #BEBEBE;
         transform: translate(0, -5%);
     }
+`;
+
+export const ClassInfoContainer = style.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    background-color: yellow;
+`;
+
+export const ClassInfoSelection = style.select`
+
+`;
+
+export const ClassInfoSelectionOption = style.option`
+
+`;
+
+export const ClassInfoTime = style.input`
+
+`;
+
+export const ClassInfoNumber = style.input`
+
 `;

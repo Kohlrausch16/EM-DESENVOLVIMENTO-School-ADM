@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { classContent } from "../axios";
 import LateralMenu from "../layouts/LateralMenu";
-import { ClassContainer, ClassContainerSection, ClassContainerSectionTitle, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
+import { ClassContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
 import UploadButton from "../components/UploadButton";
 import FolderButton from "../components/FolderButton";
 import SaveButton from "../components/SaveButton";
@@ -14,6 +14,8 @@ function ClassInfo(){
     const foundClass = classContent.find((item) =>{
         return item.id === id;
     });
+
+    const weekDays = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ];
 
     return(
         <>
@@ -41,9 +43,25 @@ function ClassInfo(){
                         </ClassContainer>
 
 
+                        <ClassInfoContainer>
+                            <ClassContainerSectionTitle> Dia </ClassContainerSectionTitle>
 
+                            <ClassInfoSelection required>
 
+                                {weekDays.map((item) => item === foundClass?.classInfo[0].content ? (<ClassInfoSelectionOption selected>
+                                    {foundClass?.classInfo[0].content}
+                                </ClassInfoSelectionOption>) : (<ClassInfoSelectionOption>
+                                    {item}
+                                </ClassInfoSelectionOption>))}
 
+                            </ClassInfoSelection>
+
+                            <ClassContainerSectionTitle> Horário </ClassContainerSectionTitle>
+                            <ClassInfoTime type="time"/>
+
+                            <ClassContainerSectionTitle> Sala </ClassContainerSectionTitle>
+                            <ClassInfoNumber type="number" />
+                        </ClassInfoContainer>
 
                     </HeaderContainer>
                     <IconContainer>

@@ -11,7 +11,7 @@ function SearchBar({title}: TitleProps){
         <>
 
             <ContentContainer>
-                <SearchField type='text' placeholder={`Buscar ${title}`} />
+                <SearchField type='search' placeholder={`Buscar ${title}`} />
                 <IconContainer>
                     <SearchIcon className='fa-solid fa-magnifying-glass'/>
                 </IconContainer>  
