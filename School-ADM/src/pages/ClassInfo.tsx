@@ -1,17 +1,24 @@
 import { useParams } from "react-router-dom";
 import { classContent } from "../axios";
 import LateralMenu from "../layouts/LateralMenu";
-import { ClassContainer, PriceColumnContainer, FinalPriceFee, FeeQuantity, GeneralPriceFee, PriceContainerSection, PriceRowContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassInfoInnerContainer, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
+import { ClassContainer, PriceColumnContainer, PersonalDataContainer, FinalPriceFee, FeeQuantity, GeneralPriceFee, PriceContainerSection, PriceRowContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassInfoInnerContainer, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
 import UploadButton from "../components/UploadButton";
 import FolderButton from "../components/FolderButton";
 import SaveButton from "../components/SaveButton";
 import DeleteButton from "../components/DeleteButton";
+
+import { teacherTest } from '../axios';
+import TeacherCard from "../layouts/TeacherCard";
 
 function ClassInfo(){
 
     const {id} = useParams();
 
     const foundClass = classContent.find((item) =>{
+        return item.id === id;
+    });
+
+    const foundTeacher = teacherTest.classes[0].find((item) =>{
         return item.id === id;
     });
 
@@ -28,6 +35,8 @@ function ClassInfo(){
                             <ClassName type='text' defaultValue={foundClass?.className}/>
                             <ActiveSwitch type='radio' />
                         </NameContainer>
+
+                        
 
 
                         <ClassContainer>
@@ -87,7 +96,6 @@ function ClassInfo(){
                                     <FeeQuantity type="number" defaultValue="2" />
                                 </PriceContainerSection>
 
-
                             </PriceRowContainer>
 
                             <ClassContainerSectionTitle> Total:  </ClassContainerSectionTitle>
@@ -95,19 +103,22 @@ function ClassInfo(){
                                         style: 'currency',
                                         currency: 'BRL',}).format((foundClass?.materialFee) * (foundClass?.materialFee) )}
                             </FinalPriceFee>
-                        </PriceColumnContainer>
+                        </PriceColumnContainer>         
                     </HeaderContainer>
 
-
-                    
-
                     <IconContainer>
-                        <UploadButton />
-                        <FolderButton />
-                        <SaveButton />
-                        <DeleteButton />
-                    </IconContainer>
+                            <UploadButton />
+                            <FolderButton />
+                            <SaveButton />
+                            <DeleteButton />
+                        </IconContainer>
 
+
+                        <PersonalDataContainer>
+                            <TeacherCard teacher={foundTeacher} />
+
+                        </PersonalDataContainer>
+                    
                 </PageBody>
             </ContentContainer>
         </ContentArea> 

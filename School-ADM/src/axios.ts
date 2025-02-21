@@ -443,6 +443,11 @@ export const teacherTest = [
         lenguageIcon: "/assets/images/usa_rund.png",
       },
     ],
+    classes:[
+      {
+        id: "8230d29d-1eed-4294-93e6-0939a61156ea",
+      },
+    ],
   },
   {
     id: "4fcf8c9a-5714-4208-a6bc-65164749udoe",
@@ -455,6 +460,11 @@ export const teacherTest = [
       },
       {
         lenguageIcon: "/assets/images/usa_rund.png",
+      },
+    ],
+    classes:[
+      {
+        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4i",
       },
     ],
   },

@@ -2,6 +2,7 @@ import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, Stu
 import DeleteButton from "../components/DeleteButton";
 import EditButton from "../components/EditButton";
 
+
 type lenguageIcon = string;
 
 type TeacherDataProps = {
@@ -10,6 +11,7 @@ type TeacherDataProps = {
     first_name: string;
     last_name: string;
     lenguages: lenguageIcon[];
+    
 }
 
 function TeacherCard({teacher}: TeacherDataProps[]){

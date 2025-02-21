@@ -20,7 +20,7 @@ export const ContentContainer = style.div`
 
 export const PageBody = style.div`
     display: flex;
-    flex-warp: warp;
+    flex-wrap: wrap;
     width: 85%;
     height: 85%;
     overflow-y: scroll;
@@ -37,8 +37,8 @@ export const HeaderContainer = style.div`
 export const IconContainer = style.div`
     display: flex;
     flex-direction: column;
-    width: 5%;
-    height: 72%;
+    width: 4%;
+    height: 70%;
     padding: 1% 2%;
     margin-bottom: 5%;
     gap: 1%;
@@ -312,4 +312,13 @@ export const FeeQuantity = style.input`
         background-color: #FAF5F5;
         border-radius: 2px;
     }
+`;
+
+export const PersonalDataContainer = style.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    margin-top: -5%;
+
 `;
