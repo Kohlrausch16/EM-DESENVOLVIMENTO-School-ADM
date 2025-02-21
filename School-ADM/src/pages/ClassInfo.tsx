@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { classContent } from "../axios";
 import LateralMenu from "../layouts/LateralMenu";
-import { ClassContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassInfoInnerContainer, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
+import { ClassContainer, PriceColumnContainer, FinalPriceFee, FeeQuantity, GeneralPriceFee, PriceContainerSection, PriceRowContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassInfoInnerContainer, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
 import UploadButton from "../components/UploadButton";
 import FolderButton from "../components/FolderButton";
 import SaveButton from "../components/SaveButton";
@@ -44,7 +44,6 @@ function ClassInfo(){
 
 
                         <ClassInfoContainer>
-
                             <ClassInfoInnerContainer>
                                 <ClassContainerSectionTitle> Dia </ClassContainerSectionTitle>
                                     <ClassInfoSelection required>
@@ -63,18 +62,52 @@ function ClassInfo(){
 
                             <ClassInfoInnerContainer>    
                                 <ClassContainerSectionTitle> Sala </ClassContainerSectionTitle>
-                                <ClassInfoNumber type="number" value={`${foundClass?.classInfo[3].content}`}/>
+                                <ClassInfoNumber> {`${foundClass?.classInfo[3].content}`} </ClassInfoNumber>
                             </ClassInfoInnerContainer>
-
                         </ClassInfoContainer>
 
+                        <PriceColumnContainer>
+                            <PriceRowContainer>
+                                <PriceContainerSection>
+                                    <ClassContainerSectionTitle> Mensalidade </ClassContainerSectionTitle>
+                                    <GeneralPriceFee type='text' defaultValue={new Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL',}).format(foundClass?.monthlyFee)} />
+                                </PriceContainerSection>
+
+                                <PriceContainerSection>
+                                    <ClassContainerSectionTitle> Material </ClassContainerSectionTitle>
+                                    <GeneralPriceFee type='text' defaultValue={new Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL',}).format(foundClass?.materialFee)} />
+                                </PriceContainerSection>
+
+                                <PriceContainerSection>
+                                    <ClassContainerSectionTitle> N° parcelas </ClassContainerSectionTitle>
+                                    <FeeQuantity type="number" defaultValue="2" />
+                                </PriceContainerSection>
+
+
+                            </PriceRowContainer>
+
+                            <ClassContainerSectionTitle> Total:  </ClassContainerSectionTitle>
+                            <FinalPriceFee>{new Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL',}).format((foundClass?.materialFee) * (foundClass?.materialFee) )}
+                            </FinalPriceFee>
+                        </PriceColumnContainer>
                     </HeaderContainer>
+
+
+                    
+
                     <IconContainer>
                         <UploadButton />
                         <FolderButton />
                         <SaveButton />
                         <DeleteButton />
                     </IconContainer>
+
                 </PageBody>
             </ContentContainer>
         </ContentArea> 

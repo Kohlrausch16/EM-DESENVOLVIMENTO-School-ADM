@@ -69,7 +69,7 @@ export const ClassName = style.input`
 
     &:hover{
         background-color: #FAF5F5;
-        border-radius: 5px;
+        border-radius: 2px;
     }
 `;
 
@@ -80,7 +80,7 @@ export const ActiveSwitch = style.input`
 export const ClassContainer = style.div`
     display: flex;
     width: 100%;
-    height: 25%;
+    height: 30%;
     justify-content: space-between;
     align-items: center;
 `;
@@ -208,12 +208,12 @@ export const ClassInfoTime = style.input`
     }
 `;
 
-export const ClassInfoNumber = style.input`
+export const ClassInfoNumber = style.div`
     width: 20%;
-    height: 40%;
-    outline: none;
-    border: none;
-    text-align: center;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background:rgba(250, 248, 248, 0.38);
     border-radius: 2px;
     font-family: verdana;
@@ -221,8 +221,95 @@ export const ClassInfoNumber = style.input`
     font-size: 100%;
     font-style: italic;
 
+    &:hover{
+        background-color: #FAF5F5;
+    }
+`;
+
+
+export const PriceColumnContainer = style.div`
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 95%;
+    height: 50%;
+    gap: 2%;
+`;
+
+export const PriceRowContainer = style.div`
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: 70%;
+`;
+
+export const PriceContainerSection = style.div`
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 3%;
+    height: 100%;
+`;
+
+export const GeneralPriceFee = style.input`
+    width: 40%;
+    padding: 2%;
+    height: 15%;
+    font-size: 110%;
+    font-family: verdana;
+    text-align: center;
+    font-style: italic;
+    color: #333333;
+    outline: none;
+    border: none;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
 
     &:hover{
         background-color: #FAF5F5;
+        border-radius: 2px;
+    }
+`;
+
+
+export const FinalPriceFee = style.div`
+    display: flex;
+    width: 30%;
+    padding: 0.5%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    font-size: 120%;
+    font-family: verdana;
+    color: #333333;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
+
+    &:hover{
+        background-color: #FAF5F5;
+        border-radius: 2px;
+    }
+
+`;
+
+export const FeeQuantity = style.input`
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    outline: none;
+    border: none;
+    background:rgba(250, 248, 248, 0.38);
+    border-radius: 2px;
+    font-family: verdana;
+    color: #333333;
+    font-size: 100%;
+    font-style: italic;
+
+    &:hover{
+        background-color: #FAF5F5;
+        border-radius: 2px;
     }
 `;
