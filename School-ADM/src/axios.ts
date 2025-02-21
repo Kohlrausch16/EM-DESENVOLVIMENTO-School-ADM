@@ -41,6 +41,7 @@ export const classContent = [
     active: true,
     monthlyFee: 499,
     materialFee: 99.99,
+    teacher: "4fcf8c9a-5714-4208-a6bc-6516474b1doe", // Professor Teacher 1
   },
   {
     id: "9c10c584-9d04-43c0-83e9-71be600462b7",
@@ -69,6 +70,7 @@ export const classContent = [
     active: true,
     monthlyFee: 589,
     materialFee: 129.99,
+    teacher: "4fcf8c9a-5714-4208-a6bc-65164749udoe", // Professor Test Test
   },
   {
     id: "9c10c584-9d04-43c0-83e9-71be600462b8",
@@ -97,6 +99,7 @@ export const classContent = [
     active: true,
     monthlyFee: 525,
     materialFee: 119.99,
+    teacher: "d42d2c0a-b380-43a4-9a33-fc29ad66f042", // Professora Ana Martinez
   },
   {
     id: "7a54d357-7298-47a7-a4ee-cad48bbd0628",
@@ -125,6 +128,7 @@ export const classContent = [
     active: true,
     monthlyFee: 650,
     materialFee: 139.99,
+    teacher: "d42d2c0a-b380-43a4-9a33-fc29ad66f042", // Professora Ana Martinez
   },
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4g",
@@ -153,6 +157,7 @@ export const classContent = [
     active: false,
     monthlyFee: 700,
     materialFee: 159.99,
+    teacher: "bce1a54b-52a5-40c9-b12d-408bdbb81c31", // Professor Luca Bianchi
   },
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4h",
@@ -181,6 +186,7 @@ export const classContent = [
     active: true,
     monthlyFee: 480,
     materialFee: 99.99,
+    teacher: "4fcf8c9a-5714-4208-a6bc-6516474b1doe", // Professor Teacher 1
   },
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4i",
@@ -209,6 +215,7 @@ export const classContent = [
     active: true,
     monthlyFee: 420,
     materialFee: 89.99,
+    teacher: "bce1a54b-52a5-40c9-b12d-408bdbb81c31", // Professor Luca Bianchi
   },
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4j",
@@ -237,6 +244,7 @@ export const classContent = [
     active: true,
     monthlyFee: 460,
     materialFee: 109.99,
+    teacher: "bce1a54b-52a5-40c9-b12d-408bdbb81c31", // Professor Luca Bianchi
   },
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4k",
@@ -265,6 +273,7 @@ export const classContent = [
       },
     ],
     active: true,
+    teacher: "4fcf8c9a-5714-4208-a6bc-6516474b1doe", // Professor Teacher 1
   },
 ];
 
@@ -419,16 +428,6 @@ export const studentsTest = [
   }
 ];
 
-
-
-
-
-
-
-
-
-
-
 export const teacherTest = [
   {
     id: "4fcf8c9a-5714-4208-a6bc-6516474b1doe",
@@ -441,11 +440,6 @@ export const teacherTest = [
       },
       {
         lenguageIcon: "/assets/images/usa_rund.png",
-      },
-    ],
-    classes:[
-      {
-        id: "8230d29d-1eed-4294-93e6-0939a61156ea",
       },
     ],
   },
@@ -462,9 +456,26 @@ export const teacherTest = [
         lenguageIcon: "/assets/images/usa_rund.png",
       },
     ],
-    classes:[
+  },
+  {
+    id: "bce1a54b-52a5-40c9-b12d-408bdbb81c31",
+    picture: "/assets/images/italien_rund.webp",
+    first_name: "Luca",
+    last_name: "Bianchi",
+    lenguages: [
       {
-        id: "4fcf8c9a-5714-4208-a6bc-6516474b1d4i",
+        lenguageIcon: "/assets/images/italien_rund.webp",
+      },
+    ],
+  },
+  {
+    id: "d42d2c0a-b380-43a4-9a33-fc29ad66f042",
+    picture: "/assets/images/spanien_rund.png",
+    first_name: "Ana",
+    last_name: "Martinez",
+    lenguages: [
+      {
+        lenguageIcon: "/assets/images/spanien_rund.png",
       },
     ],
   },

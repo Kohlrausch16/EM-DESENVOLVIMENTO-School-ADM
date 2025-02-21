@@ -20,7 +20,10 @@ function Teachers(){
                     <AddButton />
                 </ButtonContainer>
                 <PageBody>
-                    <TeacherCard teacher={teacherTest} />
+                    {teacherTest.map((item) =>
+                        <TeacherCard teacher={item} />
+                    )}
+                    
                 </PageBody>
                 
             </ContentContainer>

@@ -2,7 +2,6 @@ import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, Stu
 import DeleteButton from "../components/DeleteButton";
 import EditButton from "../components/EditButton";
 
-
 type lenguageIcon = string;
 
 type TeacherDataProps = {
@@ -14,21 +13,20 @@ type TeacherDataProps = {
     
 }
 
-function TeacherCard({teacher}: TeacherDataProps[]){
+function TeacherCard({teacher}: TeacherDataProps){
 
     return(
         <>
-            {teacher.map((item: TeacherDataProps) =>
-                <ContentContainer href={`/teacher/${item.id}`}> 
-                <StudentPic src={item.picture} />
+            <ContentContainer href={`/teacher/${teacher.id}`}> 
+                <StudentPic src={teacher.picture} />
                     <InfoContainer>
                     <StudentName>
-                        {item.first_name}  {item.last_name}
+                        {teacher.first_name}  {teacher.last_name}
                     </StudentName>
 
                     <LenguageIconContainer>
 
-                    {item.lenguages.map((contentIcon) => 
+                    {teacher.lenguages.map((contentIcon) => 
                         <CourseIcon src={contentIcon.lenguageIcon} />
                     )}
 
@@ -40,7 +38,6 @@ function TeacherCard({teacher}: TeacherDataProps[]){
                         <DeleteButton />
                     </ButtonSection>
             </ContentContainer>
-            )}       
         </>
     );
 }

@@ -8,6 +8,7 @@ import SaveButton from "../components/SaveButton";
 import DeleteButton from "../components/DeleteButton";
 
 import { teacherTest } from '../axios';
+
 import TeacherCard from "../layouts/TeacherCard";
 
 function ClassInfo(){
@@ -18,9 +19,11 @@ function ClassInfo(){
         return item.id === id;
     });
 
-    const foundTeacher = teacherTest.classes[0].find((item) =>{
-        return item.id === id;
+    const foundTeacher = teacherTest.find((item) =>{
+        return item.id === foundClass?.teacher; 
     });
+
+    console.log(foundTeacher);
 
     const weekDays = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ];
 
@@ -36,9 +39,6 @@ function ClassInfo(){
                             <ActiveSwitch type='radio' />
                         </NameContainer>
 
-                        
-
-
                         <ClassContainer>
                             <ClassContainerSection>
                                 <ClassContainerSectionTitle> Idioma </ClassContainerSectionTitle>
@@ -50,7 +50,6 @@ function ClassInfo(){
                                 <ClassLevelSection> {foundClass?.level} </ClassLevelSection>
                             </ClassContainerSection>
                         </ClassContainer>
-
 
                         <ClassInfoContainer>
                             <ClassInfoInnerContainer>
@@ -112,7 +111,6 @@ function ClassInfo(){
                             <SaveButton />
                             <DeleteButton />
                         </IconContainer>
-
 
                         <PersonalDataContainer>
                             <TeacherCard teacher={foundTeacher} />
