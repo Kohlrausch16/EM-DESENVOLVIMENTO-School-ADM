@@ -7,3 +7,5 @@
   Link - UX: https://whimsical.com/ux-school-adm-Avj5pJ1XbEy1jMqLjxSEjD
 
   Link - UI: https://www.figma.com/design/1kvV7v8nIxjpaKeNXT1Mka/Untitled?t=mX3sXhxBg4EeO9cC-0
+
+  Link - UML: https://app.gleek.io/diagrams/KNt8X_IS3wIXFgj7U8bjTQ
