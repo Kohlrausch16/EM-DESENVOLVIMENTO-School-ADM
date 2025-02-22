@@ -315,10 +315,9 @@ export const FeeQuantity = style.input`
 `;
 
 export const PersonalDataContainer = style.div`
-    display: flex;
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-color: red;
-    margin-top: -5%;
+
 
 `;

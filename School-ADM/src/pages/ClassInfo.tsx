@@ -114,7 +114,6 @@ function ClassInfo(){
 
                         <PersonalDataContainer>
                             <TeacherCard teacher={foundTeacher} />
-
                         </PersonalDataContainer>
                     
                 </PageBody>
