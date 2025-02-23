@@ -1,5 +1,6 @@
 package com.personalproject.schooADM.entities;
 
+import com.personalproject.schooADM.entities.enums.LanaguageEnum;
 import jakarta.persistence.Entity;
 
 import java.util.Objects;
@@ -11,6 +12,7 @@ public class Language {
     private String flagIcon;
     private String roundFlagIcon;
     private Boolean activeStatus;
+    private LanaguageEnum language;
 
 
     public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus) {
@@ -45,6 +47,14 @@ public class Language {
 
     public void setActiveStatus(Boolean activeStatus) {
         this.activeStatus = activeStatus;
+    }
+
+    public LanaguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguageEnum(LanaguageEnum language) {
+        this.language = language;
     }
 
     @Override
