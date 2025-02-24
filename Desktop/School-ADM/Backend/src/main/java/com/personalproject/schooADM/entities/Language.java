@@ -1,24 +1,32 @@
 package com.personalproject.schooADM.entities;
 
 import com.personalproject.schooADM.entities.enums.LanaguageEnum;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
+@Table(name = "languages")
 public class Language {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
     private String flagIcon;
+
     private String roundFlagIcon;
+
     private Boolean activeStatus;
+
     private LanaguageEnum language;
 
 
-    public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus) {
+    public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus, LanaguageEnum language) {
         this.flagIcon = flagIcon;
         this.roundFlagIcon = roundFlagIcon;
         this.activeStatus = activeStatus;
+        this.language = language;
     }
 
     public String getId() {
