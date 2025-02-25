@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: schoolADM_database
+  datasource:
+    url: jdbc:postgresql://localhost:5432/schoolADM_db
+    username: schoolADM
+    password: schoolADM
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

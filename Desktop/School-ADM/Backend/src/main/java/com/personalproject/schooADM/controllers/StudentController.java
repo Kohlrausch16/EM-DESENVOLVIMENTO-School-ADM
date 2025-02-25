@@ -21,4 +21,10 @@ public class StudentController {
         return ResponseEntity.ok().body(studentList);
     }
 
+    @GetMapping(value = "/student/{id}")
+    public ResponseEntity<Student> getStudentById(@PathVariable String id){
+        Student student = studentService.getStudentById(id);
+        return ResponseEntity.ok().body(student);
+    }
+
 }
