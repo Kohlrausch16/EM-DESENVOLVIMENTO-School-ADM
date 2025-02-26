@@ -1,7 +1,10 @@
 package com.personalproject.schooADM.entities;
 
 import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 @Entity
@@ -13,11 +16,27 @@ public class Student {
     private String id;
     private String name;
     private String phoneNumber;
-    private String email;
-    private Date birthDate;
 
-    public Student(String name, String lastName, String phoneNumber, String email, Date birthDate) {
+    @Column(unique = true)
+    private String email;
+
+    public String picture;
+
+    private LocalDate birthDate;
+
+    private Integer age;
+
+    public Student(){
+
+    }
+
+    public Student(String name, String phoneNumber, String email, LocalDate birthDate, String picture) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.birthDate = birthDate;
+        this.picture = picture;
+
     }
 
     public String getId(){
@@ -48,11 +67,28 @@ public class Student {
         this.email = email;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Integer getAge(){
+        return this.age;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public Integer calculateAge(){
+        LocalDate now = LocalDate.now();
+        return this.age = Period.between(this.getBirthDate(), LocalDate.now()).getYears();
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

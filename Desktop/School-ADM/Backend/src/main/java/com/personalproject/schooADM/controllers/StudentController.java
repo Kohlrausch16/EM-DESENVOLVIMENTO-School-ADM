@@ -27,4 +27,10 @@ public class StudentController {
         return ResponseEntity.ok().body(student);
     }
 
+    @PostMapping(value = "/student")
+    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
+        Student result = studentService.addStudent(student);
+        return ResponseEntity.ok().body(result);
+    }
+
 }
