@@ -33,9 +33,38 @@ public class StudentService {
        if(foundStudent.isPresent()){
            throw new FoundEmailException(student.getEmail());
        }
-        student.calculateAge();
         studentRepository.save(student);
         return student;
+    }
+
+    public Student updateStudent(Student student, String id){
+        Student foundStudent = this.getStudentById(id);
+
+        if(foundStudent == null){
+            throw new RuntimeException();
+        }
+
+        foundStudent.setName(student.getName());
+        foundStudent.setPhoneNumber(student.getPhoneNumber());
+        foundStudent.setEmail(student.getEmail());
+        foundStudent.setPicture(student.getPicture());
+        foundStudent.setBirthDate(student.getBirthDate());
+
+        studentRepository.save(foundStudent);
+
+        return student;
+    }
+
+    public String deleteStudent(String id){
+        Student foundStudent = this.getStudentById(id);
+
+        if(foundStudent == null){
+            throw new RuntimeException();
+        }
+
+        studentRepository.deleteById(id);
+
+        return "Estudante " + id + " deletado com sucesso!";
     }
 
 }

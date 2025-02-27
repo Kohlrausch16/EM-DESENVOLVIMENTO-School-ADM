@@ -73,6 +73,7 @@ public class Student {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+        this.calculateAge();
     }
 
     public Integer getAge(){
@@ -83,7 +84,7 @@ public class Student {
         return picture;
     }
 
-    public Integer calculateAge(){
+    private Integer calculateAge(){
         LocalDate now = LocalDate.now();
         return this.age = Period.between(this.getBirthDate(), LocalDate.now()).getYears();
     }
