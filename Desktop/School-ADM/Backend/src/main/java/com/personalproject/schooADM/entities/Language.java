@@ -1,9 +1,12 @@
 package com.personalproject.schooADM.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.personalproject.schooADM.entities.enums.LanaguageEnum;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "languages")
@@ -14,12 +17,13 @@ public class Language {
     private String id;
 
     private String flagIcon;
-
     private String roundFlagIcon;
-
     private Boolean activeStatus;
-
     private LanaguageEnum language;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "language")
+    private Set<Teacher> teacherList = new HashSet<>();
 
 
     public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus, LanaguageEnum language) {
@@ -59,6 +63,14 @@ public class Language {
 
     public LanaguageEnum getLanguage() {
         return language;
+    }
+
+    public void addTeacher(Teacher teacher){
+        this.teacherList.add(teacher);
+    }
+
+    public void deleteTeacher(Teacher teacher){
+        this.teacherList.remove(teacher);
     }
 
     public void setLanguageEnum(LanaguageEnum language) {
