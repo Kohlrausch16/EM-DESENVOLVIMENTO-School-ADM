@@ -19,12 +19,17 @@ public class Language {
     private String flagIcon;
     private String roundFlagIcon;
     private Boolean activeStatus;
+
+    @Enumerated(EnumType.STRING)
     private LanaguageEnum language;
 
     @JsonIgnore
     @OneToMany(mappedBy = "language")
     private Set<Teacher> teacherList = new HashSet<>();
 
+    public Language(){
+
+    }
 
     public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus, LanaguageEnum language) {
         this.flagIcon = flagIcon;

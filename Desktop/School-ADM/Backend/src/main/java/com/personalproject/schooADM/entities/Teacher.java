@@ -11,6 +11,7 @@ public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
     private String name;
 
     @Column(unique = true)
@@ -23,7 +24,6 @@ public class Teacher {
     private Language language;
 
     public Teacher(){
-
     }
 
     public Teacher(String name, String email, String phone, String password, Language language) {
