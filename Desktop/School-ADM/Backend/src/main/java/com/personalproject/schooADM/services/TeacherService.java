@@ -27,12 +27,17 @@ public class TeacherService {
     }
 
     public Teacher addTeacher(TeacherDTO teacherDTO){
-
         Teacher teacher = teacherDTO.getTeacher();
+
+        Optional<Teacher> foundTeacherEmail = teacherRepository.findTeacherByEmail(teacher.getEmail());
+
+        if(foundTeacherEmail.isPresent()){
+            throw new RuntimeException("Email already registred");
+        }
 
         Optional<Language> foundLanguage = languageRepository.findById(teacherDTO.getLanguage());
 
-        if(foundLanguage.isPresent()){
+        if(foundLanguage.isPresent() || teacherDTO.getLanguage() == null){
             teacher.setLanguage(foundLanguage.get());
         } else {
             teacher.setLanguage(null);
@@ -41,5 +46,36 @@ public class TeacherService {
         return teacherRepository.save(teacher);
     }
 
+    public Teacher updateTeacher(TeacherDTO teacher, String id){
+        Optional<Teacher> foundTeacher = this.getTeacherById(id);
 
+        if(foundTeacher.isPresent() == false){
+            throw new RuntimeException("Id not found!");
+        }
+
+        Teacher updatedTeacher = this.teacherUpdateHelper(foundTeacher.get(), teacher.getTeacher());
+        teacherRepository.save(updatedTeacher);
+        return updatedTeacher;
+
+    }
+
+    public Teacher teacherUpdateHelper(Teacher foundTeacher, Teacher teacher){
+        foundTeacher.setName(teacher.getName());
+        foundTeacher.setEmail(teacher.getEmail());
+        foundTeacher.setPassword(teacher.getPassword());
+        foundTeacher.setPhone(teacher.getPhone());
+        foundTeacher.setLanguage(teacher.getLanguage());
+
+        return foundTeacher;
+    }
+
+    public String deleteTeacher(String id){
+        Optional<Teacher> foundTeacher = this.getTeacherById(id);
+
+        if(foundTeacher.isPresent()) {
+            teacherRepository.deleteById(id);
+            return " Teacher " + id + " deleted successfully";
+        }
+        return "Teacher id " + id + " not found";
+    }
 }

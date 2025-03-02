@@ -29,10 +29,34 @@ public class TeacherController {
         return ResponseEntity.ok().body(teacher);
     }
 
-    @PostMapping (value = "/teacher")
+    @PostMapping(value = "/teacher")
     public ResponseEntity<Teacher> addTeacher(@RequestBody TeacherDTO teacherDTO){
         Teacher addedTeacher = teacherService.addTeacher(teacherDTO);
         return ResponseEntity.ok().body(addedTeacher);
     }
 
+    @PutMapping(value = "/teacher/{id}")
+    public ResponseEntity<Teacher> updateTeacher(@RequestBody TeacherDTO teacherDTO, @PathVariable String id){
+        Teacher updatedTeacher = teacherService.updateTeacher(teacherDTO, id);
+        return ResponseEntity.ok().body(updatedTeacher);
+    }
+
+    @DeleteMapping(value= "/teacher/{id}")
+    public ResponseEntity<String> delelteTeacher(@PathVariable String id){
+        String deleteResult = teacherService.deleteTeacher(id);
+        return ResponseEntity.ok().body(deleteResult);
+    }
 }
+
+
+/*
+    {
+    "teacher": {
+        "name": ,
+        "email": ,
+        "password": ,
+        "phone":
+    },
+    "language":
+    }
+*/
