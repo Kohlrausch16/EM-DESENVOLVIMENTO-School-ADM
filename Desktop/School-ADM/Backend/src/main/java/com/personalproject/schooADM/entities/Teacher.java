@@ -1,8 +1,12 @@
 package com.personalproject.schooADM.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.Objects;
+
+import static org.hibernate.annotations.QueryHints.READ_ONLY;
 
 @Entity
 @Table(name = "teacher")
@@ -19,19 +23,19 @@ public class Teacher {
     private String phone;
     private String password;
 
+    @JsonProperty("language")
     @ManyToOne
-    @JoinColumn(name = "teacherList")
+    @JoinColumn(name = "language_id")
     private Language language;
 
     public Teacher(){
     }
 
-    public Teacher(String name, String email, String phone, String password, Language language) {
+    public Teacher(String name, String email, String phone, String password) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.password = password;
-        this.language = language;
     }
 
     public String getId() {

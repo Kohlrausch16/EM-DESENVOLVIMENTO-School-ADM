@@ -1,12 +1,11 @@
 package com.personalproject.schooADM.controllers;
 
+import com.personalproject.schooADM.entities.DTOs.TeacherDTO;
 import com.personalproject.schooADM.entities.Teacher;
 import com.personalproject.schooADM.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,5 +29,10 @@ public class TeacherController {
         return ResponseEntity.ok().body(teacher);
     }
 
+    @PostMapping (value = "/teacher")
+    public ResponseEntity<Teacher> addTeacher(@RequestBody TeacherDTO teacherDTO){
+        Teacher addedTeacher = teacherService.addTeacher(teacherDTO);
+        return ResponseEntity.ok().body(addedTeacher);
+    }
 
 }
