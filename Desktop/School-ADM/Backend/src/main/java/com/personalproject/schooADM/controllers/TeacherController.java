@@ -16,7 +16,6 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-
     @GetMapping(value = "/teacher")
     public ResponseEntity<List<Teacher>> getTeachers(){
         List<Teacher> teacherList = teacherService.getTeachers();
