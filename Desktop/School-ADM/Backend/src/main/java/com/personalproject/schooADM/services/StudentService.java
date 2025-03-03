@@ -44,16 +44,21 @@ public class StudentService {
             throw new RuntimeException();
         }
 
+        Student updatedStudent = this.studentUpdateHandler(foundStudent, student);
+        studentRepository.save(updatedStudent);
+        return updatedStudent;
+    }
+
+    private Student studentUpdateHandler(Student foundStudent, Student student){
         foundStudent.setName(student.getName());
         foundStudent.setPhoneNumber(student.getPhoneNumber());
         foundStudent.setEmail(student.getEmail());
         foundStudent.setPicture(student.getPicture());
         foundStudent.setBirthDate(student.getBirthDate());
 
-        studentRepository.save(foundStudent);
-
-        return student;
+        return foundStudent;
     }
+
 
     public String deleteStudent(String id){
         Student foundStudent = this.getStudentById(id);

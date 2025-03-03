@@ -20,6 +20,7 @@ public class Teacher {
 
     @Column(unique = true)
     private String email;
+    private String picture;
     private String phone;
     private String password;
 
@@ -31,9 +32,10 @@ public class Teacher {
     public Teacher(){
     }
 
-    public Teacher(String name, String email, String phone, String password) {
+    public Teacher(String name, String email, String picture, String phone, String password) {
         this.name = name;
         this.email = email;
+        this.picture = picture;
         this.phone = phone;
         this.password = password;
     }
@@ -56,6 +58,14 @@ public class Teacher {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public String getPhone() {

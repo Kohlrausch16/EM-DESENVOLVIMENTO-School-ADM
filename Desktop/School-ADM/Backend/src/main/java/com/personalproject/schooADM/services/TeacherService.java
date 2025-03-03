@@ -47,24 +47,20 @@ public class TeacherService {
     }
 
     public Teacher updateTeacher(TeacherDTO teacher, String id){
-
         Optional<Teacher> foundTeacher = this.getTeacherById(id);
-
         if(foundTeacher == null){
             throw new RuntimeException("Id not found!");
         }
 
         Teacher updatedTeacher = this.teacherUpdateHelper(foundTeacher.get(), teacher);
-
         teacherRepository.save(updatedTeacher);
-
         return updatedTeacher;
-
     }
 
-    public Teacher teacherUpdateHelper(Teacher foundTeacher, TeacherDTO teacher){
+    private Teacher teacherUpdateHelper(Teacher foundTeacher, TeacherDTO teacher){
         foundTeacher.setName(teacher.getTeacher().getName());
         foundTeacher.setEmail(teacher.getTeacher().getEmail());
+        foundTeacher.setPicture(teacher.getTeacher().getPicture());
         foundTeacher.setPassword(teacher.getTeacher().getPassword());
         foundTeacher.setPhone(teacher.getTeacher().getPhone());
 
