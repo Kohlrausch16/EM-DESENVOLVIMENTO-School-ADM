@@ -84,6 +84,7 @@ public class Teacher {
         this.password = password;
     }
 
+    @JsonIgnore
     public Language getLanguage() {
         return language;
     }

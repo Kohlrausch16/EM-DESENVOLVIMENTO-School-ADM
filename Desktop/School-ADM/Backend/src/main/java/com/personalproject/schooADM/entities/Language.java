@@ -1,5 +1,7 @@
 package com.personalproject.schooADM.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.personalproject.schooADM.entities.enums.LanaguageEnum;
 import jakarta.persistence.*;
 
@@ -24,6 +26,7 @@ public class Language {
     @OneToMany(mappedBy = "language")
     private List<Teacher> teacherList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "language")
     private List<Course> courseList;
 
