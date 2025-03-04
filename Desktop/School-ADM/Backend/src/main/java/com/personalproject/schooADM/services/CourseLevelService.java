@@ -35,13 +35,25 @@ public class CourseLevelService {
         return courseLevel;
     }
 
+    public CourseLevel updateLevel(CourseLevel level, String id){
+        CourseLevel foundLevel = this.getLevelById(id);
+        CourseLevel updatedLevel = this.levelUpdateHalper(foundLevel, level);
+        courseLevelRepository.save(updatedLevel);
+        return updatedLevel;
+    }
 
+    public CourseLevel levelUpdateHalper(CourseLevel foundLevel, CourseLevel level){
+        foundLevel.setName(level.getName());
+        foundLevel.setShortName(level.getShortName());
+        foundLevel.setActiveStatus(level.getActiveStatus());
+
+        return foundLevel;
+    }
 
     public String deleteLevel(String id){
         CourseLevel foundLevel = this.getLevelById(id);
         courseLevelRepository.deleteById(foundLevel.getId());
         return "Register " + id + " was deleted successfully!";
     }
-
 
 }
