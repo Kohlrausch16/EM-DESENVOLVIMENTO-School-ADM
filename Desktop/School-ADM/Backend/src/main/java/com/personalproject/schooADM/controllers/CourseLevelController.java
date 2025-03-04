@@ -23,7 +23,16 @@ public class CourseLevelController {
     public ResponseEntity<CourseLevel> getLevelById(@PathVariable String id){
         return ResponseEntity.ok().body(courseLevelService.getLevelById(id));
     }
+    
+    @PostMapping
+    public ResponseEntity<CourseLevel> addLevel(@RequestBody CourseLevel courseLevel){
+        return ResponseEntity.ok().body(courseLevelService.addLevel(courseLevel));
+    }
 
 
 
+    @DeleteMapping(value = "/teacher/{id}")
+    public ResponseEntity<CourseLevel> deleteLevel(@PathVariable String id){
+        return ResponseEntity.ok().body(courseLevelService.getLevelById(id));
+    }
 }

@@ -30,7 +30,18 @@ public class CourseLevelService {
         return foundLevel.get();
     }
 
+    public CourseLevel addLevel(CourseLevel courseLevel){
+        courseLevelRepository.save(courseLevel);
+        return courseLevel;
+    }
 
+
+
+    public String deleteLevel(String id){
+        CourseLevel foundLevel = this.getLevelById(id);
+        courseLevelRepository.deleteById(foundLevel.getId());
+        return "Register " + id + " was deleted successfully!";
+    }
 
 
 }
