@@ -1,6 +1,5 @@
 package com.personalproject.schooADM.entities;
 
-
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -16,6 +15,8 @@ public class CourseLevel {
     private String name;
     private String shortName;
     private Boolean activeStatus;
+
+    /*private Course course;*/
 
 
     public CourseLevel(){

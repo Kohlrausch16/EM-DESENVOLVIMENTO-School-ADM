@@ -24,6 +24,9 @@ public class Language {
     @OneToMany(mappedBy = "language")
     private List<Teacher> teacherList;
 
+    @OneToMany(mappedBy = "language")
+    private List<Course> courseList;
+
     public Language(){
     }
 
@@ -42,28 +45,20 @@ public class Language {
         return flagIcon;
     }
 
-    public void setFlagIcon(String flagIcon) {
-        this.flagIcon = flagIcon;
-    }
-
     public String getRoundFlagIcon() {
         return roundFlagIcon;
-    }
-
-    public void setRoundFlagIcon(String roundFlagIcon) {
-        this.roundFlagIcon = roundFlagIcon;
     }
 
     public Boolean getActiveStatus() {
         return activeStatus;
     }
 
-    public void setActiveStatus(Boolean activeStatus) {
-        this.activeStatus = activeStatus;
-    }
-
     public LanaguageEnum getLanguage() {
         return language;
+    }
+
+    public List<Teacher> getTeacherList(){
+        return this.teacherList;
     }
 
     public void addTeacher(Teacher teacher){
@@ -74,8 +69,12 @@ public class Language {
         this.teacherList.remove(teacher);
     }
 
-    public void setLanguageEnum(LanaguageEnum language) {
-        this.language = language;
+    public void addCourse(Course course){
+        this.courseList.add(course);
+    }
+
+    public void deleteCourse(Course course){
+        this.courseList.remove(course);
     }
 
     @Override
