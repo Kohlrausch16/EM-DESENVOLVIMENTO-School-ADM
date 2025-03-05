@@ -21,12 +21,20 @@ public class CourseController {
         return ResponseEntity.ok().body(courseService.getCourses());
     }
 
+    @GetMapping(value = "/course/{id}")
+    public ResponseEntity<Course> getCourseById(@PathVariable String id){
+        return ResponseEntity.ok().body(courseService.getCourseById(id));
+    }
 
     @PostMapping(value = "/course")
     public ResponseEntity<Course> addCourse(@RequestBody CourseDTO courseDTO){
         return ResponseEntity.ok().body(courseService.addCourse(courseDTO));
     }
 
+    @DeleteMapping(value = "/course/{id}")
+    public ResponseEntity<String> deleteCourse(@PathVariable String id){
+        return ResponseEntity.ok().body(courseService.deleteCourse(id));
+    }
 
 }
 
@@ -38,7 +46,4 @@ public class CourseController {
         },
         "language"
     }
-
-
-
 */

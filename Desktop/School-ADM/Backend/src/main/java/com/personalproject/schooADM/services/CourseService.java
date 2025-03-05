@@ -25,6 +25,17 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    public Course getCourseById(String id){
+
+        Optional<Course> foundCourse = courseRepository.findById(id);
+
+        if(foundCourse.isPresent() == false){
+            throw new RuntimeException("Unable to find course " + id);
+        }
+
+        return foundCourse.get();
+    }
+
     public Course addCourse(CourseDTO courseDTO){
 
         Optional<Language> foundLang = (languageRepository.findById(courseDTO.getLanguage()));
@@ -39,4 +50,9 @@ public class CourseService {
         return courseRepository.save(courseDTO.getCourse());
     }
 
+    public String deleteCourse(String id){
+
+        courseRepository.deleteById(this.getCourseById(id).getId());
+        return "Course " + id + " was deleted successfully!";
+    }
 }
