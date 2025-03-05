@@ -1,11 +1,13 @@
 package com.personalproject.schooADM.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Course {
 
     @Id
@@ -15,7 +17,6 @@ public class Course {
     private String name;
     private Boolean activeStatus;
 
-    @JsonProperty("language")
     @ManyToOne
     @JoinColumn(name = "language_id")
     private Language language;

@@ -1,7 +1,6 @@
 package com.personalproject.schooADM.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import com.personalproject.schooADM.entities.enums.LanaguageEnum;
 import jakarta.persistence.*;
 
@@ -10,6 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "languages")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Language {
 
     @Id
@@ -26,7 +26,6 @@ public class Language {
     @OneToMany(mappedBy = "language")
     private List<Teacher> teacherList;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "language")
     private List<Course> courseList;
 
@@ -70,6 +69,10 @@ public class Language {
 
     public void deleteTeacher(Teacher teacher){
         this.teacherList.remove(teacher);
+    }
+
+    public List<Course> getCourseList(){
+        return this.courseList;
     }
 
     public void addCourse(Course course){

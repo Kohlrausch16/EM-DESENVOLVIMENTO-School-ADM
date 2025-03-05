@@ -20,7 +20,6 @@ export const IconBar = style.div`
     background-color: none;
     border-bottom: solid 1px #DEDEDE;
     justify-content: space-around;
-
 `;
 
 export const Icon = style.i`

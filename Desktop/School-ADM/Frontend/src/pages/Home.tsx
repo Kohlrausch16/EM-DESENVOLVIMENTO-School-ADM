@@ -4,7 +4,7 @@ import HomeClassCard from "../layouts/HomeClassCard";
 import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer, IconBar, HomeTitle, Icon, ClassCardArea } from "./HomeStyle";
-
+    
 function Home(){
     
     const headIcons = ["fab fa-instagram", "fab fa-facebook", "fab fa-whatsapp", "fas fa-envelope", "fas fa-globe", "fas fa-user-circle"];

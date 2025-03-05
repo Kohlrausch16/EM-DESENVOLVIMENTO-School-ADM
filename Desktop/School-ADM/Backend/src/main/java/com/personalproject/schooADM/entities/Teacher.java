@@ -1,15 +1,14 @@
 package com.personalproject.schooADM.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
-import static org.hibernate.annotations.QueryHints.READ_ONLY;
 
 @Entity
 @Table(name = "teacher")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Teacher {
 
     @Id
@@ -24,7 +23,6 @@ public class Teacher {
     private String phone;
     private String password;
 
-    @JsonProperty("language")
     @ManyToOne
     @JoinColumn(name = "language_id")
     private Language language;
@@ -84,7 +82,6 @@ public class Teacher {
         this.password = password;
     }
 
-    @JsonIgnore
     public Language getLanguage() {
         return language;
     }
