@@ -16,8 +16,13 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(name= "flag_icon", nullable = false)
     private String flagIcon;
+
+    @Column(name= "round_flag_icon", nullable = false)
     private String roundFlagIcon;
+
+    @Column(name= "active_status", nullable = false)
     private Boolean activeStatus;
 
     @Enumerated(EnumType.STRING)

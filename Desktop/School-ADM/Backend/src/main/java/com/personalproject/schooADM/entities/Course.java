@@ -14,7 +14,10 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(name= "course_name", nullable = false, unique=true)
     private String name;
+
+    @Column(name= "active_status", nullable = false)
     private Boolean activeStatus;
 
     @ManyToOne

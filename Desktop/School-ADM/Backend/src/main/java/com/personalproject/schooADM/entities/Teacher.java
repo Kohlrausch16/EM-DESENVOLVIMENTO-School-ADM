@@ -15,15 +15,21 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(name= "teacher_name", nullable = false)
     private String name;
 
-    @Column(unique = true)
+    @Column(name= "teacher_email", nullable = false, unique=true)
     private String email;
+
+    @Column(name= "teacher_picture")
     private String picture;
+
+    @Column(name= "teacher_phone", nullable = false)
     private String phone;
+
+    @Column(name= "teacher_password", nullable = false)
     private String password;
 
-    @ManyToOne
     @JoinColumn(name = "language_id")
     private Language language;
 
