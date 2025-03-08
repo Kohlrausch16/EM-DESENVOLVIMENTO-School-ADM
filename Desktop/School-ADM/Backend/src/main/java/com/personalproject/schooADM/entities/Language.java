@@ -68,24 +68,9 @@ public class Language {
         return this.teacherList;
     }
 
-    public void addTeacher(Teacher teacher){
-        this.teacherList.add(teacher);
-    }
-
-    public void deleteTeacher(Teacher teacher){
-        this.teacherList.remove(teacher);
-    }
 
     public List<Course> getCourseList(){
         return this.courseList;
-    }
-
-    public void addCourse(Course course){
-        this.courseList.add(course);
-    }
-
-    public void deleteCourse(Course course){
-        this.courseList.remove(course);
     }
 
     @Override

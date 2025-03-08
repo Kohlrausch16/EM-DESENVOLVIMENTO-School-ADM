@@ -1,13 +1,12 @@
 package com.personalproject.schooADM.services;
 
-import com.personalproject.schooADM.entities.Course;
+import com.personalproject.schooADM.entities.*;
 import com.personalproject.schooADM.entities.DTOs.CourseDTO;
-import com.personalproject.schooADM.entities.Language;
-import com.personalproject.schooADM.repository.CourseRepository;
-import com.personalproject.schooADM.repository.LanguageRepository;
+import com.personalproject.schooADM.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +18,9 @@ public class CourseService {
 
     @Autowired
     private LanguageRepository languageRepository;
+
+    @Autowired
+    private CourseLevelService clService;
 
 
     public List<Course> getCourses(){
@@ -37,21 +39,37 @@ public class CourseService {
     }
 
     public Course addCourse(CourseDTO courseDTO){
-
         Optional<Language> foundLang = (languageRepository.findById(courseDTO.getLanguage()));
-
         if(foundLang.get() == null){
             throw new RuntimeException("Informed language doesn't exist");
         }
+  
+        for(String cl : courseDTO.getCourseLevelList()){
 
-        foundLang.get().addCourse(courseDTO.getCourse());
+            var foundLevel = clService.getLevelById(cl);
+
+            if(foundLevel != null){
+                foundLevel.setCourse(courseDTO.getCourse());
+            } else {
+                clService.addLevel(foundLevel);
+                foundLevel.setCourse(courseDTO.getCourse());
+            }
+        }
+
+        foundLang.get().getCourseList().add(courseDTO.getCourse());
         courseDTO.getCourse().setLanguage(foundLang.get());
-
         return courseRepository.save(courseDTO.getCourse());
     }
 
-    public String deleteCourse(String id){
+    public Course updateCourse(CourseDTO courseDTO, String id){
 
+    }
+
+    public Course updateCOurseHandler(CourseDTO courseDTO, String id){
+
+    }
+
+    public String deleteCourse(String id){
         courseRepository.deleteById(this.getCourseById(id).getId());
         return "Course " + id + " was deleted successfully!";
     }

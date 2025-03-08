@@ -39,7 +39,7 @@ public class TeacherService {
 
         if(foundLanguage.isPresent() || teacherDTO.getLanguage() == null){
             teacher.setLanguage(foundLanguage.get());
-            foundLanguage.get().addTeacher(teacher);
+            foundLanguage.get().getTeacherList().add(teacher);
         } else {
             teacher.setLanguage(null);
         }

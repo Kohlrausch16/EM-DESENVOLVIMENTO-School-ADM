@@ -1,12 +1,13 @@
 package com.personalproject.schooADM.entities;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(name = "course")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Course {
 
@@ -19,6 +20,9 @@ public class Course {
 
     @Column(name= "active_status", nullable = false)
     private Boolean activeStatus;
+
+    @OneToMany(mappedBy = "course")
+    private List<CourseLevel> courseList;
 
     @ManyToOne
     @JoinColumn(name = "language_id")
@@ -60,6 +64,14 @@ public class Course {
 
     public void setLanguage(Language language) {
         this.language = language;
+    }
+
+    public List<CourseLevel> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<CourseLevel> courseList) {
+        this.courseList = courseList;
     }
 
     @Override

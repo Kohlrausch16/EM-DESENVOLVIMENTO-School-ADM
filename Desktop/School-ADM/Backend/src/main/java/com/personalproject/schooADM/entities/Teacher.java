@@ -30,6 +30,7 @@ public class Teacher {
     @Column(name= "teacher_password", nullable = false)
     private String password;
 
+    @ManyToOne
     @JoinColumn(name = "language_id")
     private Language language;
 
