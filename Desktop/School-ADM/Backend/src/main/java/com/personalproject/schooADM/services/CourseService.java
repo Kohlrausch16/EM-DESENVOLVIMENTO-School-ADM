@@ -45,10 +45,9 @@ public class CourseService {
         }
   
         for(String cl : courseDTO.getCourseLevelList()){
-
             var foundLevel = clService.getLevelById(cl);
 
-            if(foundLevel != null){
+            if(foundLevel.get() != null){
                 foundLevel.setCourse(courseDTO.getCourse());
             } else {
                 clService.addLevel(foundLevel);
