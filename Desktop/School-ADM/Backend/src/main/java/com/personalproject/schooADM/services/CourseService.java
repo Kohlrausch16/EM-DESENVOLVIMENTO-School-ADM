@@ -48,9 +48,9 @@ public class CourseService {
             var foundLevel = clService.getLevelById(cl);
 
             if(foundLevel.get() != null){
-                foundLevel.setCourse(courseDTO.getCourse());
+                foundLevel.get().setCourse(courseDTO.getCourse());
             } else {
-                clService.addLevel(foundLevel);
+                clService.addLevel(foundLevel.get());
                 foundLevel.setCourse(courseDTO.getCourse());
             }
         }
