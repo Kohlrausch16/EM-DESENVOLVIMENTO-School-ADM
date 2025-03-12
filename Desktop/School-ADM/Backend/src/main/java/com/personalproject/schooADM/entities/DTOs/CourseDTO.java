@@ -5,6 +5,7 @@ import com.personalproject.schooADM.entities.CourseLevel;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -13,7 +14,7 @@ public class CourseDTO {
 
     private Course course;
     private String language;
-    private List<String> courseLevelList;
+    private List<String> courseLevelList = new ArrayList<>();
 
     public CourseDTO(){
 

@@ -15,22 +15,16 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @Column(name= "student_name")
     private String name;
 
-    @Column(name= "student_phone", nullable = false, unique=true)
     private String phoneNumber;
 
-    @Column(name= "student_email", unique=true)
     private String email;
 
-    @Column(name= "student_picture")
     public String picture;
 
-    @Column(name= "student_birthdate", nullable = false)
     private LocalDate birthDate;
 
-    @Column(name= "student_age", nullable = false)
     private Integer age;
 
     public Student(){

@@ -62,11 +62,22 @@ public class CourseService {
     }
 
     public Course updateCourse(CourseDTO courseDTO, String id){
+        Course foundCourse = this.getCourseById(id);
 
+        foundCourse.getCourseList().clear();
+
+        Course updatedCourse = this.updateCourseHandler(foundCourse, courseDTO.getCourse());
+
+        for(String cl : courseDTO.getCourseLevelList()){
+            updatedCourse.getCourseList().add(clService.getLevelById(cl));
+        }
+
+        return updatedCourse;
     }
 
-    public Course updateCOurseHandler(CourseDTO courseDTO, String id){
+    public Course updateCourseHandler(Course foundCourse, Course course){
 
+        return foundCourse;
     }
 
     public String deleteCourse(String id){
