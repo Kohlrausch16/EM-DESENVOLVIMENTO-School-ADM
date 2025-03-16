@@ -21,7 +21,7 @@ public class CourseLevel {
 
     private Boolean activeStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
 

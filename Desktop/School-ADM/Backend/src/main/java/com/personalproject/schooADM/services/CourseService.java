@@ -73,20 +73,28 @@ public class CourseService {
 
     public Course updateCourse(CourseDTO courseDTO, String id){
         Course foundCourse = this.getCourseById(id);
+        Optional<Language> foundLang = (languageRepository.findById(courseDTO.getLanguage()));
+        if(foundLang.get() == null){
+            throw new RuntimeException("Informed language doesn't exist");
+        }
 
         foundCourse.getCourseLevelList().clear();
 
         Course updatedCourse = this.updateCourseHandler(foundCourse, courseDTO.getCourse());
+        updatedCourse.setLanguage(foundLang.get());
+        foundLang.get().getCourseList().remove(foundCourse);
+        foundLang.get().getCourseList().add(updatedCourse);
 
         for(String cl : courseDTO.getCourseLevelList()){
             updatedCourse.getCourseLevelList().add(clService.getLevelById(cl));
         }
 
-        return updatedCourse;
+        return courseRepository.save(updatedCourse);
     }
 
     public Course updateCourseHandler(Course foundCourse, Course course){
-
+        foundCourse.setName(course.getName());
+        foundCourse.setActiveStatus(course.getActiveStatus());
         return foundCourse;
     }
 

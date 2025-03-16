@@ -65,7 +65,6 @@ public class Language {
         return this.teacherList;
     }
 
-
     public List<Course> getCourseList(){
         return this.courseList;
     }
