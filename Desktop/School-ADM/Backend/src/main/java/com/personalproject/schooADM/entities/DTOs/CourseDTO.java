@@ -1,7 +1,6 @@
 package com.personalproject.schooADM.entities.DTOs;
 
 import com.personalproject.schooADM.entities.Course;
-import com.personalproject.schooADM.entities.CourseLevel;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 

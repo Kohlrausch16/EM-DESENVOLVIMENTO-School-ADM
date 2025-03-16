@@ -20,6 +20,9 @@ public class CourseService {
     private LanguageRepository languageRepository;
 
     @Autowired
+    private CourseLevelRepository clRepository;
+
+    @Autowired
     private CourseLevelService clService;
 
 
@@ -43,32 +46,40 @@ public class CourseService {
         if(foundLang.get() == null){
             throw new RuntimeException("Informed language doesn't exist");
         }
-  
+
+        Course toBeAddCourse = new Course();
+        toBeAddCourse = this.addCourseHandler(toBeAddCourse, courseDTO.getCourse());
+        toBeAddCourse.setLanguage(foundLang.get());
+        foundLang.get().getCourseList().add(toBeAddCourse);
+
         for(String cl : courseDTO.getCourseLevelList()){
-            var foundLevel = clService.getLevelById(cl);
+            Optional<CourseLevel> foundLevel = clRepository.findById(cl);
 
             if(foundLevel.get() != null){
-                foundLevel.get().setCourse(courseDTO.getCourse());
-            } else {
-                clService.addLevel(foundLevel.get());
-                foundLevel.setCourse(courseDTO.getCourse());
+                foundLevel.get().setCourse(toBeAddCourse);
+                toBeAddCourse.getCourseLevelList().add(foundLevel.get());
             }
         }
-
-        foundLang.get().getCourseList().add(courseDTO.getCourse());
-        courseDTO.getCourse().setLanguage(foundLang.get());
-        return courseRepository.save(courseDTO.getCourse());
+        return courseRepository.save(toBeAddCourse);
     }
+
+    public Course addCourseHandler(Course toBeAddedCourse, Course courseDTO){
+        toBeAddedCourse.setName(courseDTO.getName());
+        toBeAddedCourse.setActiveStatus(courseDTO.getActiveStatus());
+
+        return toBeAddedCourse;
+    }
+
 
     public Course updateCourse(CourseDTO courseDTO, String id){
         Course foundCourse = this.getCourseById(id);
 
-        foundCourse.getCourseList().clear();
+        foundCourse.getCourseLevelList().clear();
 
         Course updatedCourse = this.updateCourseHandler(foundCourse, courseDTO.getCourse());
 
         for(String cl : courseDTO.getCourseLevelList()){
-            updatedCourse.getCourseList().add(clService.getLevelById(cl));
+            updatedCourse.getCourseLevelList().add(clService.getLevelById(cl));
         }
 
         return updatedCourse;
@@ -80,7 +91,11 @@ public class CourseService {
     }
 
     public String deleteCourse(String id){
-        courseRepository.deleteById(this.getCourseById(id).getId());
+        Course foundCourse = this.getCourseById(id);
+        for(CourseLevel cl : foundCourse.getCourseLevelList()){
+            cl.setCourse(null);
+        }
+        courseRepository.deleteById(foundCourse.getId());
         return "Course " + id + " was deleted successfully!";
     }
 }

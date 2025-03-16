@@ -3,6 +3,7 @@ package com.personalproject.schooADM.entities;
 import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,10 +21,10 @@ public class Course {
     private Boolean activeStatus;
 
     @OneToMany(mappedBy = "course")
-    private List<CourseLevel> courseList;
+    private List<CourseLevel> courseLevelList = new ArrayList<>();
 
     @ManyToOne
-    @JoinColumn(name = "language_id")
+    @JoinColumn(name = "language")
     private Language language;
 
     public Course(){
@@ -64,12 +65,8 @@ public class Course {
         this.language = language;
     }
 
-    public List<CourseLevel> getCourseList() {
-        return courseList;
-    }
-
-    public void setCourseList(List<CourseLevel> courseList) {
-        this.courseList = courseList;
+    public List<CourseLevel> getCourseLevelList(){
+        return courseLevelList;
     }
 
     @Override
