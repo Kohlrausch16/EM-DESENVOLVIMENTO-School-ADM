@@ -3,6 +3,8 @@ package com.personalproject.schooADM.entities;
 import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -25,9 +27,12 @@ public class Teacher {
 
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "language_id")
     private Language language;
+
+    @OneToMany(mappedBy = "teacher")
+    private List<ClassGroup> classGroupList = new ArrayList<>();
 
     public Teacher(){
     }

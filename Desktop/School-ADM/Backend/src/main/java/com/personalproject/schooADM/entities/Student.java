@@ -5,7 +5,9 @@ import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
@@ -26,6 +28,17 @@ public class Student {
     private LocalDate birthDate;
 
     private Integer age;
+
+
+
+
+
+    //private List<ClassGroup> classGroupList = new ArrayList<>();
+
+
+
+
+
 
     public Student(){
 
