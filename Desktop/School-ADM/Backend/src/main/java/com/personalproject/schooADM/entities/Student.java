@@ -29,14 +29,8 @@ public class Student {
 
     private Integer age;
 
-
-
-
-
-    //private List<ClassGroup> classGroupList = new ArrayList<>();
-
-
-
+    @ManyToMany(mappedBy = "studentList")
+    private List<ClassGroup> classGroupList = new ArrayList<>();
 
 
 

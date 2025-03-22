@@ -26,7 +26,8 @@ public class ClassGroup {
     @JoinColumn(name = "teacher")
     private Teacher teacher;
 
-
-    //private List<Student> studentList = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "student_class", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "class_id"))
+    private List<Student> studentList = new ArrayList<>();
 
 }
