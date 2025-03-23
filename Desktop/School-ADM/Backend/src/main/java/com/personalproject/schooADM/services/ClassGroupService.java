@@ -1,24 +1,50 @@
 package com.personalproject.schooADM.services;
 
 import com.personalproject.schooADM.entities.ClassGroup;
+import com.personalproject.schooADM.entities.Course;
+import com.personalproject.schooADM.entities.DTOs.ClassGroupDTO;
+import com.personalproject.schooADM.entities.Teacher;
 import com.personalproject.schooADM.repository.ClassGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClassGroupService {
 
-
     @Autowired
     private ClassGroupRepository classGroupRepository;
 
-    public List<ClassGroup> getAll(){
+    @Autowired
+    private TeacherService teacherService;
+
+    @Autowired
+    private CourseService courseService;
+
+    public List<ClassGroup> getClasses(){
         return (classGroupRepository.findAll());
     }
 
+    public ClassGroup addCourse(ClassGroupDTO classGroupDTO){
 
+        ClassGroup addedClass = new ClassGroup();
+
+        Optional<Teacher> foundTeacher = teacherService.getTeacherById(classGroupDTO.getTeacher());
+
+        if(!foundTeacher.isPresent()){
+            throw new RuntimeException();
+        }
+
+        Course foundCourse = courseService.getCourseById(classGroupDTO.getCourse());
+
+        addedClass.setName(classGroupDTO.getClassGroup().getName());
+        addedClass.setTeacher(foundTeacher.get());
+        addedClass.setCourse(foundCourse);
+
+        return(classGroupRepository.save(addedClass));
+    }
 
 
 }
