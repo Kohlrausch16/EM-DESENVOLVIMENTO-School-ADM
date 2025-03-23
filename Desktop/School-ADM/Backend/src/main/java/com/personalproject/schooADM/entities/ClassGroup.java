@@ -54,7 +54,9 @@ public class ClassGroup {
     private List<Student> studentList = new ArrayList<>();
 
     public ClassGroup(){
-
+        this.calculateTotalFee();
+        this.calculateMonthlyMaterialFee();
+        this.calculateMonthlyClassFee();
     }
 
     public ClassGroup(String name, Double totalCost, Double classFee,
@@ -76,6 +78,10 @@ public class ClassGroup {
         this.course = course;
         this.teacher = teacher;
         this.studentList = studentList;
+
+        this.calculateTotalFee();
+        this.calculateMonthlyMaterialFee();
+        this.calculateMonthlyClassFee();
     }
 
     public String getId() {
@@ -94,7 +100,7 @@ public class ClassGroup {
         return totalCost;
     }
 
-    public void setTotalCost(Double totalCost) {
+    private void setTotalCost(Double totalCost) {
         this.totalCost = totalCost;
     }
 
@@ -118,7 +124,7 @@ public class ClassGroup {
         return monthlyMAterialFee;
     }
 
-    public void setMonthlyMAterialFee(Double monthlyMAterialFee) {
+    private void setMonthlyMAterialFee(Double monthlyMAterialFee) {
         this.monthlyMAterialFee = monthlyMAterialFee;
     }
 
@@ -126,7 +132,7 @@ public class ClassGroup {
         return monthlyCourseFee;
     }
 
-    public void setMonthlyCourseFee(Double monthlyCourseFee) {
+    private void setMonthlyCourseFee(Double monthlyCourseFee) {
         this.monthlyCourseFee = monthlyCourseFee;
     }
 
@@ -188,6 +194,18 @@ public class ClassGroup {
 
     public List<Student> getStudentList() {
         return studentList;
+    }
+
+    private void calculateMonthlyClassFee(){
+        this.setMonthlyCourseFee(this.classFee / this.getInstalments());
+    }
+
+    private void calculateMonthlyMaterialFee(){
+        this.setMonthlyCourseFee(this.materialFee / this.getInstalments());
+    }
+
+    private void calculateTotalFee(){
+        this.setTotalCost(this.getClassFee() + this.getMaterialFee());
     }
 
     @Override

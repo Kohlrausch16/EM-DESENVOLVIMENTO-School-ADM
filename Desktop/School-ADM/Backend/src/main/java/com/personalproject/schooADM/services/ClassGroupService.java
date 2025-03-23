@@ -38,22 +38,14 @@ public class ClassGroupService {
     }
 
     public ClassGroup addCourse(ClassGroupDTO classGroupDTO){
-
         ClassGroup addedClass = new ClassGroup();
-
         Optional<Teacher> foundTeacher = teacherService.getTeacherById(classGroupDTO.getTeacher());
 
         if(!foundTeacher.isPresent()){
             throw new RuntimeException();
         }
 
-        Course foundCourse = courseService.getCourseById(classGroupDTO.getCourse());
-
-        addedClass.setName(classGroupDTO.getClassGroup().getName());
-        addedClass.setTeacher(foundTeacher.get());
-        addedClass.setCourse(foundCourse);
-
-        return(classGroupRepository.save(addedClass));
+        return(classGroupRepository.save(classGroupDTO.getClassGroup()));
     }
 
     public String deleteClass(String id){
