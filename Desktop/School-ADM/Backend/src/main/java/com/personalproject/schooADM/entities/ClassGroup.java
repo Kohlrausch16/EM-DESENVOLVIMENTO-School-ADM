@@ -5,10 +5,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.personalproject.schooADM.entities.enums.WeekDayEnum;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.time.*;
+import java.util.*;
 
 @Entity
 @Table(name = "classGroup")
@@ -35,7 +33,7 @@ public class ClassGroup {
 
     private WeekDayEnum weekDay;
 
-    private LocalDateTime dayHour;
+    private LocalTime dayHour;
 
     private String classroom;
 
@@ -58,8 +56,8 @@ public class ClassGroup {
     }
 
     public ClassGroup(String name, Double totalCost, Double classFee,
-                      Double materialFee, Double monthlyCourseFee, Double monthlyMAterialFee,
-                      Integer instalments, WeekDayEnum weekDay, LocalDateTime dayHour,
+                      Double materialFee, Double monthlyCourseFee, Double monthlyMaterialFee,
+                      Integer instalments, WeekDayEnum weekDay, LocalTime dayHour,
                       String classroom, Boolean activeStatus, Course course, Teacher teacher,
                       List<Student> studentList) {
         this.name = name;
@@ -151,11 +149,11 @@ public class ClassGroup {
         this.teacher = teacher;
     }
 
-    public LocalDateTime getDayHour() {
+    public LocalTime getDayHour() {
         return dayHour;
     }
 
-    public void setDayHour(LocalDateTime dayHour) {
+    public void setDayHour(LocalTime dayHour) {
         this.dayHour = dayHour;
     }
 

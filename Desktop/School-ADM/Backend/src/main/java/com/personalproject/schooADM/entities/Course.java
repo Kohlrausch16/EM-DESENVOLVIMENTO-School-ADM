@@ -27,18 +27,8 @@ public class Course {
     @JoinColumn(name = "language")
     private Language language;
 
-
-
-
-
-
     @OneToMany(mappedBy = "course")
     private List<ClassGroup> classGroupList = new ArrayList<>();
-
-
-
-
-
 
     public Course(){
 
