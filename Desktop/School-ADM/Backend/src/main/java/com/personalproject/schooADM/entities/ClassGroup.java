@@ -29,7 +29,7 @@ public class ClassGroup {
 
     private Double monthlyCourseFee;
 
-    private Double monthlyMAterialFee;
+    private Double monthlyMaterialFee;
 
     private Integer instalments;
 
@@ -39,7 +39,7 @@ public class ClassGroup {
 
     private String classroom;
 
-    private Double activeStatus;
+    private Boolean activeStatus;
 
     @ManyToOne
     @JoinColumn(name = "course")
@@ -54,34 +54,25 @@ public class ClassGroup {
     private List<Student> studentList = new ArrayList<>();
 
     public ClassGroup(){
-        this.calculateTotalFee();
-        this.calculateMonthlyMaterialFee();
-        this.calculateMonthlyClassFee();
+
     }
 
     public ClassGroup(String name, Double totalCost, Double classFee,
                       Double materialFee, Double monthlyCourseFee, Double monthlyMAterialFee,
                       Integer instalments, WeekDayEnum weekDay, LocalDateTime dayHour,
-                      String classroom, Double activeStatus, Course course, Teacher teacher,
+                      String classroom, Boolean activeStatus, Course course, Teacher teacher,
                       List<Student> studentList) {
         this.name = name;
         this.totalCost = totalCost;
         this.classFee = classFee;
         this.materialFee = materialFee;
         this.monthlyCourseFee = monthlyCourseFee;
-        this.monthlyMAterialFee = monthlyMAterialFee;
+        this.monthlyMaterialFee = monthlyMaterialFee;
         this.instalments = instalments;
         this.weekDay = weekDay;
         this.dayHour = dayHour;
         this.classroom = classroom;
         this.activeStatus = activeStatus;
-        this.course = course;
-        this.teacher = teacher;
-        this.studentList = studentList;
-
-        this.calculateTotalFee();
-        this.calculateMonthlyMaterialFee();
-        this.calculateMonthlyClassFee();
     }
 
     public String getId() {
@@ -120,12 +111,12 @@ public class ClassGroup {
         this.materialFee = materialFee;
     }
 
-    public Double getMonthlyMAterialFee() {
-        return monthlyMAterialFee;
+    public Double getMonthlyMaterialFee() {
+        return monthlyMaterialFee;
     }
 
-    private void setMonthlyMAterialFee(Double monthlyMAterialFee) {
-        this.monthlyMAterialFee = monthlyMAterialFee;
+    private void setMonthlyMaterialFee(Double monthlyMAterialFee) {
+        this.monthlyMaterialFee = monthlyMAterialFee;
     }
 
     public Double getMonthlyCourseFee() {
@@ -176,11 +167,11 @@ public class ClassGroup {
         this.weekDay = weekDay;
     }
 
-    public Double getActiveStatus() {
+    public Boolean getActiveStatus() {
         return activeStatus;
     }
 
-    public void setActiveStatus(Double activeStatus) {
+    public void setActiveStatus(Boolean activeStatus) {
         this.activeStatus = activeStatus;
     }
 
@@ -201,11 +192,18 @@ public class ClassGroup {
     }
 
     private void calculateMonthlyMaterialFee(){
-        this.setMonthlyCourseFee(this.materialFee / this.getInstalments());
+        this.setMonthlyMaterialFee(this.materialFee / this.getInstalments());
     }
 
     private void calculateTotalFee(){
         this.setTotalCost(this.getClassFee() + this.getMaterialFee());
+    }
+
+    public void executeCalculus(){
+        this.calculateTotalFee();
+        this.calculateMonthlyMaterialFee();
+        this.calculateMonthlyClassFee();
+
     }
 
     @Override

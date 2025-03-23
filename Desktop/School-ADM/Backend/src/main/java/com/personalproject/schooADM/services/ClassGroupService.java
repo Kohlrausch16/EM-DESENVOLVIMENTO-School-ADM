@@ -45,12 +45,19 @@ public class ClassGroupService {
             throw new RuntimeException();
         }
 
-        return(classGroupRepository.save(classGroupDTO.getClassGroup()));
+        Course foundCourse = courseService.getCourseById(classGroupDTO.getCourse());
+
+        addedClass = classGroupDTO.getClassGroup();
+        addedClass.executeCalculus();
+        addedClass.setTeacher(foundTeacher.get());
+        addedClass.setCourse(foundCourse);
+
+        return(classGroupRepository.save(addedClass));
     }
 
     public String deleteClass(String id){
         classGroupRepository.delete(this.getClassById(id));
-        return "Class ${id} deleted successfully";
+        return "Class " + id + " deleted successfully";
     }
 
 }

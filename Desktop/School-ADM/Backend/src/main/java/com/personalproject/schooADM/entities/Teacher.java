@@ -97,6 +97,10 @@ public class Teacher {
         this.language = language;
     }
 
+    public List<ClassGroup> getClassGroupList(){
+        return this.classGroupList;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
