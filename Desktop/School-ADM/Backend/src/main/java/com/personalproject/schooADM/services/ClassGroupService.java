@@ -27,6 +27,16 @@ public class ClassGroupService {
         return (classGroupRepository.findAll());
     }
 
+    public ClassGroup getClassById(String id){
+        Optional<ClassGroup> foundClass = classGroupRepository.findById(id);
+
+        if(foundClass.isEmpty()){
+            throw new RuntimeException();
+        }
+
+        return foundClass.get();
+    }
+
     public ClassGroup addCourse(ClassGroupDTO classGroupDTO){
 
         ClassGroup addedClass = new ClassGroup();
@@ -46,5 +56,9 @@ public class ClassGroupService {
         return(classGroupRepository.save(addedClass));
     }
 
+    public String deleteClass(String id){
+        classGroupRepository.delete(this.getClassById(id));
+        return "Class ${id} deleted successfully";
+    }
 
 }
