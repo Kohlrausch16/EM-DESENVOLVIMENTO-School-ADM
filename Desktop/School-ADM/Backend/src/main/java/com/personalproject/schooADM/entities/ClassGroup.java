@@ -29,6 +29,8 @@ public class ClassGroup {
 
     private Double monthlyMaterialFee;
 
+    private Double totalMonthlyFee;
+
     private Integer instalments;
 
     private WeekDayEnum weekDay;
@@ -185,6 +187,14 @@ public class ClassGroup {
         return studentList;
     }
 
+    public Double getTotalMonthlyFee() {
+        return totalMonthlyFee;
+    }
+
+    private void setTotalMonthlyFee(Double totalMonthlyFee) {
+        this.totalMonthlyFee = totalMonthlyFee;
+    }
+
     private void calculateMonthlyClassFee(){
         this.setMonthlyCourseFee(this.classFee / this.getInstalments());
     }
@@ -195,12 +205,13 @@ public class ClassGroup {
 
     private void calculateTotalFee(){
         this.setTotalCost(this.getClassFee() + this.getMaterialFee());
+        this.setTotalMonthlyFee(this.getMonthlyCourseFee() + this.getMonthlyMaterialFee());
     }
 
     public void executeCalculus(){
-        this.calculateTotalFee();
         this.calculateMonthlyMaterialFee();
         this.calculateMonthlyClassFee();
+        this.calculateTotalFee();
 
     }
 

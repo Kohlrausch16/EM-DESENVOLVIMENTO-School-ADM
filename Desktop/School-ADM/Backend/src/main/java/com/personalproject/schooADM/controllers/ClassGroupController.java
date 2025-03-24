@@ -25,10 +25,15 @@ public class ClassGroupController {
         return ResponseEntity.ok().body(classGroupService.getClassById(id));
     }
 
-
     @PostMapping(value = "/class")
     public ResponseEntity<ClassGroup> addClass(@RequestBody ClassGroupDTO classGroupDTO){
         return ResponseEntity.ok().body(classGroupService.addCourse(classGroupDTO));
+    }
+
+    @PutMapping(value = "/class/{id}")
+    public ResponseEntity<ClassGroup> updateGroup(@RequestBody ClassGroupDTO classGroupDTO, @PathVariable String id){
+        ClassGroup classGroup = classGroupDTO.getClassGroup();
+        return ResponseEntity.ok().body(classGroupService.updateClass(classGroup, id));
     }
 
     @DeleteMapping(value = "/class/{id}")

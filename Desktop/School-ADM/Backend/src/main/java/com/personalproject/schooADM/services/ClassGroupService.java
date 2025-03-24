@@ -50,10 +50,32 @@ public class ClassGroupService {
         addedClass = classGroupDTO.getClassGroup();
         addedClass.executeCalculus();
         addedClass.setTeacher(foundTeacher.get());
+        foundTeacher.get().getClassGroupList().add(addedClass);
         addedClass.setCourse(foundCourse);
+        foundCourse.getClassGroupList().add(addedClass);
 
         return(classGroupRepository.save(addedClass));
     }
+
+    public ClassGroup updateClass(ClassGroup classGroup, String id){
+        ClassGroup foundClass = this.getClassById(id);
+        ClassGroup updatedClass = this.updateClassHelper(classGroup, foundClass);
+        return classGroupRepository.save(updatedClass);
+    }
+
+
+    public ClassGroup updateClassHelper(ClassGroup classGroup, ClassGroup foundClassGroup){
+
+        foundClassGroup.setName(classGroup.getName());
+        foundClassGroup.setClassFee(classGroup.getClassFee());
+        foundClassGroup.setInstalments(classGroup.getInstalments());
+        foundClassGroup.setWeekDay(classGroup.getWeekDay());
+        foundClassGroup.setClassroom(classGroup.getClassroom());
+        foundClassGroup.setActiveStatus(classGroup.getActiveStatus());
+
+        return foundClassGroup;
+    }
+
 
     public String deleteClass(String id){
         classGroupRepository.delete(this.getClassById(id));
