@@ -1,5 +1,7 @@
 package com.personalproject.schooADM.entities.DTOs;
 
+import java.util.List;
+
 import com.personalproject.schooADM.entities.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -11,6 +13,7 @@ public class ClassGroupDTO {
     private ClassGroup classGroup;
     private String teacher;
     private String course;
+    private List<String> studentList;
 
     public ClassGroup getClassGroup() {
         return classGroup;
@@ -34,5 +37,13 @@ public class ClassGroupDTO {
 
     public void setCourse(String course) {
         this.course = course;
+    }
+
+    public List<String> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<String> studentList) {
+        this.studentList = studentList;
     }
 }

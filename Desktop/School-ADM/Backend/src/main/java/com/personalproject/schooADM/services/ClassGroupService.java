@@ -1,9 +1,7 @@
 package com.personalproject.schooADM.services;
 
-import com.personalproject.schooADM.entities.ClassGroup;
-import com.personalproject.schooADM.entities.Course;
+import com.personalproject.schooADM.entities.*;
 import com.personalproject.schooADM.entities.DTOs.ClassGroupDTO;
-import com.personalproject.schooADM.entities.Teacher;
 import com.personalproject.schooADM.repository.ClassGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +20,9 @@ public class ClassGroupService {
 
     @Autowired
     private CourseService courseService;
+
+    @Autowired
+    private StudentService studentService;
 
     public List<ClassGroup> getClasses(){
         return (classGroupRepository.findAll());
@@ -57,9 +58,17 @@ public class ClassGroupService {
         return(classGroupRepository.save(addedClass));
     }
 
-    public ClassGroup updateClass(ClassGroup classGroup, String id){
+    public ClassGroup updateClass(ClassGroupDTO classGroupDTO, String id){
         ClassGroup foundClass = this.getClassById(id);
-        ClassGroup updatedClass = this.updateClassHelper(classGroup, foundClass);
+        ClassGroup updatedClass = this.updateClassHelper(classGroupDTO.getClassGroup(), foundClass);
+        updatedClass.getStudentList().clear();
+
+        for(String student : classGroupDTO.getStudentList()){
+            Student foundStudent = this.studentService.getStudentById(student);
+            foundStudent.getClassGroupList().add(updatedClass);
+            updatedClass.getStudentList().add(foundStudent);
+        }
+
         return classGroupRepository.save(updatedClass);
     }
 

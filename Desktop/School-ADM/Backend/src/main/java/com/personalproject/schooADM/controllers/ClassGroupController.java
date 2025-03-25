@@ -32,8 +32,7 @@ public class ClassGroupController {
 
     @PutMapping(value = "/class/{id}")
     public ResponseEntity<ClassGroup> updateGroup(@RequestBody ClassGroupDTO classGroupDTO, @PathVariable String id){
-        ClassGroup classGroup = classGroupDTO.getClassGroup();
-        return ResponseEntity.ok().body(classGroupService.updateClass(classGroup, id));
+        return ResponseEntity.ok().body(classGroupService.updateClass(classGroupDTO, id));
     }
 
     @DeleteMapping(value = "/class/{id}")

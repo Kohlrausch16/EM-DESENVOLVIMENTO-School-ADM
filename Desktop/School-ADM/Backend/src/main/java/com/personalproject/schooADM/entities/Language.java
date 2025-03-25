@@ -1,7 +1,7 @@
 package com.personalproject.schooADM.entities;
 
 import com.fasterxml.jackson.annotation.*;
-import com.personalproject.schooADM.entities.enums.LanaguageEnum;
+import com.personalproject.schooADM.entities.enums.LanguageEnum;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class Language {
     private Boolean activeStatus;
 
     @Enumerated(EnumType.STRING)
-    private LanaguageEnum language;
+    private LanguageEnum language;
 
     @OneToMany(mappedBy = "language")
     private List<Teacher> teacherList;
@@ -34,7 +34,7 @@ public class Language {
     public Language(){
     }
 
-    public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus, LanaguageEnum language) {
+    public Language(String flagIcon, String roundFlagIcon, Boolean activeStatus, LanguageEnum language) {
         this.flagIcon = flagIcon;
         this.roundFlagIcon = roundFlagIcon;
         this.activeStatus = activeStatus;
@@ -57,7 +57,7 @@ public class Language {
         return activeStatus;
     }
 
-    public LanaguageEnum getLanguage() {
+    public LanguageEnum getLanguage() {
         return language;
     }
 

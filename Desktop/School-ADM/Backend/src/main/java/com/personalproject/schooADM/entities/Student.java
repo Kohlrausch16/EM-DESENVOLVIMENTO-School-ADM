@@ -8,6 +8,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "student")
@@ -31,8 +32,6 @@ public class Student {
 
     @ManyToMany(mappedBy = "studentList")
     private List<ClassGroup> classGroupList = new ArrayList<>();
-
-
 
     public Student(){
 
@@ -99,5 +98,21 @@ public class Student {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public List<ClassGroup> getClassGroupList() {
+        return classGroupList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(getId(), student.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
     }
 }
