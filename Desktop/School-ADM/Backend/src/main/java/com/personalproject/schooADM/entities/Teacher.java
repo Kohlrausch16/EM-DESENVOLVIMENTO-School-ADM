@@ -27,11 +27,11 @@ public class Teacher {
 
     private String password;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "language_id")
     private Language language;
 
-    @OneToMany(mappedBy = "teacher")
+    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
     private List<ClassGroup> classGroupList = new ArrayList<>();
 
     public Teacher(){

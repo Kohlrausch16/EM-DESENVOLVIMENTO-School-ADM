@@ -30,7 +30,7 @@ public class Student {
 
     private Integer age;
 
-    @ManyToMany(mappedBy = "studentList")
+    @ManyToMany(mappedBy = "studentList", fetch = FetchType.LAZY)
     private List<ClassGroup> classGroupList = new ArrayList<>();
 
     public Student(){

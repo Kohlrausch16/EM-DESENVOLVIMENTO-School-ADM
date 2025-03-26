@@ -20,14 +20,14 @@ public class Course {
 
     private Boolean activeStatus;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<CourseLevel> courseLevelList = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "language")
     private Language language;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<ClassGroup> classGroupList = new ArrayList<>();
 
     public Course(){

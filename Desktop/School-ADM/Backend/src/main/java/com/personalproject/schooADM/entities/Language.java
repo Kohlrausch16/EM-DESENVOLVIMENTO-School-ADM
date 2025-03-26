@@ -25,10 +25,10 @@ public class Language {
     @Enumerated(EnumType.STRING)
     private LanguageEnum language;
 
-    @OneToMany(mappedBy = "language")
+    @OneToMany(mappedBy = "language", fetch = FetchType.LAZY)
     private List<Teacher> teacherList;
 
-    @OneToMany(mappedBy = "language")
+    @OneToMany(mappedBy = "language", fetch = FetchType.LAZY)
     private List<Course> courseList;
 
     public Language(){
