@@ -19,10 +19,11 @@ type StudentDataProps = {
 
 function StudentCard({student}: StudentDataProps[]){
 
+    console.log(student);
 
     return(
         <>
-            {student.map((item: StudentDataProps) =>
+            {student.map((item: any) =>
                 <ContentContainer href={`/student/${item.id}`}> 
                 <StudentPic src={item.picture} />
                     <InfoContainer>
@@ -32,7 +33,7 @@ function StudentCard({student}: StudentDataProps[]){
 
                     <LenguageIconContainer>
 
-                    {item.courses.map((contentIcon: courseContent) => 
+                    {item.classGroupList.map((contentIcon: courseContent) => 
                         <CourseIcon src={contentIcon.lenguageFlag} />
                     )}
 

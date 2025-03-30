@@ -24,7 +24,7 @@ public class CourseLevelService {
         Optional<CourseLevel> foundLevel = courseLevelRepository.findById(id);
 
         if(foundLevel.isEmpty()){
-            throw new RuntimeException("Id" + id  + "not found");
+            throw new RuntimeException("Course level" + id  + "not found");
         }
 
         return foundLevel.get();

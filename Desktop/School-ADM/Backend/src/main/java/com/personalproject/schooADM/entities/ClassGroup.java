@@ -41,15 +41,15 @@ public class ClassGroup {
 
     private Boolean activeStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "course")
     private Course course;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "teacher")
     private Teacher teacher;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     @JoinTable(name = "student_class", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "class_id"))
     private List<Student> studentList = new ArrayList<>();
 

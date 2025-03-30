@@ -1,12 +1,11 @@
 package com.personalproject.schooADM.controllers;
 
 import com.personalproject.schooADM.entities.ClassGroup;
-import com.personalproject.schooADM.entities.DTOs.ClassGroupDTO;
+import com.personalproject.schooADM.entities.DTOs.requestDTOs.ClassGroupRequestDTO;
 import com.personalproject.schooADM.services.ClassGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,13 +25,13 @@ public class ClassGroupController {
     }
 
     @PostMapping(value = "/class")
-    public ResponseEntity<ClassGroup> addClass(@RequestBody ClassGroupDTO classGroupDTO){
-        return ResponseEntity.ok().body(classGroupService.addCourse(classGroupDTO));
+    public ResponseEntity<ClassGroup> addClass(@RequestBody ClassGroupRequestDTO classGroupRequestDTO){
+        return ResponseEntity.ok().body(classGroupService.addCourse(classGroupRequestDTO));
     }
 
     @PutMapping(value = "/class/{id}")
-    public ResponseEntity<ClassGroup> updateGroup(@RequestBody ClassGroupDTO classGroupDTO, @PathVariable String id){
-        return ResponseEntity.ok().body(classGroupService.updateClass(classGroupDTO, id));
+    public ResponseEntity<ClassGroup> updateGroup(@RequestBody ClassGroupRequestDTO classGroupRequestDTO, @PathVariable String id){
+        return ResponseEntity.ok().body(classGroupService.updateClass(classGroupRequestDTO, id));
     }
 
     @DeleteMapping(value = "/class/{id}")

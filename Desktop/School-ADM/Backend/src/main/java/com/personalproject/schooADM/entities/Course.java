@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "course")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -20,14 +21,14 @@ public class Course {
 
     private Boolean activeStatus;
 
-    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course")
     private List<CourseLevel> courseLevelList = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "language")
     private Language language;
 
-    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course")
     private List<ClassGroup> classGroupList = new ArrayList<>();
 
     public Course(){

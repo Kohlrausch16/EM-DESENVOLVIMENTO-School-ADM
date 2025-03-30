@@ -1,4 +1,4 @@
-package com.personalproject.schooADM.entities.DTOs;
+package com.personalproject.schooADM.entities.DTOs.requestDTOs;
 
 import com.personalproject.schooADM.entities.Course;
 import org.springframework.context.annotation.Scope;
@@ -9,17 +9,17 @@ import java.util.List;
 
 @Component
 @Scope("session")
-public class CourseDTO {
+public class CourseRequestDTO {
 
     private Course course;
     private String language;
     private List<String> courseLevelList = new ArrayList<>();
 
-    public CourseDTO(){
+    public CourseRequestDTO(){
 
     }
 
-    public CourseDTO(Course course, String language) {
+    public CourseRequestDTO(Course course, String language) {
         this.course = course;
         this.language = language;
     }

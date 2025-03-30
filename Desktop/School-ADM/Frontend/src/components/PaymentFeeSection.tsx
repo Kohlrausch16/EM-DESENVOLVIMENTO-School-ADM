@@ -1,5 +1,4 @@
 import { CourseFee, FeeValue, CourseTotalFee } from "./PaymentFeeSectionStyle";
-import { classContent } from "../axios";
 
 
 function PaymentFeeSection({fees}: string[]){

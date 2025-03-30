@@ -1,6 +1,6 @@
 package com.personalproject.schooADM.controllers;
 
-import com.personalproject.schooADM.entities.DTOs.TeacherDTO;
+import com.personalproject.schooADM.entities.DTOs.requestDTOs.TeacherRequestDTO;
 import com.personalproject.schooADM.entities.Teacher;
 import com.personalproject.schooADM.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +29,14 @@ public class TeacherController {
     }
 
     @PostMapping(value = "/teacher")
-    public ResponseEntity<Teacher> addTeacher(@RequestBody TeacherDTO teacherDTO){
-        Teacher addedTeacher = teacherService.addTeacher(teacherDTO);
+    public ResponseEntity<Teacher> addTeacher(@RequestBody TeacherRequestDTO teacherRequestDTO){
+        Teacher addedTeacher = teacherService.addTeacher(teacherRequestDTO);
         return ResponseEntity.ok().body(addedTeacher);
     }
 
     @PutMapping(value = "/teacher/{id}")
-    public ResponseEntity<Teacher> updateTeacher(@RequestBody TeacherDTO teacherDTO, @PathVariable String id){
-        Teacher updatedTeacher = teacherService.updateTeacher(teacherDTO, id);
+    public ResponseEntity<Teacher> updateTeacher(@RequestBody TeacherRequestDTO teacherRequestDTO, @PathVariable String id){
+        Teacher updatedTeacher = teacherService.updateTeacher(teacherRequestDTO, id);
         return ResponseEntity.ok().body(updatedTeacher);
     }
 

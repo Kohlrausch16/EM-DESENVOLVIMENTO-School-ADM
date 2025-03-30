@@ -1,5 +1,3 @@
-import { classContent } from "../axios";
-
 import HomeClassCard from "../layouts/HomeClassCard";
 import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";

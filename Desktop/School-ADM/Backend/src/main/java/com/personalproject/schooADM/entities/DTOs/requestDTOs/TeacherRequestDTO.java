@@ -1,4 +1,4 @@
-package com.personalproject.schooADM.entities.DTOs;
+package com.personalproject.schooADM.entities.DTOs.requestDTOs;
 
 import com.personalproject.schooADM.entities.Teacher;
 import org.springframework.context.annotation.Scope;
@@ -6,16 +6,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("session")
-public class TeacherDTO {
+public class TeacherRequestDTO {
 
     private Teacher teacher;
     private String language;
 
-    public TeacherDTO() {
+    public TeacherRequestDTO() {
 
     }
 
-    public TeacherDTO(Teacher teacher, String language) {
+    public TeacherRequestDTO(Teacher teacher, String language) {
         Teacher newTeacher = new Teacher();
         this.teacher = newTeacher;
         this.language = language;

@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class StudentService {
@@ -41,7 +39,7 @@ public class StudentService {
         Student foundStudent = this.getStudentById(id);
 
         if(foundStudent == null){
-            throw new RuntimeException();
+            throw new RuntimeException("Student" + id + " not found");
         }
 
         Student updatedStudent = this.studentUpdateHandler(foundStudent, student);
@@ -61,12 +59,7 @@ public class StudentService {
 
 
     public String deleteStudent(String id){
-        Student foundStudent = this.getStudentById(id);
-
-        if(foundStudent == null){
-            throw new RuntimeException();
-        }
-
+        this.getStudentById(id);
         studentRepository.deleteById(id);
 
         return "Estudante " + id + " deletado com sucesso!";

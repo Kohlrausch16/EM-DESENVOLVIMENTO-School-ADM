@@ -1,5 +1,4 @@
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, PriceContainer, CardRow, FeeSection, Information, TextContent, ItemIcon, Link, ItemDescription, CardInfo } from "./CourseCardStyle";
-import { classContent } from "../axios";
 
 type classContent = {
     id: string;

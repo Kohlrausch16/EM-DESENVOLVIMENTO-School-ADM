@@ -1,4 +1,4 @@
-package com.personalproject.schooADM.entities.DTOs;
+package com.personalproject.schooADM.entities.DTOs.requestDTOs;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("session")
-public class ClassGroupDTO {
+public class ClassGroupRequestDTO {
 
     private ClassGroup classGroup;
     private String teacher;

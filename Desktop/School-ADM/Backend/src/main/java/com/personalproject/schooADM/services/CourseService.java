@@ -1,12 +1,11 @@
 package com.personalproject.schooADM.services;
 
 import com.personalproject.schooADM.entities.*;
-import com.personalproject.schooADM.entities.DTOs.CourseDTO;
+import com.personalproject.schooADM.entities.DTOs.requestDTOs.CourseRequestDTO;
 import com.personalproject.schooADM.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,18 +40,18 @@ public class CourseService {
         return foundCourse.get();
     }
 
-    public Course addCourse(CourseDTO courseDTO){
-        Optional<Language> foundLang = (languageRepository.findById(courseDTO.getLanguage()));
+    public Course addCourse(CourseRequestDTO courseRequestDTO){
+        Optional<Language> foundLang = (languageRepository.findById(courseRequestDTO.getLanguage()));
         if(foundLang.get() == null){
             throw new RuntimeException("Informed language doesn't exist");
         }
 
         Course toBeAddCourse = new Course();
-        toBeAddCourse = this.addCourseHandler(toBeAddCourse, courseDTO.getCourse());
+        toBeAddCourse = this.addCourseHandler(toBeAddCourse, courseRequestDTO.getCourse());
         toBeAddCourse.setLanguage(foundLang.get());
         foundLang.get().getCourseList().add(toBeAddCourse);
 
-        for(String cl : courseDTO.getCourseLevelList()){
+        for(String cl : courseRequestDTO.getCourseLevelList()){
             Optional<CourseLevel> foundLevel = clRepository.findById(cl);
 
             if(foundLevel.get() != null){
@@ -71,21 +70,21 @@ public class CourseService {
     }
 
 
-    public Course updateCourse(CourseDTO courseDTO, String id){
+    public Course updateCourse(CourseRequestDTO courseRequestDTO, String id){
         Course foundCourse = this.getCourseById(id);
-        Optional<Language> foundLang = (languageRepository.findById(courseDTO.getLanguage()));
+        Optional<Language> foundLang = (languageRepository.findById(courseRequestDTO.getLanguage()));
         if(foundLang.get() == null){
             throw new RuntimeException("Informed language doesn't exist");
         }
 
         foundCourse.getCourseLevelList().clear();
 
-        Course updatedCourse = this.updateCourseHandler(foundCourse, courseDTO.getCourse());
+        Course updatedCourse = this.updateCourseHandler(foundCourse, courseRequestDTO.getCourse());
         updatedCourse.setLanguage(foundLang.get());
         foundLang.get().getCourseList().remove(foundCourse);
         foundLang.get().getCourseList().add(updatedCourse);
 
-        for(String cl : courseDTO.getCourseLevelList()){
+        for(String cl : courseRequestDTO.getCourseLevelList()){
             updatedCourse.getCourseLevelList().add(clService.getLevelById(cl));
         }
 

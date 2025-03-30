@@ -1,13 +1,10 @@
 import { useParams } from "react-router-dom";
-import { classContent } from "../axios";
 import LateralMenu from "../layouts/LateralMenu";
 import { ClassContainer, PriceColumnContainer, PersonalDataContainer, FinalPriceFee, FeeQuantity, GeneralPriceFee, PriceContainerSection, PriceRowContainer, ClassInfoSelection, ClassInfoSelectionOption, ClassInfoTime, ClassInfoNumber, ClassContainerSection, ClassInfoContainer, ClassContainerSectionTitle, ClassInfoInnerContainer, ClassFlag, ClassLevelSection, ContentArea, ContentContainer, HeaderContainer, NameContainer, ActiveSwitch, PageBody, IconContainer, ClassName } from "./classInfoStyle";
 import UploadButton from "../components/UploadButton";
 import FolderButton from "../components/FolderButton";
 import SaveButton from "../components/SaveButton";
 import DeleteButton from "../components/DeleteButton";
-
-import { teacherTest } from '../axios';
 
 import TeacherCard from "../layouts/TeacherCard";
 

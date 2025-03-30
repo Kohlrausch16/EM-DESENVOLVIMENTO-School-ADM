@@ -1,7 +1,7 @@
 package com.personalproject.schooADM.services;
 
 import com.personalproject.schooADM.entities.*;
-import com.personalproject.schooADM.entities.DTOs.ClassGroupDTO;
+import com.personalproject.schooADM.entities.DTOs.requestDTOs.ClassGroupRequestDTO;
 import com.personalproject.schooADM.repository.ClassGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,17 +38,17 @@ public class ClassGroupService {
         return foundClass.get();
     }
 
-    public ClassGroup addCourse(ClassGroupDTO classGroupDTO){
+    public ClassGroup addCourse(ClassGroupRequestDTO classGroupRequestDTO){
         ClassGroup addedClass = new ClassGroup();
-        Optional<Teacher> foundTeacher = teacherService.getTeacherById(classGroupDTO.getTeacher());
+        Optional<Teacher> foundTeacher = teacherService.getTeacherById(classGroupRequestDTO.getTeacher());
 
         if(!foundTeacher.isPresent()){
-            throw new RuntimeException();
+            throw new RuntimeException("Teacher " + classGroupRequestDTO.getTeacher() + " not found");
         }
 
-        Course foundCourse = courseService.getCourseById(classGroupDTO.getCourse());
+        Course foundCourse = courseService.getCourseById(classGroupRequestDTO.getCourse());
 
-        addedClass = classGroupDTO.getClassGroup();
+        addedClass = classGroupRequestDTO.getClassGroup();
         addedClass.executeCalculus();
         addedClass.setTeacher(foundTeacher.get());
         foundTeacher.get().getClassGroupList().add(addedClass);
@@ -58,12 +58,12 @@ public class ClassGroupService {
         return(classGroupRepository.save(addedClass));
     }
 
-    public ClassGroup updateClass(ClassGroupDTO classGroupDTO, String id){
+    public ClassGroup updateClass(ClassGroupRequestDTO classGroupRequestDTO, String id){
         ClassGroup foundClass = this.getClassById(id);
-        ClassGroup updatedClass = this.updateClassHelper(classGroupDTO.getClassGroup(), foundClass);
+        ClassGroup updatedClass = this.updateClassHelper(classGroupRequestDTO.getClassGroup(), foundClass);
         updatedClass.getStudentList().clear();
 
-        for(String student : classGroupDTO.getStudentList()){
+        for(String student : classGroupRequestDTO.getStudentList()){
             Student foundStudent = this.studentService.getStudentById(student);
             foundStudent.getClassGroupList().add(updatedClass);
             updatedClass.getStudentList().add(foundStudent);

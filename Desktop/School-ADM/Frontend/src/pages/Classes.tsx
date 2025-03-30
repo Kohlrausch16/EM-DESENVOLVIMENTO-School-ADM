@@ -5,7 +5,6 @@ import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
 import ClassCard from "../layouts/ClassCard";
-import { classContent } from "../axios";
 
 function Classes(){
 

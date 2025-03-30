@@ -2,7 +2,6 @@ package com.personalproject.schooADM.controllers;
 
 import com.personalproject.schooADM.entities.Student;
 import com.personalproject.schooADM.services.StudentService;
-import com.personalproject.schooADM.services.exceptions.FoundEmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
