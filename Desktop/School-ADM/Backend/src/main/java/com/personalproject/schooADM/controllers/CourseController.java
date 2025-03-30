@@ -31,8 +31,9 @@ public class CourseController {
     }
 
     @GetMapping(value = "/course/{id}")
-    public ResponseEntity<Course> getCourseById(@PathVariable String id){
-        return ResponseEntity.ok().body(courseService.getCourseById(id));
+    public ResponseEntity<CourseResponseDTO> getCourseById(@PathVariable String id){
+        Course course = courseService.getCourseById(id);
+        return ResponseEntity.ok().body(new CourseResponseDTO(course));
     }
 
     @PostMapping(value = "/course")

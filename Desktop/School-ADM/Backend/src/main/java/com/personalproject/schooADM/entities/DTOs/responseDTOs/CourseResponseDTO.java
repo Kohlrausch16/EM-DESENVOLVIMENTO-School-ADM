@@ -68,5 +68,5 @@ public class CourseResponseDTO {
     public List<String> getClassList() {
         return classList;
     }
-    
+
 }
