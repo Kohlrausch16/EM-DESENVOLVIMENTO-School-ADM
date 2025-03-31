@@ -1,12 +1,14 @@
 package com.personalproject.schooADM.controllers;
 
 import com.personalproject.schooADM.entities.DTOs.requestDTOs.TeacherRequestDTO;
+import com.personalproject.schooADM.entities.DTOs.responseDTOs.TeacherResponseDTO;
 import com.personalproject.schooADM.entities.Teacher;
 import com.personalproject.schooADM.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,15 +19,21 @@ public class TeacherController {
     private TeacherService teacherService;
 
     @GetMapping(value = "/teacher")
-    public ResponseEntity<List<Teacher>> getTeachers(){
+    public ResponseEntity<List<TeacherResponseDTO>> getTeachers(){
         List<Teacher> teacherList = teacherService.getTeachers();
-        return ResponseEntity.ok().body(teacherList);
+        List<TeacherResponseDTO> responseList = new ArrayList<>();
+
+        for(Teacher teacher : teacherList){
+            responseList.add(new TeacherResponseDTO(teacher));
+        }
+
+        return ResponseEntity.ok().body(responseList);
     }
 
     @GetMapping(value = "/teacher/{id}")
-    public ResponseEntity<Optional<Teacher>> getTeacherById(@PathVariable String id){
+    public ResponseEntity<TeacherResponseDTO> getTeacherById(@PathVariable String id){
         Optional<Teacher> teacher = teacherService.getTeacherById(id);
-        return ResponseEntity.ok().body(teacher);
+        return ResponseEntity.ok().body(new TeacherResponseDTO(teacher.get()));
     }
 
     @PostMapping(value = "/teacher")
