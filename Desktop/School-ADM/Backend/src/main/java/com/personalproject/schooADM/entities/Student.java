@@ -24,7 +24,7 @@ public class Student {
 
     private String email;
 
-    public String picture;
+    private String picture;
 
     private LocalDate birthDate;
 

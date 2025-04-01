@@ -1,11 +1,13 @@
 package com.personalproject.schooADM.controllers;
 
+import com.personalproject.schooADM.entities.DTOs.responseDTOs.StudentResponseDTO;
 import com.personalproject.schooADM.entities.Student;
 import com.personalproject.schooADM.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,15 +18,21 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping(value = "/student")
-    public ResponseEntity<List<Student>> getStudents(){
+    public ResponseEntity<List<StudentResponseDTO>> getStudents(){
         List<Student> studentList = studentService.getStudents();
-        return ResponseEntity.ok().body(studentList);
+        List<StudentResponseDTO> responseList = new ArrayList<>();
+
+        for(Student student : studentList){
+            responseList.add(new StudentResponseDTO(student));
+        }
+
+        return ResponseEntity.ok().body(responseList);
     }
 
     @GetMapping(value = "/student/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable String id){
+    public ResponseEntity<StudentResponseDTO> getStudentById(@PathVariable String id){
         Student student = studentService.getStudentById(id);
-        return ResponseEntity.ok().body(student);
+        return ResponseEntity.ok().body(new StudentResponseDTO(student));
     }
 
     @PostMapping(value = "/student")
