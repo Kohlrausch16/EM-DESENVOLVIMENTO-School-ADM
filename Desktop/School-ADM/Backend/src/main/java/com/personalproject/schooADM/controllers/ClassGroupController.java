@@ -37,7 +37,7 @@ public class ClassGroupController {
 
     @PostMapping(value = "/class")
     public ResponseEntity<ClassGroup> addClass(@RequestBody ClassGroupRequestDTO classGroupRequestDTO){
-        return ResponseEntity.ok().body(classGroupService.addCourse(classGroupRequestDTO));
+        return ResponseEntity.ok().body(classGroupService.addClassGlassGroup(classGroupRequestDTO));
     }
 
     @PutMapping(value = "/class/{id}")

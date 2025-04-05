@@ -6,11 +6,11 @@ type student = {
     phone: string;
 }
 
-type StudentDataProps = {
+type StudentData = {
     studentInfo: student;
 }
 
-function StudentInfoSection({studentInfo}: StudentDataProps){
+function StudentInfoSection({studentInfo}: StudentData){
     return(
         <>
             <StudentName type='text' defaultValue={studentInfo.name} />

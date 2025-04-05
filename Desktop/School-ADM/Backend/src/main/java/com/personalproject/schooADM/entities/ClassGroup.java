@@ -50,7 +50,7 @@ public class ClassGroup {
     private Teacher teacher;
 
     @ManyToMany
-    @JoinTable(name = "student_class", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "class_id"))
+    @JoinTable(name = "student_class", joinColumns = @JoinColumn(name = "class_id"), inverseJoinColumns = @JoinColumn(name = "student_id"))
     private List<Student> studentList = new ArrayList<>();
 
     public ClassGroup(){

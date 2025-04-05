@@ -1,27 +1,26 @@
 import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, StudentName, CourseIcon, ButtonSection } from "./StudentCardStyle";
 import DeleteButton from "../components/DeleteButton";
+import { StudentData } from "../models/StudentModel";
+
+import { getClasses, getCourses, getLanguages } from "../axios";
 
 
-
-function StudentCard({student}: StudentDataProps[]){
+function StudentCard({student}: StudentData){
 
     console.log(student);
 
     return(
         <>
-            {student.map((item: any) =>
-                <ContentContainer href={`/student/${item.id}`}> 
-                <StudentPic src={item.picture} />
+            <ContentContainer href={`/student/${student.id}`}> 
+                <StudentPic src={student.picture} />
                     <InfoContainer>
                     <StudentName>
-                        {item.name}
+                        {student.name}
                     </StudentName>
 
                     <LenguageIconContainer>
 
-                    {item.classGroupList.map((contentIcon: courseContent) => 
-                        <CourseIcon src={contentIcon.lenguageFlag} />
-                    )}
+                   
 
                     </LenguageIconContainer> 
 
@@ -31,8 +30,7 @@ function StudentCard({student}: StudentDataProps[]){
                         <DeleteButton />
                 </ButtonSection>
 
-            </ContentContainer>
-            )}       
+            </ContentContainer>    
         </>
     );
 }
@@ -43,6 +41,7 @@ export default StudentCard;
 
 /*
 
-
-
-                    */
+{student.classGroupList.map((contentIcon) => 
+                        <CourseIcon src={contentIcon.lenguageFlag} />
+                    )}
+                         */

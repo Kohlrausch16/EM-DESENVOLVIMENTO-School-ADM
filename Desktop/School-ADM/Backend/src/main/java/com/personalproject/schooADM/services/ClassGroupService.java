@@ -38,7 +38,7 @@ public class ClassGroupService {
         return foundClass.get();
     }
 
-    public ClassGroup addCourse(ClassGroupRequestDTO classGroupRequestDTO){
+    public ClassGroup addClassGlassGroup(ClassGroupRequestDTO classGroupRequestDTO){
         ClassGroup addedClass = new ClassGroup();
         Optional<Teacher> foundTeacher = teacherService.getTeacherById(classGroupRequestDTO.getTeacher());
 
@@ -54,6 +54,13 @@ public class ClassGroupService {
         foundTeacher.get().getClassGroupList().add(addedClass);
         addedClass.setCourse(foundCourse);
         foundCourse.getClassGroupList().add(addedClass);
+
+        for(String student : classGroupRequestDTO.getStudentList()){
+            Student foundStudent = studentService.getStudentById(student);
+            addedClass.getStudentList().add(foundStudent);
+            foundStudent.getClassGroupList().add(addedClass);
+
+        }
 
         return(classGroupRepository.save(addedClass));
     }

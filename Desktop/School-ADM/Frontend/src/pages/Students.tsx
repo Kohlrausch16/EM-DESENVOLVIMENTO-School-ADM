@@ -6,13 +6,16 @@ import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
 import StudentCard from "../layouts/StudentCard";
 
-import { getStudents } from "../axios";
+import { AxiosStudentRequest } from "../axios";
+import { StudentData } from "../models/StudentModel";
 
-function Students(){
+async function Students(){
+
+    const axiosStudentRequest = new AxiosStudentRequest();
 
     const title = 'aluno';
-    const studentsData = getStudents.data;
-
+    const studentsData: StudentData[] = await axiosStudentRequest.getStudents();
+ 
     return(
     <>
         <ContentArea>
@@ -23,7 +26,7 @@ function Students(){
                     <AddButton />
                 </ButtonContainer>
                 <PageBody>
-                  
+                    {studentsData.map((item: StudentData) => <StudentCard student={item} />)}
                 </PageBody>
                 
             </ContentContainer>
