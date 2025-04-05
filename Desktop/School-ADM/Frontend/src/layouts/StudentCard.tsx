@@ -1,21 +1,7 @@
 import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, StudentName, CourseIcon, ButtonSection } from "./StudentCardStyle";
 import DeleteButton from "../components/DeleteButton";
 
-type courseContent = {
-    id: string;
-    lenguageFlag: string;
-    className: string;
-    level: string;
-}
 
-type StudentDataProps = {
-    id: string;
-    picture: string;
-    name: string;
-    age: string;
-    phone: string;
-    courses: courseContent[];
-}
 
 function StudentCard({student}: StudentDataProps[]){
 

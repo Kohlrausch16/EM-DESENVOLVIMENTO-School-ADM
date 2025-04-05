@@ -19,7 +19,7 @@ public class ClassGroupController {
 
     @GetMapping(value = "/class")
     public ResponseEntity<List<ClassGroupResponseDTO>> getClasses(){
-        List<ClassGroup> classGroupList =classGroupService.getClasses();
+        List<ClassGroup> classGroupList = classGroupService.getClasses();
         List<ClassGroupResponseDTO> responseList = new ArrayList<>();
 
         for(ClassGroup cg : classGroupList){

@@ -1,6 +1,7 @@
 import axios from "axios";
+import { contains } from "class-validator";
 
-const apiKey: string = "localhost:8080";
+const apiKey: string = "http://localhost:8080";
 
 export const login = [
   {
@@ -17,7 +18,4 @@ export const login = [
   },
 ];
 
-export const getStudents = axios({
-  method: 'get',
-  url: `${apiKey}/student`,
-});
+export const getStudents = await axios.get(`${apiKey}/student`);

@@ -11,6 +11,8 @@ import { getStudents } from "../axios";
 function Students(){
 
     const title = 'aluno';
+    const studentsData = getStudents.data;
+
     return(
     <>
         <ContentArea>
@@ -21,7 +23,7 @@ function Students(){
                     <AddButton />
                 </ButtonContainer>
                 <PageBody>
-                    <StudentCard student={getStudents} />
+                  
                 </PageBody>
                 
             </ContentContainer>

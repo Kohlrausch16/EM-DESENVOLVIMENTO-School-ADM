@@ -19,12 +19,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/student" element={<Students />} />
-        <Route path="/student/:id" element={<StudentInfo />} />
-        <Route path="/class" element={<Classes />} />
-        <Route path="/class/:id" element={<ClassInfo />} />
-        <Route path="/teacher" element={<Teachers />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
@@ -32,3 +27,13 @@ const App = () => {
 };
 
 export default App;
+
+/*
+  <Route path="/home" element={<Home />} />
+        
+        <Route path="/student/:id" element={<StudentInfo />} />
+        <Route path="/class" element={<Classes />} />
+        <Route path="/class/:id" element={<ClassInfo />} />
+        <Route path="/teacher" element={<Teachers />} />
+        
+*/
