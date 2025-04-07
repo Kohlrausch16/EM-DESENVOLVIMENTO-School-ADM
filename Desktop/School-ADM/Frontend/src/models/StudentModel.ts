@@ -4,7 +4,7 @@ export type StudentData = {
     phoneNumber: string;
     email: string;
     picture: string;
-    birthDate: string;
+    birthDate: string[];
     age: number;
     classGroupList: string[];
 }

@@ -2,10 +2,11 @@ import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, Stu
 import DeleteButton from "../components/DeleteButton";
 import { StudentData } from "../models/StudentModel";
 
-import { getClasses, getCourses, getLanguages } from "../axios";
+type StudentDataProps = {
+    student: StudentData;
+}
 
-
-function StudentCard({student}: StudentData){
+function StudentCard({student}: StudentDataProps){
 
     console.log(student);
 
