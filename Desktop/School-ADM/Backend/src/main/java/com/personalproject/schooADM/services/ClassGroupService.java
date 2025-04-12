@@ -75,7 +75,6 @@ public class ClassGroupService {
             foundStudent.getClassGroupList().add(updatedClass);
             updatedClass.getStudentList().add(foundStudent);
         }
-
         return classGroupRepository.save(updatedClass);
     }
 
