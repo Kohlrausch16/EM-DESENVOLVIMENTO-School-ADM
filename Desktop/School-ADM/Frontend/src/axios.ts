@@ -3,7 +3,8 @@ import { StudentData } from "./models/Student";
 import { ClassData } from "./models/ClassGroup";
 import { CourseData } from "./models/Course";
 import { LanguageData } from "./models/Language";
-
+import { TeacherData } from "./models/Teacher";
+import { CourseLevelData } from "./models/CourseLevel";
 
 
 const apiKey: string = "http://localhost:8080";
@@ -74,7 +75,7 @@ export class AxiosClassRequest {
     const today = days.getDay();
 
     const todayClasses: ClassData[] = classList.filter((item: ClassData) =>{
-        return item.weekDay === weekDays[3];
+        return item.weekDay === weekDays[today - 1];
     });
 
     console.log(todayClasses);
@@ -83,7 +84,6 @@ export class AxiosClassRequest {
   }
 
 }
-
 
 export class AxiosCourseRequest{
 
@@ -114,5 +114,28 @@ export class AxiosLanguageRequest{
 
 }
 
+export class AxiosTeacherRequest{
+  async getTeachers(): Promise<TeacherData[]>{
+    const teacherList = await axios.get<TeacherData[]>(`${apiKey}/teacher`);
+    return teacherList.data;
+  }
 
-export const getTeachers = await axios.get(`${apiKey}/teacher`);
+  async getTeacher(id: string): Promise<TeacherData>{
+    const foundTeacher = await axios.get<TeacherData>(`${apiKey}/teacher/${id}`);
+    return foundTeacher.data;
+  }
+
+}
+
+export class AxiosCourseLevelRequest{
+  async getCourseLevels(): Promise<CourseLevelData[]>{
+    const courseLevelList = await axios.get<CourseLevelData[]>(`${apiKey}/level`);
+    return courseLevelList.data;
+  }
+
+  async getCourseLevel(id: string): Promise<CourseLevelData>{
+    const foundCourseLevel = await axios.get<CourseLevelData>(`${apiKey}/level/${id}`);
+    return foundCourseLevel.data;
+  }
+
+}

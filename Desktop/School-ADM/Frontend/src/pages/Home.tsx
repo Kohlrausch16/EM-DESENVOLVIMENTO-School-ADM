@@ -8,8 +8,8 @@ import { ClassData } from "../models/ClassGroup";
 import Loading from "./Loadding";
     
 function Home(){
-    
     const headIcons = ["fab fa-instagram", "fab fa-facebook", "fab fa-whatsapp", "fas fa-envelope", "fas fa-globe", "fas fa-user-circle"];
+
     const [todayClasses, setTodayClasses] = useState<ClassData[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
