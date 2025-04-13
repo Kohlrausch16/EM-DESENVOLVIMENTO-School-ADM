@@ -34,6 +34,23 @@ export class AxiosStudentRequest {
     const foundStudent = await axios.get<StudentData>(`${apiKey}/student/${id}`);
     return foundStudent.data;
   }
+
+  async getStudentLanguagesRequest(student: StudentData): Promise<LanguageData[]>{
+    const axiosClassRequest = new AxiosClassRequest();
+    const axiosCourseRequest = new AxiosCourseRequest();
+    const axiosLanguageRequest = new AxiosLanguageRequest();
+
+    const languages: LanguageData[] = [];
+    
+    for(const item of student.classGroupList){
+      const foundClass: ClassData = await axiosClassRequest.getClass(item);
+      const foundCourse: CourseData = await axiosCourseRequest.getCourse(foundClass.course);
+      const foundLanguage: LanguageData = await axiosLanguageRequest.getLanguage(foundCourse.language);
+      languages.push(foundLanguage);
+    }
+
+    return languages;
+  }
 }
 
 
@@ -45,7 +62,7 @@ export class AxiosClassRequest {
   }
 
   async getClass(id: string): Promise<ClassData> {
-    const foundClass = await axios.get<ClassData>(`${apiKey}/class${id}`);
+    const foundClass = await axios.get<ClassData>(`${apiKey}/class/${id}`);
     return foundClass.data;
   }
 }

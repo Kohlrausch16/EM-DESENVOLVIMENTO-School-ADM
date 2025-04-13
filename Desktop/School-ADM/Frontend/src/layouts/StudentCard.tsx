@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 
 import DeleteButton from "../components/DeleteButton";
 import { StudentData } from "../models/Student";
-import { AxiosCourseRequest } from "../axios";
-import { CourseData } from "../models/Course";
+import { AxiosStudentRequest } from "../axios";
+import { LanguageData } from "../models/Language";
+import Loading from "../pages/Loadding";
 
 type StudentDataProps = {
   student: StudentData;
@@ -12,17 +13,18 @@ type StudentDataProps = {
 
 function StudentCard({ student }: StudentDataProps) {
 
-  const [studentsData, setCourseData] = useState<StudentData[]>([]);
+    const [foundLanguages, setLanguages] = useState<LanguageData[]>([]);
+    const [emptyLanguages, setEmptyLanguages] = useState<boolean>(true);
   
     useEffect(() => {
       const fetchData = async () => {
-        const axiosCourseRequest = new AxiosCourseRequest();
-        const data: CourseData = await axiosCourseRequest.getCourse();
-        setCourseData(data);
+        const studentAxiosRequest = new AxiosStudentRequest();
+        const foundLanguagesRequest: LanguageData[] = await studentAxiosRequest.getStudentLanguagesRequest(student);
+        setLanguages(foundLanguagesRequest);
+        setEmptyLanguages(false);
       };
-  
       fetchData();
-    }, []);
+    });
 
   return (
     <>
@@ -31,7 +33,8 @@ function StudentCard({ student }: StudentDataProps) {
         <InfoContainer>
           <StudentName>{student.name}</StudentName>
 
-          <LenguageIconContainer></LenguageIconContainer>
+          {emptyLanguages == true ? <Loading /> : <LenguageIconContainer> {foundLanguages.map((item: LanguageData) => <CourseIcon src={`/assets/images/${item.roundFlagIcon}`} />)} </LenguageIconContainer>}
+      
         </InfoContainer>
 
         <ButtonSection>
@@ -45,8 +48,5 @@ function StudentCard({ student }: StudentDataProps) {
 export default StudentCard;
 
 /*
-
-{student.classGroupList.map((contentIcon) => 
-                        <CourseIcon src={contentIcon.lenguageFlag} />
-                    )}
-                         */
+{(foundLanguages.map((item) =>{ }))}
+*/
