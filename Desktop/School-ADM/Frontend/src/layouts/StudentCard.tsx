@@ -26,6 +26,7 @@ function StudentCard({ student }: StudentDataProps) {
       fetchData();
     });
 
+
   return (
     <>
       <ContentContainer href={`/student/${student.id}`}>
@@ -46,7 +47,3 @@ function StudentCard({ student }: StudentDataProps) {
 }
 
 export default StudentCard;
-
-/*
-{(foundLanguages.map((item) =>{ }))}
-*/

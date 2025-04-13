@@ -1,24 +1,11 @@
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardRow, Information, TextContent, ItemIcon, Link, ItemDescription, CardInfo } from "./HomeClassCardStyle";
-
-type homeCardContent = {
-    id: string;
-    lenguageFlag: string;
-    className: string;
-    level: string;
-    classInfo: [
-        {
-            icon: string,
-            content: string;
-        }
-    ];
-    active: true;
-}
+import { ClassData } from "../models/ClassGroup";
 
 type HomeCardContentProps = {
-    content: homeCardContent;
+    classContent: ClassData;
 }
 
-function HomeClassCard({content}: HomeCardContentProps){
+function HomeClassCard({classContent}: HomeCardContentProps){
 
     return(
         <>

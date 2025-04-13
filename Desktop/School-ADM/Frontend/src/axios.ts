@@ -65,8 +65,24 @@ export class AxiosClassRequest {
     const foundClass = await axios.get<ClassData>(`${apiKey}/class/${id}`);
     return foundClass.data;
   }
-}
 
+  async getTodayClasses(): Promise<ClassData[]> {
+    const classList: ClassData[] = await this.getClasses(); 
+
+    const weekDays = ['SEGUNDA_FEIRA', 'TERCA_FEIRA', 'QUARTA_FEIRA', 'QUINTA_FEIRA', 'SEXTA_FEIRA', 'SABADO' ];
+    const days = new Date();
+    const today = days.getDay();
+
+    const todayClasses: ClassData[] = classList.filter((item: ClassData) =>{
+        return item.weekDay === weekDays[3];
+    });
+
+    console.log(todayClasses);
+
+    return todayClasses;
+  }
+
+}
 
 
 export class AxiosCourseRequest{
