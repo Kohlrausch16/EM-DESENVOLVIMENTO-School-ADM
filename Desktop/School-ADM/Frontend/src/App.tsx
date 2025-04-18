@@ -18,8 +18,9 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/class" element={<Classes />} />
         <Route path="/student" element={<Students />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -31,7 +32,7 @@ export default App;
 
 /*
   
-  <Route path="/class" element={<Classes />} />
+ 
   <Route path="/student/:id" element={<StudentInfo />} />
   <Route path="/class/:id" element={<ClassInfo />} />
   <Route path="/teacher" element={<Teachers />} />

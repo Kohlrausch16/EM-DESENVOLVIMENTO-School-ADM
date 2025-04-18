@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { ClassCard, LenguageFlag, ClassName, CourseLevel, CardRow, Information, TextContent, ItemIcon, Link, ItemDescription, CardInfo } from "./HomeClassCardStyle";
-import { AxiosCourseRequest, AxiosLanguageRequest, AxiosTeacherRequest, AxiosCourseLevelRequest } from "../axios";
+import { AxiosCourseRequest, AxiosLanguageRequest, AxiosTeacherRequest} from "../axios";
 
 import { CourseData } from "../models/Course";
 import { ClassData } from "../models/ClassGroup";
@@ -18,11 +18,10 @@ function HomeClassCard({classContent}: HomeCardContentProps){
     const axiosCourseRequest = new AxiosCourseRequest();
     const axiosLanguageRequest = new AxiosLanguageRequest();
     const axiosTeacherRequest = new AxiosTeacherRequest();
-    //const axiosCourseLevelRequest = new AxiosCourseLevelRequest();
 
     const [language, setLanguage] = useState<LanguageData>();
     const [teacher, setTeacher] = useState<TeacherData>();
-    const [courseLevel, setCourseLevel] = useState<string>(" ");
+
 
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -37,7 +36,6 @@ function HomeClassCard({classContent}: HomeCardContentProps){
             
             setLanguage(foundLanguage);
             setTeacher(foundTeacher);
-            setCourseLevel(" - ");
             setLoading(false);
         }
         fetchData();
@@ -55,7 +53,7 @@ function HomeClassCard({classContent}: HomeCardContentProps){
                     <CardRow>
                         <CardInfo>
                             <ClassName> {classContent.name}</ClassName>
-                            <CourseLevel> {courseLevel} </CourseLevel>
+                            <CourseLevel> {classContent.courseLevel} </CourseLevel>
                         </CardInfo>
 
                         <TextContent>
@@ -66,7 +64,7 @@ function HomeClassCard({classContent}: HomeCardContentProps){
 
                             <Information>
                                 <ItemIcon className={cardIcons[1]} />
-                                <ItemDescription> {classContent.dayHour}</ItemDescription>
+                                <ItemDescription> {`${classContent.dayHour[0]}:${classContent.dayHour[1]}`}</ItemDescription>
                             </Information>
 
                             <Information>

@@ -34,7 +34,7 @@ export const ClassName = style.div`
 export const CourseLevel = style.div`
     font-family: verdana;
     margin-left: auto;
-    height: 60%;
+    height: 30%;
     border-bottom-left-radius: 15px;
     font-size: 120%;
     padding: 3%;
