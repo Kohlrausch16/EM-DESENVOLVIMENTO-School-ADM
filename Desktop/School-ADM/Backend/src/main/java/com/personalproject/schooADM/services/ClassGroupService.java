@@ -6,8 +6,7 @@ import com.personalproject.schooADM.repository.ClassGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class ClassGroupService {
@@ -24,6 +23,9 @@ public class ClassGroupService {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private CourseLevelService courseLevelService;
+
     public List<ClassGroup> getClasses(){
         return (classGroupRepository.findAll());
     }
@@ -39,7 +41,7 @@ public class ClassGroupService {
     }
 
     public ClassGroup addClassGlassGroup(ClassGroupRequestDTO classGroupRequestDTO){
-        ClassGroup addedClass = new ClassGroup();
+        ClassGroup addedClass;
         Optional<Teacher> foundTeacher = teacherService.getTeacherById(classGroupRequestDTO.getTeacher());
 
         if(!foundTeacher.isPresent()){
@@ -47,6 +49,7 @@ public class ClassGroupService {
         }
 
         Course foundCourse = courseService.getCourseById(classGroupRequestDTO.getCourse());
+        CourseLevel foundCourseLevel = courseLevelService.getLevelById(classGroupRequestDTO.getClassGroup().getCourseLevel());
 
         addedClass = classGroupRequestDTO.getClassGroup();
         addedClass.executeCalculus();
@@ -54,12 +57,12 @@ public class ClassGroupService {
         foundTeacher.get().getClassGroupList().add(addedClass);
         addedClass.setCourse(foundCourse);
         foundCourse.getClassGroupList().add(addedClass);
+        addedClass.setCourseLevel(foundCourseLevel.getShortName());
 
         for(String student : classGroupRequestDTO.getStudentList()){
             Student foundStudent = studentService.getStudentById(student);
             addedClass.getStudentList().add(foundStudent);
             foundStudent.getClassGroupList().add(addedClass);
-
         }
 
         return(classGroupRepository.save(addedClass));
@@ -67,17 +70,19 @@ public class ClassGroupService {
 
     public ClassGroup updateClass(ClassGroupRequestDTO classGroupRequestDTO, String id){
         ClassGroup foundClass = this.getClassById(id);
+        CourseLevel foundCourseLevel = courseLevelService.getLevelById(classGroupRequestDTO.getClassGroup().getCourseLevel());
         ClassGroup updatedClass = this.updateClassHelper(classGroupRequestDTO.getClassGroup(), foundClass);
+
+        updatedClass.setCourseLevel(foundCourseLevel.getShortName());
         updatedClass.getStudentList().clear();
 
         for(String student : classGroupRequestDTO.getStudentList()){
             Student foundStudent = this.studentService.getStudentById(student);
-            foundStudent.getClassGroupList().add(updatedClass);
-            updatedClass.getStudentList().add(foundStudent);
+            foundStudent.getClassGroupList().add(foundClass);
+            foundClass.getStudentList().add(foundStudent);
         }
         return classGroupRepository.save(updatedClass);
     }
-
 
     public ClassGroup updateClassHelper(ClassGroup classGroup, ClassGroup foundClassGroup){
 
@@ -87,10 +92,10 @@ public class ClassGroupService {
         foundClassGroup.setWeekDay(classGroup.getWeekDay());
         foundClassGroup.setClassroom(classGroup.getClassroom());
         foundClassGroup.setActiveStatus(classGroup.getActiveStatus());
+        foundClassGroup.setCourseLevel(classGroup.getCourseLevel());
 
         return foundClassGroup;
     }
-
 
     public String deleteClass(String id){
         classGroupRepository.delete(this.getClassById(id));

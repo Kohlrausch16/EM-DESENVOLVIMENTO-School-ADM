@@ -14,5 +14,6 @@ export type ClassData = {
     activeStatus: boolean;
     course: string;
     teacher: string;
+    courseLevel: string;
     studentList: string[];
 }

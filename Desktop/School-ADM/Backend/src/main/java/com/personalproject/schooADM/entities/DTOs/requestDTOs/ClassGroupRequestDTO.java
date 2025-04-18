@@ -46,4 +46,5 @@ public class ClassGroupRequestDTO {
     public void setStudentList(List<String> studentList) {
         this.studentList = studentList;
     }
+
 }

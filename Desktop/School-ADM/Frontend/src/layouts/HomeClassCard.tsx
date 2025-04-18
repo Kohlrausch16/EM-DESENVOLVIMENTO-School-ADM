@@ -6,7 +6,6 @@ import { AxiosCourseRequest, AxiosLanguageRequest, AxiosTeacherRequest, AxiosCou
 import { CourseData } from "../models/Course";
 import { ClassData } from "../models/ClassGroup";
 import { TeacherData } from "../models/Teacher";
-import { CourseLevelData } from "../models/CourseLevel";
 import { LanguageData } from "../models/Language";
 import Loading from "../pages/Loadding";
 
@@ -21,7 +20,6 @@ function HomeClassCard({classContent}: HomeCardContentProps){
     const axiosTeacherRequest = new AxiosTeacherRequest();
     //const axiosCourseLevelRequest = new AxiosCourseLevelRequest();
 
-    const [course, setCourse] = useState<CourseData>();
     const [language, setLanguage] = useState<LanguageData>();
     const [teacher, setTeacher] = useState<TeacherData>();
     const [courseLevel, setCourseLevel] = useState<string>(" ");
@@ -37,7 +35,6 @@ function HomeClassCard({classContent}: HomeCardContentProps){
             const foundLanguage: LanguageData = await axiosLanguageRequest.getLanguage(foundCourse.language); 
             const foundTeacher: TeacherData = await axiosTeacherRequest.getTeacher(classContent.teacher);
             
-            setCourse(foundCourse);
             setLanguage(foundLanguage);
             setTeacher(foundTeacher);
             setCourseLevel(" - ");
@@ -87,7 +84,6 @@ function HomeClassCard({classContent}: HomeCardContentProps){
                 </ClassCard>
             </Link>
         </>
-
     );
 }
 

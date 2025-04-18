@@ -41,6 +41,8 @@ public class ClassGroup {
 
     private Boolean activeStatus;
 
+    private String courseLevel;
+
     @ManyToOne
     @JoinColumn(name = "course")
     private Course course;
@@ -60,8 +62,7 @@ public class ClassGroup {
     public ClassGroup(String name, Double totalCost, Double classFee,
                       Double materialFee, Double monthlyCourseFee, Double monthlyMaterialFee,
                       Integer instalments, WeekDayEnum weekDay, LocalTime dayHour,
-                      String classroom, Boolean activeStatus, Course course, Teacher teacher,
-                      List<Student> studentList) {
+                      String classroom, Boolean activeStatus, String courseLevel) {
         this.name = name;
         this.totalCost = totalCost;
         this.classFee = classFee;
@@ -71,6 +72,7 @@ public class ClassGroup {
         this.instalments = instalments;
         this.weekDay = weekDay;
         this.dayHour = dayHour;
+        this.courseLevel = courseLevel;
         this.classroom = classroom;
         this.activeStatus = activeStatus;
     }
@@ -189,6 +191,14 @@ public class ClassGroup {
 
     public Double getTotalMonthlyFee() {
         return totalMonthlyFee;
+    }
+
+    public String getCourseLevel() {
+        return courseLevel;
+    }
+
+    public void setCourseLevel(String courseLevel) {
+        this.courseLevel = courseLevel;
     }
 
     private void setTotalMonthlyFee(Double totalMonthlyFee) {

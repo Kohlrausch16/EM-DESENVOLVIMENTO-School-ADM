@@ -21,7 +21,12 @@ public class StudentService {
 
     public Student getStudentById(String id){
         Optional<Student> foundStudent = studentRepository.findById(id);
-        return foundStudent.isPresent() ? foundStudent.get() : null;
+
+        if(foundStudent.isEmpty()){
+            throw new RuntimeException("Student not found");
+        }
+
+        return foundStudent.get();
     }
 
     public Student addStudent(Student student){

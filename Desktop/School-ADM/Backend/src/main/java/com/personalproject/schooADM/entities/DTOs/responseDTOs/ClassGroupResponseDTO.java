@@ -1,14 +1,7 @@
 package com.personalproject.schooADM.entities.DTOs.responseDTOs;
 
-import com.personalproject.schooADM.entities.ClassGroup;
-import com.personalproject.schooADM.entities.Course;
-import com.personalproject.schooADM.entities.Student;
-import com.personalproject.schooADM.entities.Teacher;
+import com.personalproject.schooADM.entities.*;
 import com.personalproject.schooADM.entities.enums.WeekDayEnum;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -31,6 +24,7 @@ public class ClassGroupResponseDTO {
     private Boolean activeStatus;
     private String course;
     private String teacher;
+    private String courseLevel;
     private List<String> studentList = new ArrayList<>();
 
 
@@ -54,6 +48,7 @@ public class ClassGroupResponseDTO {
         this.activeStatus = classGroup.getActiveStatus();
         this.course = classGroup.getCourse().getId();
         this.teacher = classGroup.getTeacher().getId();
+        this.courseLevel = classGroup.getCourseLevel();
 
         for(Student student : classGroup.getStudentList()){
             studentList.add(student.getId());
@@ -174,6 +169,14 @@ public class ClassGroupResponseDTO {
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
+    }
+
+    public String getCourseLevel() {
+        return courseLevel;
+    }
+
+    public void setCourseLevel(String courseLevel) {
+        this.courseLevel = courseLevel;
     }
 
     public List<String> getStudentList() {
