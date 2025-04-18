@@ -1,3 +1,4 @@
+
 import { PageBody, ButtonContainer } from "./TeachersStyle";
 import SearchBar from "../components/SearchBar";
 import AddButton from "../components/AddButton";
@@ -5,6 +6,14 @@ import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
 import TeacherCard from "../layouts/TeacherCard";
+
+
+
+
+
+
+
+
 
 function Teachers(){
 

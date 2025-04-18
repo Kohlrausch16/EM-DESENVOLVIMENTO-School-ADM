@@ -4,11 +4,11 @@ import { CardContainer, LenguageFlag, ClassName, ItemContainer, CourseLevel, Car
 import DeleteButton from "../components/DeleteButton";
 import EditButton from "../components/EditButton";
 import { ClassData } from "../models/ClassGroup";
-import { AxiosCourseRequest, AxiosLanguageRequest } from "../axios";
+import { AxiosCourseRequest, AxiosLanguageRequest, AxiosTeacherRequest } from "../axios";
 import { CourseData } from "../models/Course";
 import { LanguageData } from "../models/Language";
 import Loading from "../pages/Loadding";
-
+import { TeacherData } from "../models/Teacher";
 
 type ClassCardContentProps = {
     classContent: ClassData;
@@ -16,18 +16,24 @@ type ClassCardContentProps = {
 
 function ClassCard({classContent}: ClassCardContentProps){
 
+    const cardIcons = ["fas fa-calendar-alt", "fas fa-clock", "fas fa-chalkboard-teacher", "fas fa-users"];
+
     const [languageData, setLanguageData] = useState<LanguageData>();
+    const [teacherData, setTeacherData] = useState<TeacherData>();
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() =>{
         const fetchData = async () =>{
             const axiosCourseRequest = new AxiosCourseRequest();
             const axiosLanguageRequest = new AxiosLanguageRequest();
+            const axiosTeacherRequest = new AxiosTeacherRequest();
 
             const foundCourse: CourseData = await axiosCourseRequest.getCourse(classContent.course);
             const foundLanguage: LanguageData = await axiosLanguageRequest.getLanguage(foundCourse.language);
+            const foundTeacher: TeacherData = await axiosTeacherRequest.getTeacher(classContent.teacher);
 
             setLanguageData(foundLanguage);
+            setTeacherData(foundTeacher);
             setLoading(false);
         }
 
@@ -42,17 +48,30 @@ function ClassCard({classContent}: ClassCardContentProps){
         <>
             <Link href={`/class/${classContent.id}`}>
                 <CardContainer>
-                    <LenguageFlag src={content.lenguageFlag} />
+                    <LenguageFlag src={`assets/images/${languageData?.flagIcon}`} />
                     <CardRow>
-                            <ClassName> {content.className} </ClassName>
+                            <ClassName> {classContent.name} </ClassName>
 
                         <TextContent>
-                            {content.classInfo.map((item) =>
-                                <ItemContainer>
-                                <ItemIcon className={item.icon} /> 
-                                <ItemDescription> {item.content} </ItemDescription>
+                            <ItemContainer>
+                                <ItemIcon className={cardIcons[0]} />
+                                <ItemDescription> {classContent.weekDay}</ItemDescription>
                             </ItemContainer>
-                            )}
+
+                            <ItemContainer>
+                                <ItemIcon className={cardIcons[1]} />
+                                <ItemDescription> {`${classContent.dayHour[0]}:${classContent.dayHour[1]}`}</ItemDescription>
+                            </ItemContainer>
+
+                            <ItemContainer>
+                                <ItemIcon className={cardIcons[2]} />
+                                <ItemDescription> {teacherData?.name}</ItemDescription>
+                            </ItemContainer>
+
+                            <ItemContainer>
+                                <ItemIcon className={cardIcons[3]} />
+                                <ItemDescription> {classContent.classroom}</ItemDescription>
+                            </ItemContainer>
                         </TextContent>
                     </CardRow>
 
@@ -61,7 +80,7 @@ function ClassCard({classContent}: ClassCardContentProps){
                         <DeleteButton />
                     </ButtonContainer>
                     
-                    <CourseLevel> {content.level} </CourseLevel>
+                    <CourseLevel> {classContent.courseLevel} </CourseLevel>
                 </CardContainer>
             </Link>  
         </>
