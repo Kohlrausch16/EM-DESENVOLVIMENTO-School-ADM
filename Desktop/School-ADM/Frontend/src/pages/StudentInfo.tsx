@@ -3,7 +3,7 @@ import { IconContainer, TextTitle, LenguageIcons, StudentInfoContainer, EmptyDiv
 import { useParams } from "react-router-dom";
 import LateralMenu from "../layouts/LateralMenu";
 
-import Loading from "./Loadding";
+import Loading from "./Loading";
 
 import PictureSection from "../components/PictureSection";
 import StudentInfoSection from "../components/StudentInfoSection";

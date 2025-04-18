@@ -5,7 +5,7 @@ import DeleteButton from "../components/DeleteButton";
 import { StudentData } from "../models/Student";
 import { AxiosStudentRequest } from "../axios";
 import { LanguageData } from "../models/Language";
-import Loading from "../pages/Loadding";
+import Loading from "../pages/Loading";
 
 type StudentDataProps = {
   student: StudentData;

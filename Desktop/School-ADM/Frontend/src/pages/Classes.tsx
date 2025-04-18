@@ -7,7 +7,7 @@ import LateralMenu from "../layouts/LateralMenu";
 import { ContentArea } from "./FlexController";
 import { ContentContainer } from "./HomeStyle";
 import ClassCard from "../layouts/ClassCard";
-import Loading from "./Loadding";
+import Loading from "./Loading";
 import { ClassData } from "../models/ClassGroup";
 import { AxiosClassRequest } from "../axios";
 

@@ -9,7 +9,7 @@ import StudentCard from "../layouts/StudentCard";
 
 import { AxiosStudentRequest } from "../axios";
 import { StudentData } from "../models/Student";
-import Loading from "./Loadding";
+import Loading from "./Loading";
 
 function Students() {
   const title = "aluno";

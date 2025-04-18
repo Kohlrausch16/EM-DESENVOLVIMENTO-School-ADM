@@ -7,7 +7,7 @@ import { CourseData } from "../models/Course";
 import { ClassData } from "../models/ClassGroup";
 import { TeacherData } from "../models/Teacher";
 import { LanguageData } from "../models/Language";
-import Loading from "../pages/Loadding";
+import Loading from "../pages/Loading";
 
 type HomeCardContentProps = {
     classContent: ClassData;

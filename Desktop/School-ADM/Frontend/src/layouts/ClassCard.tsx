@@ -7,7 +7,7 @@ import { ClassData } from "../models/ClassGroup";
 import { AxiosCourseRequest, AxiosLanguageRequest, AxiosTeacherRequest } from "../axios";
 import { CourseData } from "../models/Course";
 import { LanguageData } from "../models/Language";
-import Loading from "../pages/Loadding";
+import Loading from "../pages/Loading";
 import { TeacherData } from "../models/Teacher";
 
 type ClassCardContentProps = {

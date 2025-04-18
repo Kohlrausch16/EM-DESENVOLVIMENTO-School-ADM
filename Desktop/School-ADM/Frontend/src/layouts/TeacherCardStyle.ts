@@ -19,7 +19,7 @@ export const ContentContainer = style.a`
     }
 `;
 
-export const StudentPic = style.img`
+export const TeacherPic = style.img`
     height: 200%;
     border-radius: 50%;
     border: solid 2px  #DEDEDE;
@@ -33,7 +33,7 @@ export const InfoContainer = style.div`
     justify-content: center;
 `;
 
-export const StudentName = style.div`
+export const TeacherName = style.div`
     display: flex;
     height: 65%;    
     font-size: 130%;

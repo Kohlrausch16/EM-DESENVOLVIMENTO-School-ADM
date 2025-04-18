@@ -6,6 +6,7 @@ export const PageBody = style.div`
     width: 85%;
     height: 85%;
     padding-top: 1%;
+    padding-bottom: 5%;
     overflow: scroll;
 `;
 

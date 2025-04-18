@@ -1,35 +1,45 @@
-import { ContentContainer, LenguageIconContainer, InfoContainer, StudentPic, StudentName, CourseIcon, ButtonSection } from "./TeacherCardStyle";
+import { useState, useEffect } from "react";
+import { ContentContainer, LenguageIconContainer, InfoContainer, TeacherPic, TeacherName, CourseIcon, ButtonSection } from "./TeacherCardStyle";
 import DeleteButton from "../components/DeleteButton";
 import EditButton from "../components/EditButton";
-
-type lenguageIcon = string;
+import { TeacherData } from "../models/Teacher";
+import { AxiosLanguageRequest } from "../axios";
+import { LanguageData } from "../models/Language";
+import Loading from "../pages/Loading";
 
 type TeacherDataProps = {
-    id: string;
-    picture: string;
-    first_name: string;
-    last_name: string;
-    lenguages: lenguageIcon[];
-    
+    teacherContent: TeacherData;
 }
 
-function TeacherCard({teacher}: TeacherDataProps){
+function TeacherCard({teacherContent}: TeacherDataProps){
+
+    const [languageData, setLanguageData] = useState<LanguageData>();
+    const [loading, setLoading] = useState<boolean>();
+
+    useEffect(() =>{
+        const fetchData = async () =>{
+            const axiosLanguageRequest = new AxiosLanguageRequest();
+            const foundLanguage: LanguageData = await axiosLanguageRequest.getLanguage(teacherContent.language);
+
+            setLanguageData(foundLanguage);
+            setLoading(false);
+        }
+        fetchData();
+    });
+
+    if(loading){
+        return <Loading />
+    }
 
     return(
         <>
-            <ContentContainer href={`/teacher/${teacher.id}`}> 
-                <StudentPic src={teacher.picture} />
+            <ContentContainer href={`/teacher/${teacherContent.id}`}> 
+                <TeacherPic src={`assets/images/${teacherContent.picture}`} />
                     <InfoContainer>
-                    <StudentName>
-                        {teacher.first_name}  {teacher.last_name}
-                    </StudentName>
+                    <TeacherName> {teacherContent.name} </TeacherName>
 
                     <LenguageIconContainer>
-
-                    {teacher.lenguages.map((contentIcon) => 
-                        <CourseIcon src={contentIcon.lenguageIcon} />
-                    )}
-
+                        <CourseIcon src={languageData?.roundFlagIcon} />
                     </LenguageIconContainer> 
 
                 </InfoContainer>
