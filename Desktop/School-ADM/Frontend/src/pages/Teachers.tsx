@@ -50,11 +50,7 @@ function Teachers(){
                 
             </ContentContainer>
         </ContentArea>
-
-        
-       
     </>
-    
 );}
 
 export default Teachers;

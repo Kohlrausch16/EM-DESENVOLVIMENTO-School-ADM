@@ -41,7 +41,7 @@ export const HomeTitle = style.div`
     color: #333333;
     font-family: verdana;
     font-size: 160%;
-    
+
 `;
 
 export const ClassCardArea = style.div`

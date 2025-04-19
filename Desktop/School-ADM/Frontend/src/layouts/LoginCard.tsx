@@ -1,42 +1,64 @@
-import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import img from '/assets/images/logo.png';
-import { Card, Logo, CardText, TextArea, Input, ActionButton } from './LoginCardStyle';
-import { login } from '../axios';
+/* **   React imports  ** */
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+/* **   Component imports  ** */
+import {
+  Card,
+  Logo,
+  CardText,
+  TextArea,
+  Input,
+  ActionButton,
+} from "./LoginCardStyle";
+
+/* **   Images imports  ** */
+import img from "/assets/images/logo.png";
+
+/* **   Axios imports  ** */
+import { login } from "../axios";
 
 const LoginCard = () => {
+  const navigate = useNavigate();
 
-  const emailContent = useRef<HTMLInputElement | null>(null);
-  const passwordContent = useRef<HTMLInputElement | null>(null);
-  const navigate = useNavigate(); 
+  /*  **  Validation of e-mail and password informed by user  ** */
+  const [allowProcedeButton, setProcedeButton] = useState<boolean>(false);
+  const [informedEmail, setInformedEmail] = useState<string>();
+  const [informedPassword, setInformedPassword] = useState<string>();
 
-  document.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Enter') {
-      submit('/home'); 
+  /*  **  useEffect that watches the state of button (available or not to press)  ** */  
+  useEffect(() => {
+    if (informedEmail != null && informedPassword != null) {
+      setProcedeButton(true);
+      console.log(informedPassword);
+    }
+
+    if (informedEmail == "" || informedPassword == "") {
+      setProcedeButton(false);
+    }
+  }, [informedEmail, informedPassword]);
+
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter") {
+      submit("/home");
     }
   });
 
+  /*  **  function that rund the login validation  ** */
   function submit(link: string) {
-    const emailValue = emailContent.current ? emailContent.current.value : '';
-    const passwordValue = passwordContent.current ? passwordContent.current.value : '';
 
-    if (emailValue === '' || passwordValue === '') {
-      alert('Email e/ou senha não informados!');
+    let loginAccepted = false;
+
+    login.map((item) => {
+       if(item.email === informedEmail && item.password === informedPassword){
+        loginAccepted = true
+       }
+    });
+
+    if (loginAccepted) {
+      navigate(link);
     } else {
-      let loginAccepted = false;
-
-      for (let i = 0; i <= login.length - 1; i++) {
-        if (emailValue === login[i].email && passwordValue === login[i].password) {
-          loginAccepted = true;
-          break;
-        }
-      }
-
-      if (loginAccepted === true) {
-        navigate(link);
-      } else {
-        alert('Acesso negado!');
-      }
+      return <div> invalido </div>
     }
   }
 
@@ -45,12 +67,12 @@ const LoginCard = () => {
       <Logo src={img} />
       <CardText>Realize seu login</CardText>
       <TextArea>
-        <Input id="emailInput" ref={emailContent} type="email" placeholder="Informe seu e-mail" />
+        <Input id="emailInput" type="email" onChange={(e) => setInformedEmail(e.target.value)} placeholder="Informe seu e-mail"/>
       </TextArea>
       <TextArea>
-        <Input id="passwordInput" ref={passwordContent} type="password" placeholder="Informe sua senha" />
+        <Input id="passwordInput" type="password" onChange={(e) => setInformedPassword(e.target.value)} placeholder="Informe sua senha" />
       </TextArea>
-      <ActionButton id="button" onClick={() => submit('/home')}>Entrar</ActionButton>
+      <ActionButton value={allowProcedeButton} id="button" onClick={() => submit("/home")}> Entrar </ActionButton>
     </Card>
   );
 };

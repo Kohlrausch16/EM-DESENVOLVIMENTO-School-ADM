@@ -100,7 +100,6 @@ export class AxiosCourseRequest{
 }
 
 
-
 export class AxiosLanguageRequest{
   async getLanguages(): Promise<LanguageData[]>{
     const languageList = await axios.get<LanguageData[]>(`${apiKey}/language`);

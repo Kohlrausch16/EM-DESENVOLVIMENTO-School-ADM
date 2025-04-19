@@ -25,8 +25,6 @@ export const CardText = style.div`
 
 `;
     
-/* top | right | bottom | left */
-
 export const TextArea = style.div`
     display: flex;
     flex-direction: column;
@@ -61,11 +59,12 @@ export const ActionButton = style.button`
     color: #ffffff;
     border-radius: 50px;
     border: none;
-    background-color: #8DBDF4;
+    background-color:${(props) => props.value ? '#8DBDF4' : '#958D8D'};
     font-size: 164x;
     margin: 2% 0% 0% 0%; 
-
+    
     &:hover {
-        background-color: #4A90E2;
+        background-color: ${(props) => props.value ? '#4A90E2' : '#958D8D'};   
+        cursor: ${(props) => props.value ? 'pointer' : 'not-allowed'};
     }
 `;

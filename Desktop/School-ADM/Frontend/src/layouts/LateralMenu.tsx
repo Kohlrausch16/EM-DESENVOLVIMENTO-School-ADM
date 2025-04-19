@@ -38,23 +38,18 @@ function LateralMenu(){
     ];
 
     return(
-        <>
-            <MenuBody>
-                <LogoContainer>
-                    <MenuLogo src={logo} />
-                </LogoContainer>
+        <MenuBody>
+            <LogoContainer>
+                <MenuLogo src={logo} />
+            </LogoContainer>
 
-                {items.map((item) => 
-
-                <ItemBar href={item.link}>  
-                    <MenuIcon src={item.icon} />
-                    <MenuField> {item.fieldName}</MenuField>
-                </ItemBar>
-                
-                )}
-
-            </MenuBody>
-        </>
+            {items.map((item) => 
+            <ItemBar href={item.link}>  
+                <MenuIcon src={item.icon} />
+                <MenuField> {item.fieldName}</MenuField>
+            </ItemBar>
+            )}
+        </MenuBody>
     );
 }
 
