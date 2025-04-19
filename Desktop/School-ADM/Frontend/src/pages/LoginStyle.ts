@@ -1,13 +1,15 @@
 import style from "styled-components";
 import image from "/assets/images/background.png";
 
+const colors =  [ "#FFD1DC", "#FFECB3", "#C8E6C9", "#B3E5FC", "#E1BEE7", "#FFF9C4", "#F8BBD0", "#D1C4E9", "#B2EBF2", "#DCEDC8"];
+
 export const ContentArea = style.div`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100dvw;
     height: 100dvh;
-    background-color: black;
+    background-image: linear-gradient(to bottom right, ${colors[Math.floor(Math.random() * 9)]}, ${colors[Math.floor(Math.random() * 9)]});    
 `;
 
 export const BackgroundImage = style.div`

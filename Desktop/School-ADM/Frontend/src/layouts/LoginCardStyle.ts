@@ -19,10 +19,19 @@ export const Logo = style.img`
 `;
 
 export const CardText = style.div`
-    font-family: Verdana;
-    font-size: 35px;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
     padding: 8%;
 
+    @media(min-width: 768px){
+        font-size: 35px;
+    }
+
+    @media(min-width: 913px){
+        font-size: 35px;
+    }
 `;
     
 export const TextArea = style.div`
@@ -31,9 +40,17 @@ export const TextArea = style.div`
     justify-content: center;
     padding: 1.5% 0% 1.5% 5%;
     margin: 2% 0% 2% 0%;
-    width: 65%;
+    width: 75%;
     border: solid #DEDEDE 1px; 
     border-radius: 50px;
+
+    @media(min-width: 768px){
+        width: 67%;
+    }
+
+    @media(min-width: 913px){
+        width: 65%;
+    }
 
     &:hover {
         background-color: #FAF5F5;
@@ -50,6 +67,9 @@ export const Input = style.input`
     border: none;
     box-shadow: none;
     background: none;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 `;
 
 export const ActionButton = style.button`
@@ -62,7 +82,13 @@ export const ActionButton = style.button`
     background-color:${(props) => props.value ? '#8DBDF4' : '#958D8D'};
     font-size: 164x;
     margin: 2% 0% 0% 0%; 
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     
+    &:animation {
+    }
+
     &:hover {
         background-color: ${(props) => props.value ? '#4A90E2' : '#958D8D'};   
         cursor: ${(props) => props.value ? 'pointer' : 'not-allowed'};
