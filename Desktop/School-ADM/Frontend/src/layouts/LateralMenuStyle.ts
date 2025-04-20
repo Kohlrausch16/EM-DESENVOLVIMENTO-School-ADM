@@ -3,32 +3,61 @@ import style from 'styled-components';
 export const MenuBody = style.div`
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: 100%;
+    flex: 1;
     background-color: #333333;
-    align-items: center;
+
+    @media(min-width: 855px){
+        flex: 1;
+        padding-bottom: 15%;
+    }
+    
+    @media(min-width: 913px){
+        flex: 1;
+        padding-bottom: 17%;
+    }
 `;
 
 export const LogoContainer = style.div`
     display: flex;
-    height: 20%;
-    width: 40%;
-    padding: 10% 30%;
+    flex: 1;
     justify-content: center;
     border-bottom: solid 1px #FFFEFE;
+    padding: 5% 20%;
+
+    @media(min-width: 855px){
+        padding: 5% 20%;
+    }
+
+    @media(min-width: 913px){
+        padding: 5% 25%;
+    }
 `;
 
 export const MenuLogo = style.img`
-    width: 75%;
-    height: 90%;
+    width: 100px;
     cursor: pointer;
+
+    @media(min-width: 855px){
+        width: 90px;
+    }
+
+    @media(min-width: 913px){
+        width: 110px;
+    }
+
+`;
+
+export const ItemBarContainer = style.div`
+    display: flex;
+    flex: 6;
+    flex-direction: column;
+
 `;
 
 export const ItemBar = style.a`
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 6%;
+    flex: 1;
     border-bottom: solid 1px #FFFEFE;
     text-decoration: none;
 
@@ -37,21 +66,29 @@ export const ItemBar = style.a`
     }
 `;
 
-export const MenuIcon = style.img`
-    display: flex;
-    width: 7%;
-    padding: 1% 2% 1% 18%;
-    text-align: end;
-    cursor: pointer;
+export const MenuIcon = style.i`
+    padding: 0% 2% 0% 0%;
 `;
 
 export const MenuField = style.div`
-    width: 73%;
     display: flex;
-    font-family: Verdana;
-    justify-content: left;
+    flex: 1;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
     align-items: center;
-    font-weight: bold;
     color: #FFFEFE;
     cursor: pointer;
+
+    @media(min-width: 855px){
+        padding: 0% 0% 0% 10%;
+        justify-content: left;
+    }
+
+    @media(min-width: 913px){
+        padding: 0% 0% 0% 10%;
+       justify-content: left;
+    }
+
 `;

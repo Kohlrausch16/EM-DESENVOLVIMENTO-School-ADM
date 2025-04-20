@@ -55,10 +55,38 @@ export class AxiosStudentRequest {
 }
 
 
-
 export class AxiosClassRequest {
   async getClasses(): Promise<ClassData[]> {
     const classList = await axios.get<ClassData[]>(`${apiKey}/class`);
+
+    classList.data.map((item: ClassData) =>{
+    
+      switch(item.weekDay){
+          case 'SEGUNDA_FEIRA':
+            item.weekDay = 'Segunda-Feira';
+            break 
+          
+          case 'TERCA_FEIRA':
+            item.weekDay = 'Terça-Feira';
+            break 
+
+          case 'QUARTA_FEIRA':
+            item.weekDay = 'Quarta-Feira';
+            break 
+
+          case 'QUINTA_FEIRA':
+            item.weekDay = 'Quinta-Feira';
+            break 
+
+          case 'SEXTA_FEIRA':
+            item.weekDay = 'Sexta-Feira';
+            break 
+
+          case 'SABADO':
+            item.weekDay = 'Sábado';
+            break 
+      }
+    });
     return classList.data;
   }
 
@@ -70,20 +98,20 @@ export class AxiosClassRequest {
   async getTodayClasses(): Promise<ClassData[]> {
     const classList: ClassData[] = await this.getClasses(); 
 
-    const weekDays = ['SEGUNDA_FEIRA', 'TERCA_FEIRA', 'QUARTA_FEIRA', 'QUINTA_FEIRA', 'SEXTA_FEIRA', 'SABADO'];
+    const weekDays = ['Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado'];
+  
     const days = new Date();
     const today = days.getDay();
 
     const todayClasses: ClassData[] = classList.filter((item: ClassData) =>{
-        return item.weekDay === weekDays[today - 1];
+        return item.weekDay === weekDays[today + 1];
     });
-
-    console.log(todayClasses);
 
     return todayClasses;
   }
-
 }
+
+
 
 export class AxiosCourseRequest{
 

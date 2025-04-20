@@ -1,13 +1,28 @@
 import style from "styled-components";
 
-export const ContentContainer = style.div`
-    flex: 1;
+export const ContentArea = style.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    @media(min-width: 855px){
+        flex-direction: row;
+    }
+
+    @media(min-width: 913px){
+       flex-direction: row;
+    }
+`;
+
+
+export const ContentContainer = style.div`
+    display: flex;
+    flex: 2.5;
+    flex-direction: column;
     background-color: #FFFEFE;
-    padding: 3% 1%;
+    padding: 3% 1% 0% 1%;
     justify-content: center;
     align-items: center;
 `;
@@ -24,9 +39,17 @@ export const IconBar = style.div`
 
 export const Icon = style.i`
     color: #333333;
-    font-size: 35px;
+    font-size: 20px;
     transition: transform 0.2s;
     cursor: pointer;
+
+    @media(min-width: 855px){
+        font-size: 30px;
+    }
+    
+    @media(min-width: 913px){
+        font-size: 35px;
+    }
 
     &:hover{
         color: #958D8D;

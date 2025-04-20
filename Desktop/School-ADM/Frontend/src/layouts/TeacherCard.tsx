@@ -39,7 +39,7 @@ function TeacherCard({teacherContent}: TeacherDataProps){
                     <TeacherName> {teacherContent.name} </TeacherName>
 
                     <LenguageIconContainer>
-                        <CourseIcon src={languageData?.roundFlagIcon} />
+                        <CourseIcon src={`assets/images/${languageData?.roundFlagIcon}`} />
                     </LenguageIconContainer> 
 
                 </InfoContainer>

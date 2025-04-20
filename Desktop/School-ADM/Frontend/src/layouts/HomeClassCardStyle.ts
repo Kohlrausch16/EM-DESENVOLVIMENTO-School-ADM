@@ -1,6 +1,5 @@
 import style from 'styled-components';
 
-
 export const ClassCard = style.div`
     display: flex;
     width: 100%;
@@ -25,14 +24,18 @@ export const LenguageFlag = style.img`
 export const ClassName = style.div`
     display: flex;
     flex-warp: warp;
-    font-family: verdana;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 140%;
     padding: 3%;
     color: #333333;
 `;
 
 export const CourseLevel = style.div`
-    font-family: verdana;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
     margin-left: auto;
     height: 30%;
     border-bottom-left-radius: 15px;
@@ -50,6 +53,9 @@ export const Information = style.div`
     display: flex;
     width: 50%;    
     gap: 5%;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
 `;
 
 export const ItemIcon = style.i`
@@ -70,6 +76,9 @@ export const ItemDescription = style.div`
     flex-direction: column;
     flex: 1;
     align-self: center;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
 `;
 
 export const CardRow = style.div`

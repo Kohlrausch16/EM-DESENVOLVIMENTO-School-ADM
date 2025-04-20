@@ -5,8 +5,7 @@ export const PageBody = style.div`
     flex-direction: column;
     width: 85%;
     height: 85%;
-    padding-top: 1%;
-    padding-bottom: 5%;
+    padding-top: 1% 0% 0% 0%;
     overflow: scroll;
 `;
 

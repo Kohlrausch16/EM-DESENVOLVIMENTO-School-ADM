@@ -36,8 +36,10 @@ export const InfoContainer = style.div`
 export const StudentName = style.div`
     display: flex;
     height: 65%;    
-    font-size: 130%;
-    font-family: verdana;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
     color: #333333;
 `;
 

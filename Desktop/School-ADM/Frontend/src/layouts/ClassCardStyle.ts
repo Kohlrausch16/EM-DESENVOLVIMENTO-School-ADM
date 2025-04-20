@@ -27,7 +27,9 @@ export const ClassName = style.div`
     height: 40%;
     padding: 0% 3%;
     font-size: 140%;
-    font-family: verdana;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
     color: #333333;
     align-items: center;
 `;
@@ -52,7 +54,9 @@ export const CourseLevel = style.div`
     margin-left: auto;
     font-size: 100%;
     border-bottom-left-radius: 10px;
-    font-family: verdana;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     color: #333333;
     background-color: #DEDEDE;
 `;
@@ -85,6 +89,9 @@ export const ItemContainer = style.div`
     display: flex;
     flex: 1;
     gap: 2%;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 `;
 
 export const Link = style.a`

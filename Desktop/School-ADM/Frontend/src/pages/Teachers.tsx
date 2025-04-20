@@ -45,7 +45,6 @@ function Teachers(){
                     {teacherData?.map((item: TeacherData) =>
                         <TeacherCard teacherContent={item} />
                     )}
-                    
                 </PageBody>
                 
             </ContentContainer>

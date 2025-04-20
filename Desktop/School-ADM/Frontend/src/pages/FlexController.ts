@@ -15,7 +15,6 @@ export const BackgroundImage = style.div`
     background-image: url(${image});
 `;
 
-
 export const FlexContainer = style.div`
     display: flex;
     width: 40%;
